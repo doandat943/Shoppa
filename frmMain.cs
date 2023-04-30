@@ -62,7 +62,7 @@ namespace Shoppa
 
                     productItem.Set_ProductName = row[0].ToString();
                     productItem.Set_Price = row[1].ToString();
-                    productItem.Set_QuantityInStock = row[2].ToString();
+                    productItem.Set_Sold = row[2].ToString();
                     productItem.Set_ProductImage = row[3].ToString();
 
                     flowLayoutPanel.Controls.Add(productItem);
@@ -87,6 +87,12 @@ namespace Shoppa
             uiUserInfo userInfoView = new uiUserInfo(AccountID);
             userInfoView.Location = new Point(200, 0);
             this.Controls.Add(userInfoView);
+        }
+
+        private void btnManageProduct_Click(object sender, EventArgs e)
+        {
+            frmManageProduct frmManageProduct = new frmManageProduct();
+            frmManageProduct.ShowDialog();
         }
     }
 }

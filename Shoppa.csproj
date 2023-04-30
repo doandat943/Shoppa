@@ -256,11 +256,23 @@
     <Compile Include="frmTemp.Designer.cs">
       <DependentUpon>frmTemp.cs</DependentUpon>
     </Compile>
+    <Compile Include="pnCartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pnCartItem.Designer.cs">
+      <DependentUpon>pnCartItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="pnProductItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="pnProductItem.Designer.cs">
       <DependentUpon>pnProductItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uiCart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uiCart.Designer.cs">
+      <DependentUpon>uiCart.cs</DependentUpon>
     </Compile>
     <Compile Include="uiProductDetail.cs">
       <SubType>UserControl</SubType>
@@ -309,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pnProductItem.resx">
       <DependentUpon>pnProductItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uiCart.resx">
+      <DependentUpon>uiCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiProductDetail.resx">
       <DependentUpon>uiProductDetail.cs</DependentUpon>

@@ -75,10 +75,10 @@
             this.cboGender = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUsername = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -172,7 +172,7 @@
             this.btnUpdateAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnUpdateAccount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnUpdateAccount.TextMarginLeft = 0;
-            this.btnUpdateAccount.TextPadding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnUpdateAccount.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnUpdateAccount.UseDefaultRadiusAndThickness = true;
             this.btnUpdateAccount.Click += new System.EventHandler(this.btnUpdateAccount_Click);
             // 
@@ -264,7 +264,7 @@
             this.btnDeleteAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDeleteAccount.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDeleteAccount.TextMarginLeft = 0;
-            this.btnDeleteAccount.TextPadding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnDeleteAccount.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDeleteAccount.UseDefaultRadiusAndThickness = true;
             this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
@@ -357,7 +357,7 @@
             this.btnSelectAvatar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSelectAvatar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSelectAvatar.TextMarginLeft = 0;
-            this.btnSelectAvatar.TextPadding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnSelectAvatar.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnSelectAvatar.UseDefaultRadiusAndThickness = true;
             this.btnSelectAvatar.Click += new System.EventHandler(this.btnSelectAvatar_Click);
             // 
@@ -585,7 +585,7 @@
             this.txtPhoneNumber.Padding = new System.Windows.Forms.Padding(3);
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPhoneNumber.PlaceholderText = "0987654321";
+            this.txtPhoneNumber.PlaceholderText = "098765432";
             this.txtPhoneNumber.ReadOnly = false;
             this.txtPhoneNumber.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPhoneNumber.SelectedText = "";
@@ -599,7 +599,7 @@
             this.txtPhoneNumber.TextMarginBottom = 0;
             this.txtPhoneNumber.TextMarginLeft = 5;
             this.txtPhoneNumber.TextMarginTop = 0;
-            this.txtPhoneNumber.TextPlaceholder = "0987654321";
+            this.txtPhoneNumber.TextPlaceholder = "098765432";
             this.txtPhoneNumber.UseSystemPasswordChar = false;
             this.txtPhoneNumber.WordWrap = true;
             // 
@@ -942,6 +942,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(377, 109);
             this.tableLayoutPanel1.TabIndex = 20;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 78);
+            this.label5.Margin = new System.Windows.Forms.Padding(5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 17);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Mật khẩu:";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1040,18 +1051,7 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Tên tài khoản:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 78);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Mật khẩu:";
-            // 
-            // pnUserInfo
+            // uiUserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1064,7 +1064,7 @@
             this.Controls.Add(this.btnDeleteAccount);
             this.Controls.Add(this.btnUpdateAccount);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "pnUserInfo";
+            this.Name = "uiUserInfo";
             this.Size = new System.Drawing.Size(670, 450);
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

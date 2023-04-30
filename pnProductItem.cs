@@ -28,9 +28,9 @@ namespace Shoppa
             set => lbPrice.Text = int.Parse(value).ToString("N0") + "₫";
         }
 
-        public string Set_QuantityInStock
+        public string Set_Sold
         {
-            set => lbQuantityInStock.Text = value;
+            set => lbSold.Text = value;
         }
 
         public string Set_ProductImage

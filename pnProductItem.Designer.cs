@@ -32,7 +32,7 @@
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.lbProductName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lbQuantityInStock = new System.Windows.Forms.Label();
+            this.lbSold = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -60,23 +60,24 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(121, 175);
+            this.pictureBox2.Location = new System.Drawing.Point(122, 201);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // lbQuantityInStock
+            // lbSold
             // 
-            this.lbQuantityInStock.AutoSize = true;
-            this.lbQuantityInStock.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuantityInStock.Location = new System.Drawing.Point(128, 156);
-            this.lbQuantityInStock.Name = "lbQuantityInStock";
-            this.lbQuantityInStock.Size = new System.Drawing.Size(14, 15);
-            this.lbQuantityInStock.TabIndex = 4;
-            this.lbQuantityInStock.Text = "0";
+            this.lbSold.AutoSize = true;
+            this.lbSold.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSold.Location = new System.Drawing.Point(8, 209);
+            this.lbSold.Name = "lbSold";
+            this.lbSold.Size = new System.Drawing.Size(60, 15);
+            this.lbSold.TabIndex = 4;
+            this.lbSold.Text = "Đã bán 10";
             // 
             // lbPrice
             // 
@@ -92,15 +93,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(159)))), ((int)(((byte)(226)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.lbPrice);
-            this.Controls.Add(this.lbQuantityInStock);
+            this.Controls.Add(this.lbSold);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbProductName);
             this.Controls.Add(this.pbProductImage);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "pnProductItem";
-            this.Size = new System.Drawing.Size(155, 209);
+            this.Size = new System.Drawing.Size(155, 234);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -113,7 +114,7 @@
         private System.Windows.Forms.PictureBox pbProductImage;
         private System.Windows.Forms.Label lbProductName;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lbQuantityInStock;
+        private System.Windows.Forms.Label lbSold;
         private System.Windows.Forms.Label lbPrice;
     }
 }
