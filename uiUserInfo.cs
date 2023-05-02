@@ -18,14 +18,7 @@ namespace Shoppa
         public uiUserInfo(string AccountID)
         {
             InitializeComponent();
-
-            //
-
-            this.AccountID = AccountID;
-            txtUsername.Text = AccountID;
-
-            mySqlServices.AddParamater("@AccountID", AccountID);
-
+            
             //
 
             DataTable dtGender = mySqlServices.ExecuteQueryTable("Select *From Gender");
@@ -44,8 +37,12 @@ namespace Shoppa
             cboProvince.ValueMember = "ProvinceID";
 
             //
+            this.AccountID = AccountID;
+            txtUsername.Text = AccountID;
 
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select Name, PhoneNumber, Email, Address, ProvinceID, GenderID, RoleID, Avatar From Accounts");
+            mySqlServices.AddParamater("@AccountID", AccountID);
+
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select Name, PhoneNumber, Email, Address, ProvinceID, GenderID, RoleID, Avatar From Accounts Where AccountID = @AccountID");
             
             if (dataTable.Rows.Count > 0)
             {

@@ -16,7 +16,7 @@ namespace Shoppa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTemp());
+            Application.Run(new frmLogin());
         }
     }
 }

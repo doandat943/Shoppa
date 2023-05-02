@@ -37,16 +37,19 @@ C:\Users\doandat943\source\repos\study\Shoppa\bin\Debug\System.Threading.AccessC
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.AssemblyReference.cache
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.SuggestedBindingRedirects.cache
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmChangePassword.resources
+C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmManageCategory.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmManageProduct.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmLogin.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmMain.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmRegister.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmTemp.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.pnProductItem.resources
+C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.uiCart.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.uiProductDetail.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.Properties.Resources.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.pnRatingItem.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.pnRatingStar.resources
+C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.uiProductView.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.uiUserInfo.resources
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.GenerateResource.cache
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.exe.licenses
@@ -55,5 +58,3 @@ C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.Fody.CopyL
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.CopyComplete
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.exe
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.pdb
-C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.uiCart.resources
-C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmManageCategory.resources

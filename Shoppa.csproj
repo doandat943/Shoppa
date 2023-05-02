@@ -301,6 +301,12 @@
     <Compile Include="pnRatingStar.Designer.cs">
       <DependentUpon>pnRatingStar.cs</DependentUpon>
     </Compile>
+    <Compile Include="uiProductView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uiProductView.Designer.cs">
+      <DependentUpon>uiProductView.cs</DependentUpon>
+    </Compile>
     <Compile Include="uiUserInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pnRatingStar.resx">
       <DependentUpon>pnRatingStar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uiProductView.resx">
+      <DependentUpon>uiProductView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiUserInfo.resx">
       <DependentUpon>uiUserInfo.cs</DependentUpon>

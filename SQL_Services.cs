@@ -14,7 +14,7 @@ namespace Shoppa
     internal class SQL_Services
     {
         private static SqlConnection mySqlConnection;
-        private SqlDataAdapter myDataAdapter;
+        private SqlDataAdapter myDataAdapter = new SqlDataAdapter();
         private SqlCommand mySqlCommand = new SqlCommand();
         
         private void DisplayError(SqlException ex)
@@ -30,8 +30,7 @@ namespace Shoppa
                 MessageBox.Show(ex.Message, "Lỗi: " + ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        // Mở kết nối Database
+        
         public void OpenDB(string sCon)
         {
             try
@@ -41,12 +40,10 @@ namespace Shoppa
             }
             catch (SqlException ex)
             {
-                //mySqlConnection = null;
                 DisplayError(ex);
             }
         }
-
-        // Đóng kết nối Database
+        
         public void CloseDB()
         {
             try
@@ -56,21 +53,30 @@ namespace Shoppa
             catch (SqlException ex)
             {
                 DisplayError(ex);
-                throw;
+            }
+        }
+
+        public void AddParamater(string parameterName, string parameterValue)
+        {
+            if (mySqlCommand.Parameters.Contains(parameterName))
+            {
+                mySqlCommand.Parameters[parameterName].Value = parameterValue;
+            }
+            else
+            {
+                mySqlCommand.Parameters.AddWithValue(parameterName, parameterValue);
             }
         }
 
         public string ExecuteScalar(string sSql)
         {
-            mySqlCommand.Connection = mySqlConnection;
-            mySqlCommand.CommandText = sSql;
+            SetCommandText(sSql);
             return mySqlCommand.ExecuteScalar().ToString();
         }
 
         public int ExecuteNonQuery(string sSql)
         {
-            mySqlCommand.Connection = mySqlConnection;
-            mySqlCommand.CommandText = sSql;
+            SetCommandText(sSql);
             return mySqlCommand.ExecuteNonQuery();
         }
 
@@ -79,7 +85,8 @@ namespace Shoppa
             DataTable myDataTable = new DataTable();
             try
             {
-                myDataAdapter = new SqlDataAdapter(sSql, mySqlConnection);
+                SetCommandText(sSql);
+                myDataAdapter.SelectCommand = mySqlCommand;
                 myDataAdapter.Fill(myDataTable);
             }
             catch (SqlException ex)
@@ -97,25 +104,10 @@ namespace Shoppa
             return int.Parse(ExecuteScalar(sSql)) != 0;
         }
 
-        public int GetRoleID(string AccountID, string Password)
+        public void SetCommandText(string sSql)
         {
-            //mySqlCommand = new SqlCommand("", mySqlConnection);
-            mySqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
-            mySqlCommand.Parameters.AddWithValue("@Password", Password);
-
-            return (int)mySqlCommand.ExecuteScalar();
-        }
-
-        public void AddParamater(string parameterName, string parameterValue)
-        {
-            if (mySqlCommand.Parameters.Contains(parameterName))
-            {
-                mySqlCommand.Parameters[parameterName].Value = parameterValue;
-            }
-            else
-            {
-                mySqlCommand.Parameters.AddWithValue(parameterName, parameterValue);
-            }
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.CommandText = sSql;
         }
     }
 }

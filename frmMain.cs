@@ -17,6 +17,8 @@ namespace Shoppa
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
 
+        private uiUserInfo userInfoView;
+
         FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 
         public frmMain(string AccountID)
@@ -24,6 +26,9 @@ namespace Shoppa
             InitializeComponent();
 
             this.AccountID = AccountID;
+            
+            userInfoView = new uiUserInfo(AccountID);
+            userInfoView.Location = new Point(200, 0);
         }
 
         private void ColorButton(BunifuButton clickedButton)
@@ -73,6 +78,7 @@ namespace Shoppa
             flowLayoutPanel.Size = new Size(670, 450);
             flowLayoutPanel.AutoScroll = true;
             this.Controls.Add(flowLayoutPanel);
+            userInfoView.BringToFront();
         }
 
         private void btnCartView_Click(object sender, EventArgs e)
@@ -84,9 +90,8 @@ namespace Shoppa
         {
             ColorButton((BunifuButton)sender);
 
-            uiUserInfo userInfoView = new uiUserInfo(AccountID);
-            userInfoView.Location = new Point(200, 0);
             this.Controls.Add(userInfoView);
+            userInfoView.BringToFront();
         }
 
         private void btnManageProduct_Click(object sender, EventArgs e)
