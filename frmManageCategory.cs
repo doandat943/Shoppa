@@ -68,7 +68,7 @@ namespace Shoppa
 
         private void btnEditCategory_Click(object sender, EventArgs e)
         {
-            newMode = true;
+            newMode = false;
             SetControls(true);
         }
 
@@ -96,7 +96,7 @@ namespace Shoppa
                 }
                 else
                 {
-                    mySqlServices.ExecuteNonQuery("Insert Into Products Values (@CategoryName)");
+                    mySqlServices.ExecuteNonQuery("Insert Into Categories Values (@CategoryName)");
                 }
             }
             else
@@ -108,8 +108,8 @@ namespace Shoppa
                 }
                 else
                 {
-                    mySqlServices.AddParamater("oldProductID", txtCategoryName.Text);
-                    mySqlServices.ExecuteNonQuery("Update Products Set ProductID = @ProductID, ProductName = @ProductName, CategoryID = @CategoryID, UnitID = @UnitID, Price = @Price, QuantityInStock = @QuantityInStock, ProductInfo = @ProductInfo, ProductImage = @ProductImage Where ProductID = @oldProductID");
+                    mySqlServices.AddParamater("@CategoryID", CategoryID);
+                    mySqlServices.ExecuteNonQuery("Update Categories Set CategoryName = @CategoryName Where CategoryID = @CategoryID");
                 }
             }
 
@@ -119,6 +119,11 @@ namespace Shoppa
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Load();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
