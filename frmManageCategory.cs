@@ -74,7 +74,7 @@ namespace Shoppa
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản chứ?", "Xóa tài khoản", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+            if (MessageBox.Show("Bạn có chắc muốn xóa danh mục mặt hàng này chứ? Tất cả mặt hàng được liên kết với danh mục này sẽ được chuyển đến danh mục \"Danh mục đã xóa\"!!!", "Xóa loại mặt hàng", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             {
                 mySqlServices.AddParamater("@CategoryID", CategoryID);
                 mySqlServices.ExecuteNonQuery("Update Products Set CategoryID = 0 Where CategoryID = @CategoryID");
@@ -91,7 +91,7 @@ namespace Shoppa
             {
                 if (mySqlServices.CheckExist("Categories", "CategoryName"))
                 {
-                    MessageBox.Show("Loại hàng này: \"" + txtCategoryName.Text + "\" đã tồn tại. Vui lòng nhập Loại hàng khác");
+                    MessageBox.Show("Loại danh mục này: \"" + txtCategoryName.Text + "\" đã tồn tại. Vui lòng nhập Tên danh mục khác");
                     txtCategoryName.Focus();
                 }
                 else
@@ -103,7 +103,7 @@ namespace Shoppa
             {
                 if (mySqlServices.CheckExist("Categories", "CategoryName") && txtCategoryName.Text != CategoryID)
                 {
-                    MessageBox.Show("Loại hàng này: \"" + txtCategoryName.Text + "\" đã tồn tại. Vui lòng nhập Loại hàng khác");
+                    MessageBox.Show("Loại danh mục này: \"" + txtCategoryName.Text + "\" đã tồn tại. Vui lòng nhập Tên danh mục khác");
                     txtCategoryName.Focus();
                 }
                 else
