@@ -18,7 +18,7 @@ namespace Shoppa
             InitializeComponent();
 
             mySqlServices.OpenDB("Data Source=MACBOOK\\SQLEXPRESS;Initial Catalog=Shoppa;Integrated Security=True");
-            frmManageProduct frmManageProduct = new frmManageProduct();
+            frmManageCategory frmManageProduct = new frmManageCategory();
             frmManageProduct.ShowDialog();
         }
     }

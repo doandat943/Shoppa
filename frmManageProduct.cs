@@ -13,7 +13,6 @@ namespace Shoppa
     public partial class frmManageProduct : Form
     {
         private SQL_Services mySqlServices = new SQL_Services();
-        private DataTable dataTable;
 
         public frmManageProduct()
         {
@@ -21,13 +20,18 @@ namespace Shoppa
 
             //
 
-            dataTable = mySqlServices.ExecuteQueryTable("Select * From Categories"); 
-            cboCategory.DataSource = dataTable;
+            DataTable dtCategory = mySqlServices.ExecuteQueryTable("Select * From Categories"); 
+            cboCategory.DataSource = dtCategory;
             cboCategory.DisplayMember = "CategoryName";
             cboCategory.ValueMember = "CategoryID";
 
-            dataTable = mySqlServices.ExecuteQueryTable("Select * From Unit");
-            cboUnit.DataSource = dataTable;
+            DataTable dtCategoryFilter = mySqlServices.ExecuteQueryTable("Select * From Categories");
+            cboCategoryFilter.DataSource = dtCategoryFilter;
+            cboCategoryFilter.DisplayMember = "CategoryName";
+            cboCategoryFilter.ValueMember = "CategoryID";
+
+            DataTable dtUnit = mySqlServices.ExecuteQueryTable("Select * From Unit");
+            cboUnit.DataSource = dtUnit;
             cboUnit.DisplayMember = "UnitName";
             cboUnit.ValueMember = "UnitID";
             //
@@ -35,14 +39,15 @@ namespace Shoppa
             Load();
         }
 
-        private void Load()
+        private void Load(string filter = "")
         {
-            dataGridView1.DataSource = mySqlServices.ExecuteQueryTable("Select * From Products");
+            dataGridView1.DataSource = mySqlServices.ExecuteQueryTable("Select * From Products " + filter);
             SetControls(false);
         }
 
         private void SetControls(bool mode)
         {
+            dataGridView1.Enabled = !mode;
             btnAddProduct.Enabled = !mode;
             btnEditProduct.Enabled = !mode;
             btnDeleteProduct.Enabled = !mode;
@@ -63,6 +68,17 @@ namespace Shoppa
 
         private string ProductID;
         private bool newMode;
+
+        private void btnCategoryFilter_Click(object sender, EventArgs e)
+        {
+            Load("Where CategoryID = " + cboCategoryFilter.SelectedValue);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Load("WHERE ProductName LIKE N'%" + txtSearchBox.Text + "%'");
+            //mySqlServices.ExecuteNonQuery("INSERT INTO Categories Values (N'" + cboCategory.Text  + "')");
+        }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -89,7 +105,7 @@ namespace Shoppa
         {
             newMode = true;
             SetControls(true);
-            txtProductID.PlaceholderText = "SP0001";
+            txtProductID.PlaceholderText = "SP00000001";
 
             txtProductID.Clear();
             txtProductName.Clear();
@@ -109,11 +125,11 @@ namespace Shoppa
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            mySqlServices.AddParamater("@ProductID", ProductID);
-
             if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản chứ?", "Xóa tài khoản", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             {
+                mySqlServices.AddParamater("@ProductID", ProductID);
                 mySqlServices.ExecuteNonQuery("Delete From Products Where ProductID = @ProductID");
+                Load();
             }
         }
 
@@ -135,7 +151,10 @@ namespace Shoppa
                     MessageBox.Show("Mã sản phẩm: \"" + txtProductID.Text + "\" đã tồn tại. Vui lòng nhập Mã sản phẩm khác");
                     txtProductID.Focus();
                 }
-                mySqlServices.ExecuteNonQuery("Insert Into Products Values (@ProductID, @ProductName, @CategoryID, @UnitID, @Price, @QuantityInStock, @ProductInfo, @ProductImage)");
+                else
+                {
+                    mySqlServices.ExecuteNonQuery("Insert Into Products Values (@ProductID, @ProductName, @CategoryID, @UnitID, @Price, @QuantityInStock, @ProductInfo, @ProductImage)");
+                }
             }
             else
             {
@@ -156,7 +175,6 @@ namespace Shoppa
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            SetControls(false);
             Load();
         }
 
