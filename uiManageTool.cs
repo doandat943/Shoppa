@@ -28,5 +28,11 @@ namespace Shoppa
             frmManageProduct frmManageProduct = new frmManageProduct();
             frmManageProduct.Show();
         }
+
+        private void btnManageAccount_Click(object sender, EventArgs e)
+        {
+            frmTemp frmManageAccount = new frmTemp();
+            frmManageAccount.Show();
+        }
     }
 }

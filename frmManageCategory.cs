@@ -74,7 +74,7 @@ namespace Shoppa
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn xóa danh mục mặt hàng này chứ? Tất cả mặt hàng được liên kết với danh mục này sẽ được chuyển đến danh mục \"Danh mục đã xóa\"!!!", "Xóa loại mặt hàng", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+            if (MessageBox.Show("Bạn có chắc muốn xóa danh mục mặt hàng này chứ? Tất cả mặt hàng được liên kết với danh mục này sẽ được chuyển đến danh mục \"Chưa phân loại\"!!!", "Xóa loại mặt hàng", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             {
                 mySqlServices.AddParamater("@CategoryID", CategoryID);
                 mySqlServices.ExecuteNonQuery("Update Products Set CategoryID = 0 Where CategoryID = @CategoryID");

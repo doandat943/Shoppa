@@ -29,31 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uiManageTool));
-            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnManageAccount = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnManageProduct = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnManageCategory = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton4 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.SuspendLayout();
             // 
-            // bunifuTileButton1
+            // btnManageAccount
             // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton1.color = System.Drawing.Color.SeaGreen;
-            this.bunifuTileButton1.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
-            this.bunifuTileButton1.ImagePosition = 14;
-            this.bunifuTileButton1.ImageZoom = 50;
-            this.bunifuTileButton1.LabelPosition = 29;
-            this.bunifuTileButton1.LabelText = "Người dùng";
-            this.bunifuTileButton1.Location = new System.Drawing.Point(30, 250);
-            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuTileButton1.Name = "bunifuTileButton1";
-            this.bunifuTileButton1.Size = new System.Drawing.Size(100, 100);
-            this.bunifuTileButton1.TabIndex = 0;
+            this.btnManageAccount.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnManageAccount.color = System.Drawing.Color.SeaGreen;
+            this.btnManageAccount.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageAccount.ForeColor = System.Drawing.Color.White;
+            this.btnManageAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnManageAccount.Image")));
+            this.btnManageAccount.ImagePosition = 14;
+            this.btnManageAccount.ImageZoom = 50;
+            this.btnManageAccount.LabelPosition = 29;
+            this.btnManageAccount.LabelText = "Người dùng";
+            this.btnManageAccount.Location = new System.Drawing.Point(30, 250);
+            this.btnManageAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageAccount.Name = "btnManageAccount";
+            this.btnManageAccount.Size = new System.Drawing.Size(100, 100);
+            this.btnManageAccount.TabIndex = 0;
+            this.btnManageAccount.Click += new System.EventHandler(this.btnManageAccount_Click);
             // 
             // btnManageProduct
             // 
@@ -137,7 +138,7 @@
             this.Controls.Add(this.bunifuTileButton4);
             this.Controls.Add(this.btnManageCategory);
             this.Controls.Add(this.btnManageProduct);
-            this.Controls.Add(this.bunifuTileButton1);
+            this.Controls.Add(this.btnManageAccount);
             this.Name = "uiManageTool";
             this.Size = new System.Drawing.Size(670, 450);
             this.ResumeLayout(false);
@@ -146,7 +147,7 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
+        private Bunifu.Framework.UI.BunifuTileButton btnManageAccount;
         private Bunifu.Framework.UI.BunifuTileButton btnManageProduct;
         private Bunifu.Framework.UI.BunifuTileButton btnManageCategory;
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton4;

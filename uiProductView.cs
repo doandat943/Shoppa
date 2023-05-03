@@ -59,7 +59,7 @@ namespace Shoppa
 
         private void btnCategoryFilter_Click(object sender, EventArgs e)
         {
-            if (cboCategoryFilter.SelectedValue == "-1")
+            if (cboCategoryFilter.SelectedValue.ToString() == "-1")
             {
                 Load();
             }

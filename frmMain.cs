@@ -18,7 +18,7 @@ namespace Shoppa
         private string AccountID;
 
         private uiProductView uiProductView;
-        private uiUserInfo uiUserInfo;
+        private uiAccountView uiAccountView;
         private uiManageTool uiManageTool;
 
         public frmMain(string AccountID)
@@ -33,9 +33,10 @@ namespace Shoppa
             uiProductView.Dock = DockStyle.Right;
             this.Controls.Add(uiProductView);
 
-            uiUserInfo = new uiUserInfo(AccountID);
-            uiUserInfo.Location = new Point(200, 0);
-            this.Controls.Add(uiUserInfo);
+            uiAccountView = new uiAccountView();
+            uiAccountView.set_AccountID(AccountID);
+            uiAccountView.Location = new Point(200, 0);
+            this.Controls.Add(uiAccountView);
 
             uiManageTool = new uiManageTool();
             uiManageTool.Location = new Point(200, 0);
@@ -86,7 +87,7 @@ namespace Shoppa
         {
             ColorButton((BunifuButton)sender);
 
-            uiUserInfo.Show();
+            uiAccountView.Show();
         }
 
         private void btnManageTool_Click(object sender, EventArgs e)
