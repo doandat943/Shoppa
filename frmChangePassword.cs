@@ -13,6 +13,7 @@ namespace Shoppa
     public partial class frmChangePassword : Form
     {
         private SQL_Services mySqlServices = new SQL_Services();
+
         public frmChangePassword(string AccountID)
         {
             InitializeComponent();
@@ -44,7 +45,7 @@ namespace Shoppa
             }
             else if (txtRePassword.Text == "" || txtRePassword.Text != txtNewPassword.Text)
             {
-                MessageBox.Show("Mật khẩu không trùng khớp. Vui lòng nhập lại Mật khẩu");
+                MessageBox.Show("Mật khẩu mới không trùng khớp. Vui lòng nhập lại Mật khẩu");
                 txtRePassword.Focus();
             }
             else

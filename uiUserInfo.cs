@@ -39,11 +39,15 @@ namespace Shoppa
             //
             this.AccountID = AccountID;
             txtUsername.Text = AccountID;
-
             mySqlServices.AddParamater("@AccountID", AccountID);
 
+            Load();
+        }
+
+        private void Load()
+        {
             DataTable dataTable = mySqlServices.ExecuteQueryTable("Select Name, PhoneNumber, Email, Address, ProvinceID, GenderID, RoleID, Avatar From Accounts Where AccountID = @AccountID");
-            
+
             if (dataTable.Rows.Count > 0)
             {
                 txtName.Text = dataTable.Rows[0][0].ToString();
@@ -81,7 +85,21 @@ namespace Shoppa
             mySqlServices.AddParamater("@Avatar", pbAvatar.ImageLocation);
 
             mySqlServices.AddParamater("@AccountID", AccountID);
-            mySqlServices.ExecuteNonQuery("Update Accounts Set Name = @Name, PhoneNumber = @PhoneNumber, Email = @Email, Address = @Address, ProvinceID = @ProvinceID, GenderID = @GenderID, Avatar = @Avatar Where AccountID = @AccountID");
+
+            if (mySqlServices.CheckExist("Accounts", "PhoneNumber"))
+            {
+                MessageBox.Show("Số điện thoại: \"" + txtPhoneNumber.Text + "\" đã liên kết với tài khoản khác. Vui lòng nhập Số điện thoại khác");
+                txtPhoneNumber.Focus();
+            }
+            else
+            {
+                int temp = mySqlServices.ExecuteNonQuery("Update Accounts Set Name = @Name, PhoneNumber = @PhoneNumber, Email = @Email, Address = @Address, ProvinceID = @ProvinceID, GenderID = @GenderID, Avatar = @Avatar Where AccountID = @AccountID");
+                if (temp != 0)
+                {
+                    MessageBox.Show("Cập nhật thông tin tài khoản thành công!!!");
+                    Load();
+                }
+            }
         }
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)

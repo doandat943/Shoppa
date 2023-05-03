@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.21, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
       <HintPath>packages\Bunifu.Licensing.5.0.0\lib\net40\Bunifu.Licensing.dll</HintPath>
     </Reference>
@@ -44,6 +45,9 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>packages\Bunifu.UI.WinForms.1.5.3.1.0.0\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\..\..\PPF\(Plugin)\Bunifu UI WinForms\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
@@ -256,12 +260,6 @@
     <Compile Include="frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTemp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTemp.Designer.cs">
-      <DependentUpon>frmTemp.cs</DependentUpon>
-    </Compile>
     <Compile Include="pnCartItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -279,6 +277,12 @@
     </Compile>
     <Compile Include="uiCart.Designer.cs">
       <DependentUpon>uiCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uiManageTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uiManageTool.Designer.cs">
+      <DependentUpon>uiManageTool.cs</DependentUpon>
     </Compile>
     <Compile Include="uiProductDetail.cs">
       <SubType>UserControl</SubType>
@@ -331,14 +335,14 @@
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTemp.resx">
-      <DependentUpon>frmTemp.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="pnProductItem.resx">
       <DependentUpon>pnProductItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiCart.resx">
       <DependentUpon>uiCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uiManageTool.resx">
+      <DependentUpon>uiManageTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiProductDetail.resx">
       <DependentUpon>uiProductDetail.cs</DependentUpon>

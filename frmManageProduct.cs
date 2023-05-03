@@ -68,16 +68,22 @@ namespace Shoppa
 
         private string ProductID;
         private bool newMode;
-
-        private void btnCategoryFilter_Click(object sender, EventArgs e)
-        {
-            Load("Where CategoryID = " + cboCategoryFilter.SelectedValue);
-        }
-
+        
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Load("WHERE ProductName LIKE N'%" + txtSearchBox.Text + "%'");
-            //mySqlServices.ExecuteNonQuery("INSERT INTO Categories Values (N'" + cboCategory.Text  + "')");
+        }
+
+        private void btnCategoryFilter_Click(object sender, EventArgs e)
+        {
+            if (cboCategoryFilter.SelectedValue == "-1")
+            {
+                Load();
+            }
+            else
+            {
+                Load("Where CategoryID = " + cboCategoryFilter.SelectedValue);
+            }
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)

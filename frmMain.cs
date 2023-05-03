@@ -17,18 +17,25 @@ namespace Shoppa
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
 
-        private uiUserInfo userInfoView;
-
-        FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
+        private uiProductView uiProductView;
+        private uiUserInfo uiUserInfo;
 
         public frmMain(string AccountID)
         {
             InitializeComponent();
 
             this.AccountID = AccountID;
+
+            ///
+
+            uiProductView = new uiProductView();
+            uiProductView.Dock = DockStyle.Right;
+            this.Controls.Add(uiProductView);
+
+            uiUserInfo = new uiUserInfo(AccountID);
+            uiUserInfo.Location = new Point(200, 0);
+            this.Controls.Add(uiUserInfo);
             
-            userInfoView = new uiUserInfo(AccountID);
-            userInfoView.Location = new Point(200, 0);
         }
 
         private void ColorButton(BunifuButton clickedButton)
@@ -41,13 +48,22 @@ namespace Shoppa
                     ((BunifuButton)control).OnPressedState.BorderColor = Color.DarkViolet;
                 }
             }
+
+            foreach (var control in Controls)
+            {
+                if (control is UserControl)
+                {
+                    ((UserControl)control).Hide();
+                }
+            }
+
             clickedButton.OnPressedState.FillColor = Color.FromArgb(95, 29, 155);
             clickedButton.OnPressedState.BorderColor = Color.FromArgb(95, 29, 155);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            mySqlServices.CloseDB();
+            this.Close();
         }
 
         private void btnProductView_Click(object sender, EventArgs e)
@@ -55,30 +71,8 @@ namespace Shoppa
             ColorButton((BunifuButton)sender);
 
             //
-
-
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select ProductName, Price, QuantityInStock, ProductImage From Products");
-
-            if (dataTable.Rows.Count > 0)
-            {
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    pnProductItem productItem = new pnProductItem();
-
-                    productItem.Set_ProductName = row[0].ToString();
-                    productItem.Set_Price = row[1].ToString();
-                    productItem.Set_Sold = row[2].ToString();
-                    productItem.Set_ProductImage = row[3].ToString();
-
-                    flowLayoutPanel.Controls.Add(productItem);
-                }
-            }
-
-            flowLayoutPanel.Location = new Point(200, 0);
-            flowLayoutPanel.Size = new Size(670, 450);
-            flowLayoutPanel.AutoScroll = true;
-            this.Controls.Add(flowLayoutPanel);
-            userInfoView.BringToFront();
+            
+            uiProductView.Show();
         }
 
         private void btnCartView_Click(object sender, EventArgs e)
@@ -90,14 +84,19 @@ namespace Shoppa
         {
             ColorButton((BunifuButton)sender);
 
-            this.Controls.Add(userInfoView);
-            userInfoView.BringToFront();
+            uiUserInfo.Show();
         }
 
         private void btnManageProduct_Click(object sender, EventArgs e)
         {
             frmManageProduct frmManageProduct = new frmManageProduct();
             frmManageProduct.ShowDialog();
+        }
+
+        private void frmMain_SizeChanged(object sender, EventArgs e)
+        {
+            uiProductView.Width = this.ClientSize.Width - panel1.Width;
+            uiProductView.Height = this.ClientSize.Height;
         }
     }
 }

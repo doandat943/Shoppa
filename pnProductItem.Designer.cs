@@ -62,9 +62,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(122, 201);
+            this.pictureBox2.Location = new System.Drawing.Point(127, 206);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -75,9 +75,9 @@
             this.lbSold.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSold.Location = new System.Drawing.Point(8, 209);
             this.lbSold.Name = "lbSold";
-            this.lbSold.Size = new System.Drawing.Size(60, 15);
+            this.lbSold.Size = new System.Drawing.Size(46, 15);
             this.lbSold.TabIndex = 4;
-            this.lbSold.Text = "Đã bán 10";
+            this.lbSold.Text = "Còn: 10";
             // 
             // lbPrice
             // 

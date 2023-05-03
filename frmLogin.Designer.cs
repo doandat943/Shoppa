@@ -52,9 +52,14 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.AllowAnimations = true;
+            this.btnLogin.AllowMouseEffects = true;
             this.btnLogin.AllowToggling = false;
             this.btnLogin.AnimationSpeed = 200;
             this.btnLogin.AutoGenerateColors = false;
+            this.btnLogin.AutoRoundBorders = false;
+            this.btnLogin.AutoSizeLeftIcon = true;
+            this.btnLogin.AutoSizeRightIcon = true;
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.BackColor1 = System.Drawing.Color.BlueViolet;
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
@@ -76,10 +81,17 @@
             this.btnLogin.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.IconLeft = null;
+            this.btnLogin.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
             this.btnLogin.IconMarginLeft = 11;
             this.btnLogin.IconPadding = 10;
+            this.btnLogin.IconRight = null;
+            this.btnLogin.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogin.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnLogin.IconSize = 25;
             this.btnLogin.IdleBorderColor = System.Drawing.Color.BlueViolet;
             this.btnLogin.IdleBorderRadius = 3;
             this.btnLogin.IdleBorderThickness = 1;
@@ -89,6 +101,14 @@
             this.btnLogin.IndicateFocus = false;
             this.btnLogin.Location = new System.Drawing.Point(62, 249);
             this.btnLogin.Name = "btnLogin";
+            this.btnLogin.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnLogin.OnDisabledState.BorderRadius = 3;
+            this.btnLogin.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogin.OnDisabledState.BorderThickness = 1;
+            this.btnLogin.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnLogin.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnLogin.OnDisabledState.IconLeftImage = null;
+            this.btnLogin.OnDisabledState.IconRightImage = null;
             this.btnLogin.onHoverState.BorderColor = System.Drawing.Color.DarkOrchid;
             this.btnLogin.onHoverState.BorderRadius = 3;
             this.btnLogin.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -116,7 +136,9 @@
             this.btnLogin.Size = new System.Drawing.Size(200, 40);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.TextMarginLeft = 0;
+            this.btnLogin.TextPadding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.bunifuToolTip1.SetToolTip(this.btnLogin, "");
             this.bunifuToolTip1.SetToolTipIcon(this.btnLogin, null);
             this.bunifuToolTip1.SetToolTipTitle(this.btnLogin, "");
@@ -130,6 +152,7 @@
             this.txtUsername.AnimationSpeed = 200;
             this.txtUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtUsername.AutoSizeHeight = true;
             this.txtUsername.BackColor = System.Drawing.Color.Transparent;
             this.txtUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUsername.BackgroundImage")));
             this.txtUsername.BorderColorActive = System.Drawing.Color.DodgerBlue;
@@ -138,6 +161,7 @@
             this.txtUsername.BorderColorIdle = System.Drawing.Color.Silver;
             this.txtUsername.BorderRadius = 1;
             this.txtUsername.BorderThickness = 1;
+            this.txtUsername.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
@@ -176,6 +200,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtUsername.OnIdleState = stateProperties4;
+            this.txtUsername.Padding = new System.Windows.Forms.Padding(3);
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtUsername.PlaceholderText = "Tài khoản";
@@ -206,6 +231,7 @@
             this.txtPassword.AnimationSpeed = 200;
             this.txtPassword.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtPassword.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtPassword.AutoSizeHeight = true;
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
             this.txtPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPassword.BackgroundImage")));
             this.txtPassword.BorderColorActive = System.Drawing.Color.DodgerBlue;
@@ -214,6 +240,7 @@
             this.txtPassword.BorderColorIdle = System.Drawing.Color.Silver;
             this.txtPassword.BorderRadius = 1;
             this.txtPassword.BorderThickness = 1;
+            this.txtPassword.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
@@ -252,6 +279,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPassword.OnIdleState = stateProperties8;
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(3);
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPassword.PlaceholderText = "Mật khẩu";
@@ -385,6 +413,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shoppa - Đăng nhập";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

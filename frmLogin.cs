@@ -50,13 +50,22 @@ namespace Shoppa
                 string AccountID = txtUsername.Text;
                 mySqlServices.AddParamater("@AccountID", AccountID);
                 mySqlServices.AddParamater("@Password", txtPassword.Text);
-                int exist = int.Parse(mySqlServices.ExecuteScalar("Select COUNT(*) From Accounts Where AccountID = @AccountID and Password = @Password"));
-                if (exist != 0)
+                int temp = int.Parse(mySqlServices.ExecuteScalar("Select COUNT(*) From Accounts Where AccountID = @AccountID and Password = @Password"));
+                if (temp != 0)
                 {
                     frmMain frmMain = new frmMain(AccountID);
                     frmMain.ShowDialog();
                 }
+                else
+                {
+                    MessageBox.Show("Thông tin đăng nhập không chính xác. Vui lòng thử lại!!!");
+                }
             }
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mySqlServices.CloseDB();
         }
     }
 }
