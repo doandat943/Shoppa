@@ -96,12 +96,6 @@ namespace Shoppa
             uiManageTool.Show();
         }
 
-        private void btnManageProduct_Click(object sender, EventArgs e)
-        {
-            frmManageProduct frmManageProduct = new frmManageProduct();
-            frmManageProduct.ShowDialog();
-        }
-
         private void frmMain_SizeChanged(object sender, EventArgs e)
         {
             uiProductView.Width = this.ClientSize.Width - panel1.Width;
