@@ -19,6 +19,7 @@ namespace Shoppa
 
         private uiProductView uiProductView;
         private uiUserInfo uiUserInfo;
+        private uiManageTool uiManageTool;
 
         public frmMain(string AccountID)
         {
@@ -35,7 +36,10 @@ namespace Shoppa
             uiUserInfo = new uiUserInfo(AccountID);
             uiUserInfo.Location = new Point(200, 0);
             this.Controls.Add(uiUserInfo);
-            
+
+            uiManageTool = new uiManageTool();
+            uiManageTool.Location = new Point(200, 0);
+            this.Controls.Add(uiManageTool);
         }
 
         private void ColorButton(BunifuButton clickedButton)
@@ -69,8 +73,6 @@ namespace Shoppa
         private void btnProductView_Click(object sender, EventArgs e)
         {
             ColorButton((BunifuButton)sender);
-
-            //
             
             uiProductView.Show();
         }
@@ -85,6 +87,13 @@ namespace Shoppa
             ColorButton((BunifuButton)sender);
 
             uiUserInfo.Show();
+        }
+
+        private void btnManageTool_Click(object sender, EventArgs e)
+        {
+            ColorButton((BunifuButton)sender);
+
+            uiManageTool.Show();
         }
 
         private void btnManageProduct_Click(object sender, EventArgs e)

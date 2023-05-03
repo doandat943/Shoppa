@@ -59,6 +59,10 @@ namespace Shoppa
                 cboRoleInfo.SelectedValue = (int)dataTable.Rows[0][6];
                 pbAvatar.ImageLocation = dataTable.Rows[0][7].ToString();
             }
+            else
+            {
+                MessageBox.Show("Truy vấn thông tin tài khoản không thành công");
+            }
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -86,7 +90,7 @@ namespace Shoppa
 
             mySqlServices.AddParamater("@AccountID", AccountID);
 
-            if (mySqlServices.CheckExist("Accounts", "PhoneNumber"))
+            if (mySqlServices.CheckExist("Accounts", "PhoneNumber", "AccountID != @AccountID"))
             {
                 MessageBox.Show("Số điện thoại: \"" + txtPhoneNumber.Text + "\" đã liên kết với tài khoản khác. Vui lòng nhập Số điện thoại khác");
                 txtPhoneNumber.Focus();

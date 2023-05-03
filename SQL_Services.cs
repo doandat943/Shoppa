@@ -23,11 +23,11 @@ namespace Shoppa
             DataTable dtError = ExecuteQueryTable(sSql);
             if (dtError.Rows.Count > 0)
             {
-                MessageBox.Show(dtError.Rows[0][1].ToString().Trim(), "Lỗi: " + ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(dtError.Rows[0][1].ToString().Trim(), "Lỗi: " + ex.Number, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(ex.Message, "Lỗi: " + ex.Number.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Lỗi: " + ex.Number, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         
@@ -70,36 +70,51 @@ namespace Shoppa
 
         public string ExecuteScalar(string sSql)
         {
-            SetCommandText(sSql);
-            return mySqlCommand.ExecuteScalar().ToString();
+            try
+            {
+                SetCommandText(sSql);
+                return mySqlCommand.ExecuteScalar().ToString();
+            }
+            catch (Exception Ơ)
+            {
+                Console.WriteLine(Ơ);
+                throw;
+            }
         }
 
         public int ExecuteNonQuery(string sSql)
         {
-            SetCommandText(sSql);
-            return mySqlCommand.ExecuteNonQuery();
+            try
+            {
+                SetCommandText(sSql);
+                return mySqlCommand.ExecuteNonQuery();
+            }
+            catch
+            {
+                return -1;
+            }
         }
 
         public DataTable ExecuteQueryTable(string sSql)
         {
-            DataTable myDataTable = new DataTable();
             try
             {
+                DataTable myDataTable = new DataTable();
                 SetCommandText(sSql);
                 myDataAdapter.SelectCommand = mySqlCommand;
                 myDataAdapter.Fill(myDataTable);
+                return myDataTable;
             }
             catch (SqlException ex)
             {
                 DisplayError(ex);
                 return null;
             }
-            return myDataTable;
         }
 
-        public bool CheckExist(string Table, string Paramater)
+        public bool CheckExist(string Table, string Paramater, string filter = "")
         {
-            string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater;
+            string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater + " and " + filter;
 
             return int.Parse(ExecuteScalar(sSql)) != 0;
         }

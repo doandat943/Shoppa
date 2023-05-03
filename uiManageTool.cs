@@ -16,5 +16,17 @@ namespace Shoppa
         {
             InitializeComponent();
         }
+
+        private void btnManageProduct_Click(object sender, EventArgs e)
+        {
+            frmManageProduct frmManageProduct = new frmManageProduct();
+            frmManageProduct.Show();
+        }
+
+        private void btnManageCategory_Click(object sender, EventArgs e)
+        {
+            frmManageProduct frmManageProduct = new frmManageProduct();
+            frmManageProduct.Show();
+        }
     }
 }
