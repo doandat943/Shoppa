@@ -30,7 +30,7 @@ namespace Shoppa
 
         public void Load(string filter = null)
         {
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage, CategoryID  From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + filter + "\r\nGROUP BY ProductName, Price, ProductImage, CategoryID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage, CategoryID  From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + (filter != null ? "WHERE " + filter : null) + "\r\nGROUP BY ProductName, Price, ProductImage, CategoryID");
 
             if (dataTable.Rows.Count > 0)
             {
@@ -56,7 +56,7 @@ namespace Shoppa
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Load("WHERE ProductName LIKE N'%" + txtSearch.Text + "%'");
+            Load("ProductName LIKE N'%" + txtSearch.Text + "%'");
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace Shoppa
             }
             else
             {
-                Load("WHERE CategoryID = " + cboCategoryFilter.SelectedValue);
+                Load("CategoryID = " + cboCategoryFilter.SelectedValue);
             }
         }
     }
