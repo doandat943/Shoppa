@@ -13,14 +13,15 @@ namespace Shoppa
     public partial class frmManageProduct : Form
     {
         private SQL_Services mySqlServices = new SQL_Services();
+        private string ProductID;
+        private bool newMode;
 
         public frmManageProduct()
         {
             InitializeComponent();
 
             //
-
-            DataTable dtCategory = mySqlServices.ExecuteQueryTable("Select * From Categories"); 
+            DataTable dtCategory = mySqlServices.ExecuteQueryTable("Select * From Categories Where CategoryID != -1"); 
             cboCategory.DataSource = dtCategory;
             cboCategory.DisplayMember = "CategoryName";
             cboCategory.ValueMember = "CategoryID";
@@ -34,8 +35,8 @@ namespace Shoppa
             cboUnit.DataSource = dtUnit;
             cboUnit.DisplayMember = "UnitName";
             cboUnit.ValueMember = "UnitID";
-            //
 
+            //
             Load();
         }
 
@@ -47,15 +48,15 @@ namespace Shoppa
 
         private void SetControls(bool mode)
         {
+            //
             dataGridView1.Enabled = !mode;
-            btnAddProduct.Enabled = !mode;
-            btnEditProduct.Enabled = !mode;
-            btnDeleteProduct.Enabled = !mode;
-            btnSaveProduct.Enabled = mode;
+            btnAdd.Enabled = !mode;
+            btnEdit.Enabled = !mode;
+            btnDelete.Enabled = !mode;
+            btnSave.Enabled = mode;
             btnCancel.Enabled = mode;
 
-            ///
-
+            //
             txtProductID.Enabled = mode;
             txtProductName.Enabled = mode;
             cboCategory.Enabled = mode;
@@ -64,26 +65,6 @@ namespace Shoppa
             txtQuantityInStock.Enabled = mode;
             txtProductInfo.Enabled = mode;
             btnSelectProductImage.Enabled = mode;
-        }
-
-        private string ProductID;
-        private bool newMode;
-        
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            Load("WHERE ProductName LIKE N'%" + txtSearchBox.Text + "%'");
-        }
-
-        private void btnCategoryFilter_Click(object sender, EventArgs e)
-        {
-            if (cboCategoryFilter.SelectedValue == "-1")
-            {
-                Load();
-            }
-            else
-            {
-                Load("Where CategoryID = " + cboCategoryFilter.SelectedValue);
-            }
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -107,7 +88,7 @@ namespace Shoppa
             pbProductImage.ImageLocation = ofd.FileName;
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             newMode = true;
             SetControls(true);
@@ -123,13 +104,13 @@ namespace Shoppa
             pbProductImage.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\product_480px.png";
         }
 
-        private void btnEditProduct_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             newMode = false;
             SetControls(true);
         }
 
-        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản chứ?", "Xóa tài khoản", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             {
@@ -139,7 +120,7 @@ namespace Shoppa
             }
         }
 
-        private void btnSaveProduct_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             mySqlServices.AddParamater("@ProductID", txtProductID.Text);
             mySqlServices.AddParamater("@ProductName", txtProductName.Text);
@@ -187,6 +168,23 @@ namespace Shoppa
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Load("WHERE ProductName LIKE N'%" + txtSearch.Text + "%'");
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (cboCategoryFilter.SelectedValue.ToString() == "-1")
+            {
+                Load();
+            }
+            else
+            {
+                Load("Where CategoryID = " + cboCategoryFilter.SelectedValue);
+            }
         }
     }
 }

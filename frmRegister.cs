@@ -12,7 +12,7 @@ namespace Shoppa
         {
             InitializeComponent(); 
 
-            DataTable dtGender = mySqlServices.ExecuteQueryTable("Select *From Gender");
+            DataTable dtGender = mySqlServices.ExecuteQueryTable("Select *From Genders");
             cboGender.DataSource = dtGender;
             cboGender.DisplayMember = "GenderName";
             cboGender.ValueMember = "GenderID";
@@ -28,10 +28,10 @@ namespace Shoppa
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "")
+            if (txtAccountID.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Tên tài khoản");
-                txtUsername.Focus();
+                txtAccountID.Focus();
             }
             else if (txtPassword.Text == "")
             {
@@ -60,7 +60,7 @@ namespace Shoppa
             }
             else
             {
-                string AccountID = txtUsername.Text;
+                string AccountID = txtAccountID.Text;
 
                 mySqlServices.AddParamater("@AccountID", AccountID);
                 mySqlServices.AddParamater("@Password", txtPassword.Text);
@@ -73,8 +73,8 @@ namespace Shoppa
 
                 if (mySqlServices.CheckExist("Accounts", "AccountID"))
                 {
-                    MessageBox.Show("Tên tài khoản: \"" + txtUsername.Text + "\" đã tồn tại. Vui lòng nhập Tên tài khoản khác");
-                    txtUsername.Focus();
+                    MessageBox.Show("Tên tài khoản: \"" + txtAccountID.Text + "\" đã tồn tại. Vui lòng nhập Tên tài khoản khác");
+                    txtAccountID.Focus();
                 }
                 else if (mySqlServices.CheckExist("Accounts", "PhoneNumber"))
                 {

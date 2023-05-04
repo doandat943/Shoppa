@@ -127,7 +127,7 @@
         x5LWjasZ9wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnCategoryFilter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFilter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFYAAAAZCAYAAACrWNlOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACVSURBVGhD7dmhDQIxHEbxjoIjaRmCCViLtDcKGssokPbk
@@ -136,7 +136,7 @@
         eMpPcAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="txtSearchBox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAToAAAAdCAYAAAA6nKBmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACbSURBVHhe7dQxDQMxAARB80dlyzAeRgAksuQmFPZnpGsO

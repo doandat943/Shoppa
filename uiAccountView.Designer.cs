@@ -58,7 +58,7 @@
             this.btnSelectAvatar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.btnChangePassword = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.cboRoleInfo = new System.Windows.Forms.ComboBox();
+            this.cboRole = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -77,7 +77,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtUsername = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.txtAccountID = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -464,17 +464,17 @@
             this.btnChangePassword.UseDefaultRadiusAndThickness = true;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
-            // cboRoleInfo
+            // cboRole
             // 
-            this.cboRoleInfo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRoleInfo.Enabled = false;
-            this.cboRoleInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRoleInfo.FormattingEnabled = true;
-            this.cboRoleInfo.Location = new System.Drawing.Point(192, 40);
-            this.cboRoleInfo.Name = "cboRoleInfo";
-            this.cboRoleInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboRoleInfo.Size = new System.Drawing.Size(181, 25);
-            this.cboRoleInfo.TabIndex = 19;
+            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRole.Enabled = false;
+            this.cboRole.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRole.FormattingEnabled = true;
+            this.cboRole.Location = new System.Drawing.Point(192, 40);
+            this.cboRole.Name = "cboRole";
+            this.cboRole.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cboRole.Size = new System.Drawing.Size(181, 25);
+            this.cboRole.TabIndex = 19;
             // 
             // label2
             // 
@@ -930,8 +930,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsername, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cboRoleInfo, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtAccountID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboRole, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnChangePassword, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 46);
@@ -965,82 +965,82 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Chức vụ:";
             // 
-            // txtUsername
+            // txtAccountID
             // 
-            this.txtUsername.AcceptsReturn = false;
-            this.txtUsername.AcceptsTab = false;
-            this.txtUsername.AnimationSpeed = 200;
-            this.txtUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtUsername.AutoSizeHeight = true;
-            this.txtUsername.BackColor = System.Drawing.Color.Transparent;
-            this.txtUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUsername.BackgroundImage")));
-            this.txtUsername.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtUsername.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtUsername.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtUsername.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtUsername.BorderRadius = 1;
-            this.txtUsername.BorderThickness = 1;
-            this.txtUsername.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
-            this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsername.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.txtUsername.DefaultText = "";
-            this.txtUsername.Enabled = false;
-            this.txtUsername.FillColor = System.Drawing.Color.White;
-            this.txtUsername.HideSelection = true;
-            this.txtUsername.IconLeft = null;
-            this.txtUsername.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsername.IconPadding = 10;
-            this.txtUsername.IconRight = null;
-            this.txtUsername.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsername.Lines = new string[0];
-            this.txtUsername.Location = new System.Drawing.Point(192, 4);
-            this.txtUsername.MaxLength = 15;
-            this.txtUsername.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtUsername.Modified = false;
-            this.txtUsername.Multiline = false;
-            this.txtUsername.Name = "txtUsername";
+            this.txtAccountID.AcceptsReturn = false;
+            this.txtAccountID.AcceptsTab = false;
+            this.txtAccountID.AnimationSpeed = 200;
+            this.txtAccountID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtAccountID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtAccountID.AutoSizeHeight = true;
+            this.txtAccountID.BackColor = System.Drawing.Color.Transparent;
+            this.txtAccountID.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtAccountID.BackgroundImage")));
+            this.txtAccountID.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtAccountID.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.txtAccountID.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtAccountID.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtAccountID.BorderRadius = 1;
+            this.txtAccountID.BorderThickness = 1;
+            this.txtAccountID.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.txtAccountID.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtAccountID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountID.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.txtAccountID.DefaultText = "";
+            this.txtAccountID.Enabled = false;
+            this.txtAccountID.FillColor = System.Drawing.Color.White;
+            this.txtAccountID.HideSelection = true;
+            this.txtAccountID.IconLeft = null;
+            this.txtAccountID.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountID.IconPadding = 10;
+            this.txtAccountID.IconRight = null;
+            this.txtAccountID.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountID.Lines = new string[0];
+            this.txtAccountID.Location = new System.Drawing.Point(192, 4);
+            this.txtAccountID.MaxLength = 15;
+            this.txtAccountID.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtAccountID.Modified = false;
+            this.txtAccountID.Multiline = false;
+            this.txtAccountID.Name = "txtAccountID";
             stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
             stateProperties17.FillColor = System.Drawing.Color.Empty;
             stateProperties17.ForeColor = System.Drawing.Color.Empty;
             stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnActiveState = stateProperties17;
+            this.txtAccountID.OnActiveState = stateProperties17;
             stateProperties18.BorderColor = System.Drawing.Color.Empty;
             stateProperties18.FillColor = System.Drawing.Color.White;
             stateProperties18.ForeColor = System.Drawing.Color.Empty;
             stateProperties18.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtUsername.OnDisabledState = stateProperties18;
+            this.txtAccountID.OnDisabledState = stateProperties18;
             stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             stateProperties19.FillColor = System.Drawing.Color.Empty;
             stateProperties19.ForeColor = System.Drawing.Color.Empty;
             stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnHoverState = stateProperties19;
+            this.txtAccountID.OnHoverState = stateProperties19;
             stateProperties20.BorderColor = System.Drawing.Color.Silver;
             stateProperties20.FillColor = System.Drawing.Color.White;
             stateProperties20.ForeColor = System.Drawing.Color.Empty;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsername.OnIdleState = stateProperties20;
-            this.txtUsername.Padding = new System.Windows.Forms.Padding(3);
-            this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtUsername.PlaceholderText = "admin";
-            this.txtUsername.ReadOnly = false;
-            this.txtUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUsername.SelectedText = "";
-            this.txtUsername.SelectionLength = 0;
-            this.txtUsername.SelectionStart = 0;
-            this.txtUsername.ShortcutsEnabled = true;
-            this.txtUsername.Size = new System.Drawing.Size(181, 29);
-            this.txtUsername.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtUsername.TabIndex = 0;
-            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtUsername.TextMarginBottom = 0;
-            this.txtUsername.TextMarginLeft = 5;
-            this.txtUsername.TextMarginTop = 0;
-            this.txtUsername.TextPlaceholder = "admin";
-            this.txtUsername.UseSystemPasswordChar = false;
-            this.txtUsername.WordWrap = true;
+            this.txtAccountID.OnIdleState = stateProperties20;
+            this.txtAccountID.Padding = new System.Windows.Forms.Padding(3);
+            this.txtAccountID.PasswordChar = '\0';
+            this.txtAccountID.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtAccountID.PlaceholderText = "admin";
+            this.txtAccountID.ReadOnly = false;
+            this.txtAccountID.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAccountID.SelectedText = "";
+            this.txtAccountID.SelectionLength = 0;
+            this.txtAccountID.SelectionStart = 0;
+            this.txtAccountID.ShortcutsEnabled = true;
+            this.txtAccountID.Size = new System.Drawing.Size(181, 29);
+            this.txtAccountID.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtAccountID.TabIndex = 0;
+            this.txtAccountID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAccountID.TextMarginBottom = 0;
+            this.txtAccountID.TextMarginLeft = 5;
+            this.txtAccountID.TextMarginTop = 0;
+            this.txtAccountID.TextPlaceholder = "admin";
+            this.txtAccountID.UseSystemPasswordChar = false;
+            this.txtAccountID.WordWrap = true;
             // 
             // label3
             // 
@@ -1083,7 +1083,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDeleteAccount;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSelectAvatar;
         private System.Windows.Forms.PictureBox pbAvatar;
-        private System.Windows.Forms.ComboBox cboRoleInfo;
+        private System.Windows.Forms.ComboBox cboRole;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnChangePassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1103,7 +1103,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private Bunifu.UI.WinForms.BunifuTextBox txtUsername;
+        private Bunifu.UI.WinForms.BunifuTextBox txtAccountID;
         private System.Windows.Forms.Label label3;
     }
 }

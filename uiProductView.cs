@@ -18,17 +18,19 @@ namespace Shoppa
         {
             InitializeComponent();
 
+            //
             DataTable dtCategoryFilter = mySqlServices.ExecuteQueryTable("Select * From Categories");
             cboCategoryFilter.DataSource = dtCategoryFilter;
             cboCategoryFilter.DisplayMember = "CategoryName";
             cboCategoryFilter.ValueMember = "CategoryID";
 
+            //
             Load();
         }
 
         public void Load(string filter = null)
         {
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage, CategoryID  From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + filter +"\r\nGROUP BY ProductName, Price, ProductImage, CategoryID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage, CategoryID  From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + filter + "\r\nGROUP BY ProductName, Price, ProductImage, CategoryID");
 
             if (dataTable.Rows.Count > 0)
             {
@@ -54,10 +56,10 @@ namespace Shoppa
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Load("WHERE ProductName LIKE N'%" + txtSearchBox.Text + "%'");
+            Load("WHERE ProductName LIKE N'%" + txtSearch.Text + "%'");
         }
 
-        private void btnCategoryFilter_Click(object sender, EventArgs e)
+        private void btnFilter_Click(object sender, EventArgs e)
         {
             if (cboCategoryFilter.SelectedValue.ToString() == "-1")
             {
@@ -65,7 +67,7 @@ namespace Shoppa
             }
             else
             {
-                Load("Where CategoryID = " + cboCategoryFilter.SelectedValue);
+                Load("WHERE CategoryID = " + cboCategoryFilter.SelectedValue);
             }
         }
     }

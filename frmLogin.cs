@@ -35,10 +35,10 @@ namespace Shoppa
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "")
+            if (txtAccountID.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Tên tài khoản");
-                txtUsername.Focus();
+                txtAccountID.Focus();
             }
             else if (txtPassword.Text == "")
             {
@@ -47,7 +47,7 @@ namespace Shoppa
             }
             else
             {
-                string AccountID = txtUsername.Text;
+                string AccountID = txtAccountID.Text;
                 mySqlServices.AddParamater("@AccountID", AccountID);
                 mySqlServices.AddParamater("@Password", txtPassword.Text);
                 int temp = int.Parse(mySqlServices.ExecuteScalar("Select COUNT(*) From Accounts Where AccountID = @AccountID and Password = @Password"));

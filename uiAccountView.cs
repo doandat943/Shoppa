@@ -14,23 +14,24 @@ namespace Shoppa
     {
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
+        private bool AdminMode;
 
         public uiAccountView()
         {
             InitializeComponent();
         }
 
-        public void set_AccountID(string AccountID)
+        public void Initialize(string AccountID, bool AdminMode = false)
         {
-            DataTable dtGender = mySqlServices.ExecuteQueryTable("Select *From Gender");
+            DataTable dtGender = mySqlServices.ExecuteQueryTable("Select *From Genders");
             cboGender.DataSource = dtGender;
             cboGender.DisplayMember = "GenderName";
             cboGender.ValueMember = "GenderID";
 
-            DataTable dtRoleInfo = mySqlServices.ExecuteQueryTable("Select *From RoleInfo");
-            cboRoleInfo.DataSource = dtRoleInfo;
-            cboRoleInfo.DisplayMember = "RoleName";
-            cboRoleInfo.ValueMember = "RoleID";
+            DataTable dtRole = mySqlServices.ExecuteQueryTable("Select *From Roles Where RoleID != -1");
+            cboRole.DataSource = dtRole;
+            cboRole.DisplayMember = "RoleName";
+            cboRole.ValueMember = "RoleID";
 
             DataTable dtProvince = mySqlServices.ExecuteQueryTable("Select *From Provinces");
             cboProvince.DataSource = dtProvince;
@@ -38,7 +39,11 @@ namespace Shoppa
             cboProvince.ValueMember = "ProvinceID";
 
             this.AccountID = AccountID;
-            txtUsername.Text = AccountID;
+            this.AdminMode = AdminMode;
+
+            if (AdminMode) cboRole.Enabled = true;
+
+            txtAccountID.Text = AccountID;
             mySqlServices.AddParamater("@AccountID", AccountID);
 
             Load();
@@ -56,7 +61,7 @@ namespace Shoppa
                 txtAddress.Text = dataTable.Rows[0][3].ToString();
                 cboProvince.SelectedValue = (int)dataTable.Rows[0][4];
                 cboGender.SelectedValue = (int)dataTable.Rows[0][5];
-                cboRoleInfo.SelectedValue = (int)dataTable.Rows[0][6];
+                cboRole.SelectedValue = (int)dataTable.Rows[0][6];
                 pbAvatar.ImageLocation = dataTable.Rows[0][7].ToString();
             }
             else
@@ -89,6 +94,7 @@ namespace Shoppa
             mySqlServices.AddParamater("@Avatar", pbAvatar.ImageLocation);
 
             mySqlServices.AddParamater("@AccountID", AccountID);
+            mySqlServices.AddParamater("@RoleID", cboRole.SelectedValue.ToString());
 
             if (mySqlServices.CheckExist("Accounts", "PhoneNumber", "AccountID != @AccountID"))
             {
@@ -97,7 +103,7 @@ namespace Shoppa
             }
             else
             {
-                int temp = mySqlServices.ExecuteNonQuery("Update Accounts Set Name = @Name, PhoneNumber = @PhoneNumber, Email = @Email, Address = @Address, ProvinceID = @ProvinceID, GenderID = @GenderID, Avatar = @Avatar Where AccountID = @AccountID");
+                int temp = mySqlServices.ExecuteNonQuery("Update Accounts Set Name = @Name, PhoneNumber = @PhoneNumber, Email = @Email, Address = @Address, ProvinceID = @ProvinceID, GenderID = @GenderID, RoleID = @RoleID, Avatar = @Avatar Where AccountID = @AccountID");
                 if (temp != 0)
                 {
                     MessageBox.Show("Cập nhật thông tin tài khoản thành công!!!");

@@ -25,13 +25,13 @@ namespace Shoppa
 
         private void btnManageCategory_Click(object sender, EventArgs e)
         {
-            frmManageProduct frmManageProduct = new frmManageProduct();
-            frmManageProduct.Show();
+            frmManageCategory frmManageCategory = new frmManageCategory();
+            frmManageCategory.Show();
         }
 
         private void btnManageAccount_Click(object sender, EventArgs e)
         {
-            frmTemp frmManageAccount = new frmTemp();
+            frmManageAccount frmManageAccount = new frmManageAccount();
             frmManageAccount.Show();
         }
 

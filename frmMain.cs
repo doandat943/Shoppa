@@ -34,7 +34,7 @@ namespace Shoppa
             this.Controls.Add(uiProductView);
 
             uiAccountView = new uiAccountView();
-            uiAccountView.set_AccountID(AccountID);
+            uiAccountView.Initialize(AccountID);
             uiAccountView.Dock = DockStyle.Right;
             uiAccountView.Hide();
             this.Controls.Add(uiAccountView);

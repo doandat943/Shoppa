@@ -1194,7 +1194,7 @@
         rkJggg==
 </value>
   </data>
-  <data name="btnDeleteProduct.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDelete.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG4AAAAcCAYAAACAsYoxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVGhD7dqxDYIhFEVhRrEzAYdwAtcy8I9ibesoGrC0
@@ -1203,7 +1203,7 @@
         ZrSa++kLrCQZ5VVPSdIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAddProduct.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAdd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG4AAAAcCAYAAACAsYoxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVGhD7dqxDYIhFEVhRrEzAYdwAtcy8I9ibesoGrC0
@@ -1212,7 +1212,7 @@
         ZrSa++kLrCQZ5VVPSdIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnEditProduct.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEdit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG4AAAAcCAYAAACAsYoxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVGhD7dqxDYIhFEVhRrEzAYdwAtcy8I9ibesoGrC0
@@ -1230,7 +1230,7 @@
         ZrSa++kLrCQZ5VVPSdIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnSaveProduct.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSave.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG4AAAAcCAYAAACAsYoxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVGhD7dqxDYIhFEVhRrEzAYdwAtcy8I9ibesoGrC0
@@ -1248,7 +1248,7 @@
         ZrSa++kLrCQZ5VVPSdIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="txtSearchBox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtSearch.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAATEAAAAdCAYAAADCfFuRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVHhe7dRBCQQxAATB+FeVEBknYwXsEsjnJDRUwXxG
@@ -1266,7 +1266,7 @@
         x5LWjasZ9wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnCategoryFilter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFilter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFYAAAAZCAYAAACrWNlOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACVSURBVGhD7dmhDQIxHEbxjoIjaRmCCViLtDcKGssokPbk

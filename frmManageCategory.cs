@@ -13,35 +13,35 @@ namespace Shoppa
     public partial class frmManageCategory : Form
     {
         private SQL_Services mySqlServices = new SQL_Services();
+        private string CategoryID;
+        private bool newMode;
 
         public frmManageCategory()
         {
             InitializeComponent();
-            
+
+            //
             Load();
         }
 
-        private string CategoryID;
-        private bool newMode;
-
         private void Load(string filter = null)
         {
-            string sSQL = "SELECT Categories.CategoryID, Categories.CategoryName, COUNT(Products.ProductID) AS ProductCount, ISNULL(SUM(Products.QuantityInStock), 0) AS TotalQuantityInStock FROM Categories\r\nLEFT JOIN dbo.Products ON Products.CategoryID = Categories.CategoryID\r\n" + filter +"\r\nGROUP BY Categories.CategoryID, Categories.CategoryName"; 
+            string sSQL = "SELECT Categories.CategoryID, Categories.CategoryName, COUNT(Products.ProductID) AS ProductCount, ISNULL(SUM(Products.QuantityInStock), 0) AS TotalQuantityInStock FROM Categories\r\nLEFT JOIN dbo.Products ON Products.CategoryID = Categories.CategoryID\r\nWHERE CategoryID != -1" + (filter != null ? " and " + filter : null) + "\r\nGROUP BY Categories.CategoryID, Categories.CategoryName";
             dataGridView1.DataSource = mySqlServices.ExecuteQueryTable(sSQL);
             SetControls(false);
         }
 
         private void SetControls(bool mode)
         {
+            //
             dataGridView1.Enabled = !mode;
-            btnAddCategory.Enabled = !mode;
-            btnEditCategory.Enabled = !mode;
-            btnDeleteCategory.Enabled = !mode;
-            btnSaveCategory.Enabled = mode;
+            btnAdd.Enabled = !mode;
+            btnEdit.Enabled = !mode;
+            btnDelete.Enabled = !mode;
+            btnSave.Enabled = mode;
             btnCancel.Enabled = mode;
 
-            ///
-            
+            //
             txtCategoryName.Enabled = mode;
         }
 
@@ -55,7 +55,7 @@ namespace Shoppa
             txtTotalQuantityInStock.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
 
-        private void btnAddCategory_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             newMode = true;
             SetControls(true);
@@ -66,13 +66,13 @@ namespace Shoppa
             txtTotalQuantityInStock.Text = "0";
         }
 
-        private void btnEditCategory_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             newMode = false;
             SetControls(true);
         }
 
-        private void btnDeleteCategory_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa danh mục mặt hàng này chứ? Tất cả mặt hàng được liên kết với danh mục này sẽ được chuyển đến danh mục \"Chưa phân loại\"!!!", "Xóa loại mặt hàng", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
             {
@@ -83,7 +83,7 @@ namespace Shoppa
             }
         }
 
-        private void btnSaveCategory_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             mySqlServices.AddParamater("@CategoryName", txtCategoryName.Text);
 
@@ -128,7 +128,7 @@ namespace Shoppa
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Load("WHERE CategoryName LIKE N'%" + txtSearchBox.Text + "%'");
+            Load("CategoryName LIKE N'%" + txtSearchBox.Text + "%'");
         }
     }
 }
