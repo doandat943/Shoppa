@@ -18,6 +18,7 @@ namespace Shoppa
         private string AccountID;
 
         private uiProductView uiProductView;
+        private uiProductDetail uiProductDetail;
         private uiAccountView uiAccountView;
         private uiManageTool uiManageTool;
 
@@ -27,11 +28,15 @@ namespace Shoppa
 
             this.AccountID = AccountID;
 
-            ///
-
+            //
             uiProductView = new uiProductView();
             uiProductView.Dock = DockStyle.Right;
             this.Controls.Add(uiProductView);
+
+            uiProductDetail = new uiProductDetail();
+            uiProductDetail.Dock = DockStyle.Right;
+            uiProductDetail.Hide();
+            this.Controls.Add(uiProductDetail);
 
             uiAccountView = new uiAccountView();
             uiAccountView.Initialize(AccountID);
@@ -103,6 +108,9 @@ namespace Shoppa
         {
             uiProductView.Width = this.ClientSize.Width - panel1.Width;
             uiProductView.Height = this.ClientSize.Height;
+
+            uiProductDetail.Width = this.ClientSize.Width - panel1.Width;
+            uiProductDetail.Height = this.ClientSize.Height;
 
             uiAccountView.Width = this.ClientSize.Width - panel1.Width;
             uiAccountView.Height = this.ClientSize.Height;

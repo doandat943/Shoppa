@@ -72,7 +72,7 @@ namespace Shoppa
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            frmChangePassword frmChangePassword = new frmChangePassword(AccountID);
+            frmChangePassword frmChangePassword = new frmChangePassword(AccountID, AdminMode);
             frmChangePassword.ShowDialog();
         }
 
@@ -118,6 +118,11 @@ namespace Shoppa
             {
                 mySqlServices.ExecuteNonQuery("Delete From Accounts Where AccountID = @AccountID");
             }
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

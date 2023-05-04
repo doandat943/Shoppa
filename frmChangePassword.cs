@@ -13,29 +13,35 @@ namespace Shoppa
     public partial class frmChangePassword : Form
     {
         private SQL_Services mySqlServices = new SQL_Services();
+        private string AccountID;
+        private bool AdminMode;
 
-        public frmChangePassword(string AccountID)
+        public frmChangePassword(string AccountID, bool AdminMode = false)
         {
             InitializeComponent();
 
             this.AccountID = AccountID;
-        }
+            this.AdminMode = AdminMode;
 
-        private string AccountID;
+            if (AdminMode) txtOldPassword.Enabled = false;
+        }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             mySqlServices.AddParamater("@AccountID", AccountID);
             string OldPassword = mySqlServices.ExecuteScalar("Select Password From Accounts Where AccountID = @AccountID").ToString();
 
-            if (txtOldPassword.Text == "")
+            if (AdminMode == false)
             {
-                MessageBox.Show("Vui lòng nhập Mật khẩu cũ");
-                txtOldPassword.Focus();
-            }
-            else if (txtOldPassword.Text != OldPassword)
-            {
-                MessageBox.Show("Mật khẩu cũ không chính xác vui lòng nhập lại " + txtOldPassword.Text + "/" + OldPassword);
+                if (txtOldPassword.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập Mật khẩu cũ");
+                }
+                else if (txtOldPassword.Text != OldPassword)
+                {
+                    MessageBox.Show("Mật khẩu cũ không chính xác. Vui lòng thử lại!!!");
+                }
+
                 txtOldPassword.Focus();
             }
             else if (txtNewPassword.Text == "")
@@ -45,7 +51,7 @@ namespace Shoppa
             }
             else if (txtRePassword.Text == "" || txtRePassword.Text != txtNewPassword.Text)
             {
-                MessageBox.Show("Mật khẩu mới không trùng khớp. Vui lòng nhập lại Mật khẩu");
+                MessageBox.Show("Mật khẩu mới không trùng khớp. Vui lòng nhập lại Mật khẩu mới");
                 txtRePassword.Focus();
             }
             else

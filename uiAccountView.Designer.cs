@@ -33,10 +33,6 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -53,6 +49,10 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.btnUpdateAccount = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDeleteAccount = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSelectAvatar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -62,7 +62,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPhoneNumber = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtName = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtEmail = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtAddress = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -79,6 +78,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtAccountID = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtPhoneNumber = new Bunifu.UI.WinForms.BunifuTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -527,82 +527,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(377, 217);
             this.tableLayoutPanel2.TabIndex = 21;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.AcceptsReturn = false;
-            this.txtPhoneNumber.AcceptsTab = false;
-            this.txtPhoneNumber.AnimationSpeed = 200;
-            this.txtPhoneNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtPhoneNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtPhoneNumber.AutoSizeHeight = true;
-            this.txtPhoneNumber.BackColor = System.Drawing.Color.Transparent;
-            this.txtPhoneNumber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPhoneNumber.BackgroundImage")));
-            this.txtPhoneNumber.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtPhoneNumber.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtPhoneNumber.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtPhoneNumber.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtPhoneNumber.BorderRadius = 1;
-            this.txtPhoneNumber.BorderThickness = 1;
-            this.txtPhoneNumber.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
-            this.txtPhoneNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNumber.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.txtPhoneNumber.DefaultText = "";
-            this.txtPhoneNumber.FillColor = System.Drawing.Color.White;
-            this.txtPhoneNumber.HideSelection = true;
-            this.txtPhoneNumber.IconLeft = null;
-            this.txtPhoneNumber.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNumber.IconPadding = 11;
-            this.txtPhoneNumber.IconRight = null;
-            this.txtPhoneNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNumber.Lines = new string[0];
-            this.txtPhoneNumber.Location = new System.Drawing.Point(192, 40);
-            this.txtPhoneNumber.MaxLength = 10;
-            this.txtPhoneNumber.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtPhoneNumber.Modified = false;
-            this.txtPhoneNumber.Multiline = false;
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPhoneNumber.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.Empty;
-            stateProperties2.FillColor = System.Drawing.Color.White;
-            stateProperties2.ForeColor = System.Drawing.Color.Empty;
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPhoneNumber.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPhoneNumber.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.Empty;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtPhoneNumber.OnIdleState = stateProperties4;
-            this.txtPhoneNumber.Padding = new System.Windows.Forms.Padding(3);
-            this.txtPhoneNumber.PasswordChar = '\0';
-            this.txtPhoneNumber.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtPhoneNumber.PlaceholderText = "098765432";
-            this.txtPhoneNumber.ReadOnly = false;
-            this.txtPhoneNumber.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPhoneNumber.SelectedText = "";
-            this.txtPhoneNumber.SelectionLength = 0;
-            this.txtPhoneNumber.SelectionStart = 0;
-            this.txtPhoneNumber.ShortcutsEnabled = true;
-            this.txtPhoneNumber.Size = new System.Drawing.Size(181, 29);
-            this.txtPhoneNumber.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtPhoneNumber.TabIndex = 19;
-            this.txtPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPhoneNumber.TextMarginBottom = 0;
-            this.txtPhoneNumber.TextMarginLeft = 5;
-            this.txtPhoneNumber.TextMarginTop = 0;
-            this.txtPhoneNumber.TextPlaceholder = "098765432";
-            this.txtPhoneNumber.UseSystemPasswordChar = false;
-            this.txtPhoneNumber.WordWrap = true;
             // 
             // txtName
             // 
@@ -1053,6 +977,83 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Tên tài khoản:";
             // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.AcceptsReturn = false;
+            this.txtPhoneNumber.AcceptsTab = false;
+            this.txtPhoneNumber.AnimationSpeed = 200;
+            this.txtPhoneNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtPhoneNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtPhoneNumber.AutoSizeHeight = true;
+            this.txtPhoneNumber.BackColor = System.Drawing.Color.Transparent;
+            this.txtPhoneNumber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPhoneNumber.BackgroundImage")));
+            this.txtPhoneNumber.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtPhoneNumber.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.txtPhoneNumber.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtPhoneNumber.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtPhoneNumber.BorderRadius = 1;
+            this.txtPhoneNumber.BorderThickness = 1;
+            this.txtPhoneNumber.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.txtPhoneNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhoneNumber.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.txtPhoneNumber.DefaultText = "";
+            this.txtPhoneNumber.FillColor = System.Drawing.Color.White;
+            this.txtPhoneNumber.HideSelection = true;
+            this.txtPhoneNumber.IconLeft = null;
+            this.txtPhoneNumber.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhoneNumber.IconPadding = 11;
+            this.txtPhoneNumber.IconRight = null;
+            this.txtPhoneNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhoneNumber.Lines = new string[0];
+            this.txtPhoneNumber.Location = new System.Drawing.Point(192, 40);
+            this.txtPhoneNumber.MaxLength = 10;
+            this.txtPhoneNumber.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtPhoneNumber.Modified = false;
+            this.txtPhoneNumber.Multiline = false;
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhoneNumber.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.Empty;
+            stateProperties2.FillColor = System.Drawing.Color.White;
+            stateProperties2.ForeColor = System.Drawing.Color.Empty;
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtPhoneNumber.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhoneNumber.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtPhoneNumber.OnIdleState = stateProperties4;
+            this.txtPhoneNumber.Padding = new System.Windows.Forms.Padding(3);
+            this.txtPhoneNumber.PasswordChar = '\0';
+            this.txtPhoneNumber.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtPhoneNumber.PlaceholderText = "0987654321";
+            this.txtPhoneNumber.ReadOnly = false;
+            this.txtPhoneNumber.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPhoneNumber.SelectedText = "";
+            this.txtPhoneNumber.SelectionLength = 0;
+            this.txtPhoneNumber.SelectionStart = 0;
+            this.txtPhoneNumber.ShortcutsEnabled = true;
+            this.txtPhoneNumber.Size = new System.Drawing.Size(181, 29);
+            this.txtPhoneNumber.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtPhoneNumber.TabIndex = 24;
+            this.txtPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPhoneNumber.TextMarginBottom = 0;
+            this.txtPhoneNumber.TextMarginLeft = 5;
+            this.txtPhoneNumber.TextMarginTop = 0;
+            this.txtPhoneNumber.TextPlaceholder = "0987654321";
+            this.txtPhoneNumber.UseSystemPasswordChar = false;
+            this.txtPhoneNumber.WordWrap = true;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
+            // 
             // uiAccountView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1088,7 +1089,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Bunifu.UI.WinForms.BunifuTextBox txtPhoneNumber;
         private Bunifu.UI.WinForms.BunifuTextBox txtName;
         private Bunifu.UI.WinForms.BunifuTextBox txtEmail;
         private Bunifu.UI.WinForms.BunifuTextBox txtAddress;
@@ -1105,5 +1105,6 @@
         private System.Windows.Forms.Label label4;
         private Bunifu.UI.WinForms.BunifuTextBox txtAccountID;
         private System.Windows.Forms.Label label3;
+        private Bunifu.UI.WinForms.BunifuTextBox txtPhoneNumber;
     }
 }

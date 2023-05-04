@@ -78,7 +78,7 @@ namespace Shoppa
                 }
                 else if (mySqlServices.CheckExist("Accounts", "PhoneNumber"))
                 {
-                    MessageBox.Show("Số điện thoại: \"" + txtPhoneNumber.Text + "\" đã liên kết với tài khoản khác. Vui lòng nhập Số điện thoại khác");
+                    MessageBox.Show("Số điện thoại: \"" + txtPhoneNumber.Text + "\" đã được liên kết với tài khoản khác. Vui lòng nhập Số điện thoại khác");
                     txtPassword.Focus();
                 }
                 else
@@ -107,7 +107,7 @@ namespace Shoppa
             }
         }
 
-        private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }

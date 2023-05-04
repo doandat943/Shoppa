@@ -760,6 +760,7 @@
             this.txtPhoneNumber.TextPlaceholder = "0987654321";
             this.txtPhoneNumber.UseSystemPasswordChar = false;
             this.txtPhoneNumber.WordWrap = true;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // txtEmail
             // 

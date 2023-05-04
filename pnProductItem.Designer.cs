@@ -75,9 +75,9 @@
             this.lbSold.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSold.Location = new System.Drawing.Point(8, 209);
             this.lbSold.Name = "lbSold";
-            this.lbSold.Size = new System.Drawing.Size(46, 15);
+            this.lbSold.Size = new System.Drawing.Size(72, 15);
             this.lbSold.TabIndex = 4;
-            this.lbSold.Text = "Còn: 10";
+            this.lbSold.Text = "Đã bán: 999";
             // 
             // lbPrice
             // 
