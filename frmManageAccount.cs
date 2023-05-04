@@ -19,7 +19,7 @@ namespace Shoppa
             InitializeComponent();
         }
 
-        private void Load(string filter = "")
+        private void Load(string filter = null)
         {
             //mySqlServices
         }

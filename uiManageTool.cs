@@ -34,5 +34,11 @@ namespace Shoppa
             frmTemp frmManageAccount = new frmTemp();
             frmManageAccount.Show();
         }
+
+        private void uiManageTool_SizeChanged(object sender, EventArgs e)
+        {
+            bunifuSeparator1.Width = this.Width;
+            bunifuSeparator2.Width = this.Width;
+        }
     }
 }

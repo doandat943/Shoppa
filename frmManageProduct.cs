@@ -39,7 +39,7 @@ namespace Shoppa
             Load();
         }
 
-        private void Load(string filter = "")
+        private void Load(string filter = null)
         {
             dataGridView1.DataSource = mySqlServices.ExecuteQueryTable("Select * From Products " + filter);
             SetControls(false);

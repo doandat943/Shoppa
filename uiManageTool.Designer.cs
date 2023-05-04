@@ -34,6 +34,9 @@
             this.btnManageCategory = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton4 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuSeparator1 = new Bunifu.UI.WinForms.BunifuSeparator();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bunifuSeparator2 = new Bunifu.UI.WinForms.BunifuSeparator();
             this.SuspendLayout();
             // 
             // btnManageAccount
@@ -49,7 +52,7 @@
             this.btnManageAccount.ImageZoom = 50;
             this.btnManageAccount.LabelPosition = 29;
             this.btnManageAccount.LabelText = "Người dùng";
-            this.btnManageAccount.Location = new System.Drawing.Point(30, 250);
+            this.btnManageAccount.Location = new System.Drawing.Point(30, 290);
             this.btnManageAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageAccount.Name = "btnManageAccount";
             this.btnManageAccount.Size = new System.Drawing.Size(100, 100);
@@ -69,7 +72,7 @@
             this.btnManageProduct.ImageZoom = 50;
             this.btnManageProduct.LabelPosition = 29;
             this.btnManageProduct.LabelText = "Mặt hàng";
-            this.btnManageProduct.Location = new System.Drawing.Point(166, 250);
+            this.btnManageProduct.Location = new System.Drawing.Point(166, 290);
             this.btnManageProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageProduct.Name = "btnManageProduct";
             this.btnManageProduct.Size = new System.Drawing.Size(100, 100);
@@ -89,7 +92,7 @@
             this.btnManageCategory.ImageZoom = 50;
             this.btnManageCategory.LabelPosition = 29;
             this.btnManageCategory.LabelText = "Danh mục";
-            this.btnManageCategory.Location = new System.Drawing.Point(296, 250);
+            this.btnManageCategory.Location = new System.Drawing.Point(296, 290);
             this.btnManageCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageCategory.Name = "btnManageCategory";
             this.btnManageCategory.Size = new System.Drawing.Size(100, 100);
@@ -109,7 +112,7 @@
             this.bunifuTileButton4.ImageZoom = 50;
             this.bunifuTileButton4.LabelPosition = 29;
             this.bunifuTileButton4.LabelText = "Đơn hàng";
-            this.bunifuTileButton4.Location = new System.Drawing.Point(30, 32);
+            this.bunifuTileButton4.Location = new System.Drawing.Point(27, 86);
             this.bunifuTileButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuTileButton4.Name = "bunifuTileButton4";
             this.bunifuTileButton4.Size = new System.Drawing.Size(100, 100);
@@ -124,24 +127,64 @@
             this.bunifuSeparator1.LineColor = System.Drawing.Color.Silver;
             this.bunifuSeparator1.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 216);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(0, 235);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
             this.bunifuSeparator1.Size = new System.Drawing.Size(670, 14);
             this.bunifuSeparator1.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 17);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Quyền hạn nhân viên:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 234);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 17);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Quyền hạn quản lý:";
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuSeparator2.BackgroundImage")));
+            this.bunifuSeparator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuSeparator2.DashCap = Bunifu.UI.WinForms.BunifuSeparator.CapStyles.Flat;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.Silver;
+            this.bunifuSeparator2.LineStyle = Bunifu.UI.WinForms.BunifuSeparator.LineStyles.Solid;
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(-3, 34);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Orientation = Bunifu.UI.WinForms.BunifuSeparator.LineOrientation.Horizontal;
+            this.bunifuSeparator2.Size = new System.Drawing.Size(670, 14);
+            this.bunifuSeparator2.TabIndex = 25;
+            // 
             // uiManageTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuTileButton4);
             this.Controls.Add(this.btnManageCategory);
             this.Controls.Add(this.btnManageProduct);
             this.Controls.Add(this.btnManageAccount);
+            this.Controls.Add(this.bunifuSeparator2);
             this.Name = "uiManageTool";
             this.Size = new System.Drawing.Size(670, 450);
+            this.SizeChanged += new System.EventHandler(this.uiManageTool_SizeChanged);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,5 +195,8 @@
         private Bunifu.Framework.UI.BunifuTileButton btnManageCategory;
         private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton4;
         private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.UI.WinForms.BunifuSeparator bunifuSeparator2;
     }
 }

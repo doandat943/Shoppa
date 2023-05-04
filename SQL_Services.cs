@@ -75,10 +75,9 @@ namespace Shoppa
                 SetCommandText(sSql);
                 return mySqlCommand.ExecuteScalar().ToString();
             }
-            catch (Exception Ơ)
+            catch
             {
-                Console.WriteLine(Ơ);
-                throw;
+                return null;
             }
         }
 
@@ -112,9 +111,9 @@ namespace Shoppa
             }
         }
 
-        public bool CheckExist(string Table, string Paramater, string filter = "")
+        public bool CheckExist(string Table, string Paramater, string filter = null)
         {
-            string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater + " and " + filter;
+            string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater +  (filter != null ? " and " + filter : null);
 
             return int.Parse(ExecuteScalar(sSql)) != 0;
         }

@@ -35,11 +35,13 @@ namespace Shoppa
 
             uiAccountView = new uiAccountView();
             uiAccountView.set_AccountID(AccountID);
-            uiAccountView.Location = new Point(200, 0);
+            uiAccountView.Dock = DockStyle.Right;
+            uiAccountView.Hide();
             this.Controls.Add(uiAccountView);
 
             uiManageTool = new uiManageTool();
-            uiManageTool.Location = new Point(200, 0);
+            uiManageTool.Dock = DockStyle.Right;
+            uiManageTool.Hide();
             this.Controls.Add(uiManageTool);
         }
 
@@ -101,6 +103,12 @@ namespace Shoppa
         {
             uiProductView.Width = this.ClientSize.Width - panel1.Width;
             uiProductView.Height = this.ClientSize.Height;
+
+            uiAccountView.Width = this.ClientSize.Width - panel1.Width;
+            uiAccountView.Height = this.ClientSize.Height;
+
+            uiManageTool.Width = this.ClientSize.Width - panel1.Width;
+            uiManageTool.Height = this.ClientSize.Height - panel1.Height;
         }
     }
 }

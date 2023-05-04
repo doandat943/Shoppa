@@ -24,7 +24,7 @@ namespace Shoppa
         private string CategoryID;
         private bool newMode;
 
-        private void Load(string filter = "")
+        private void Load(string filter = null)
         {
             string sSQL = "SELECT Categories.CategoryID, Categories.CategoryName, COUNT(Products.ProductID) AS ProductCount, ISNULL(SUM(Products.QuantityInStock), 0) AS TotalQuantityInStock FROM Categories\r\nLEFT JOIN dbo.Products ON Products.CategoryID = Categories.CategoryID\r\n" + filter +"\r\nGROUP BY Categories.CategoryID, Categories.CategoryName"; 
             dataGridView1.DataSource = mySqlServices.ExecuteQueryTable(sSQL);

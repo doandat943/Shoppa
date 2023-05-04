@@ -26,7 +26,7 @@ namespace Shoppa
             Load();
         }
 
-        public void Load(string filter = "")
+        public void Load(string filter = null)
         {
             DataTable dataTable = mySqlServices.ExecuteQueryTable("Select ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage, CategoryID  From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + filter +"\r\nGROUP BY ProductName, Price, ProductImage, CategoryID");
 

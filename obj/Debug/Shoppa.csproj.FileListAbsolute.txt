@@ -58,8 +58,8 @@ C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.uiAccountView.res
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.GenerateResource.cache
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.exe.licenses
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.CoreCompileInputs.cache
+C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.Fody.CopyLocal.cache
+C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.Fody.RuntimeCopyLocal.cache
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.CopyComplete
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.exe
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.pdb
-C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.Fody.CopyLocal.cache
-C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.Fody.RuntimeCopyLocal.cache
