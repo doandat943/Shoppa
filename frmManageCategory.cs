@@ -26,7 +26,7 @@ namespace Shoppa
 
         private void Load(string filter = null)
         {
-            string sSQL = "SELECT Categories.CategoryID, Categories.CategoryName, COUNT(Products.ProductID) AS ProductCount, ISNULL(SUM(Products.QuantityInStock), 0) AS TotalQuantityInStock FROM Categories\r\nLEFT JOIN dbo.Products ON Products.CategoryID = Categories.CategoryID\r\nWHERE CategoryID != -1" + (filter != null ? " and " + filter : null) + "\r\nGROUP BY Categories.CategoryID, Categories.CategoryName";
+            string sSQL = "SELECT Categories.CategoryID, Categories.CategoryName, COUNT(Products.ProductID) AS ProductCount, ISNULL(SUM(Products.QuantityInStock), 0) AS TotalQuantityInStock FROM Categories\r\nLEFT JOIN dbo.Products ON Products.CategoryID = Categories.CategoryID\r\nWHERE Categories.CategoryID != -1" + (filter != null ? " and " + filter : null) + "\r\nGROUP BY Categories.CategoryID, Categories.CategoryName";
             dataGridView1.DataSource = mySqlServices.ExecuteQueryTable(sSQL);
             SetControls(false);
         }
@@ -74,7 +74,7 @@ namespace Shoppa
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn xóa danh mục mặt hàng này chứ? Tất cả mặt hàng được liên kết với danh mục này sẽ được chuyển đến danh mục \"Chưa phân loại\"!!!", "Xóa loại mặt hàng", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+            if (MessageBox.Show("Bạn có chắc muốn xóa danh mục mặt hàng này chứ? Tất cả mặt hàng được liên kết với danh mục này sẽ được chuyển đến danh mục \"Chưa phân loại\"!!!", "Xóa loại mặt hàng", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 mySqlServices.AddParamater("@CategoryID", CategoryID);
                 mySqlServices.ExecuteNonQuery("Update Products Set CategoryID = 0 Where CategoryID = @CategoryID");

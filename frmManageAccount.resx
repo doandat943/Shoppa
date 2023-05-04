@@ -154,15 +154,6 @@
         QmCC
 </value>
   </data>
-  <data name="btnStatistic.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAG4AAAAcCAYAAACAsYoxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACfSURBVGhD7dqxDYIhFEVhRrEzAYdwAtcy8I9ibesoGrC0
-        cgKV1jDAO8kpvoLc152WdN4/drWMSyvjo/i23K+zWWqHflsdKK6axz2tBsVnOCjDQRkOynBQhoMyHJTh
-        oAwHZTgow0EZDspwUIaDMhyU4aAMB2U4KMNBGQ7KcFCGgzIclOGg0vxc2UpfjoqplvFOW3kef4/X/6iY
-        ZrSa++kLrCQZ5VVPSdIAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnEdit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG4AAAAcCAYAAACAsYoxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

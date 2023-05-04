@@ -112,7 +112,7 @@ namespace Shoppa
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản chứ?", "Xóa tài khoản", MessageBoxButtons.OKCancel) == DialogResult.OK) ;
+            if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản chứ?", "Xóa tài khoản", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 mySqlServices.AddParamater("@ProductID", ProductID);
                 mySqlServices.ExecuteNonQuery("Delete From Products Where ProductID = @ProductID");

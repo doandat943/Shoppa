@@ -13,13 +13,21 @@ namespace Shoppa
 {
     public partial class pnProductItem : UserControl
     {
+        public event EventHandler<string> ClickProductImage;
+        private string ProductID;
+
         public pnProductItem()
         {
             InitializeComponent();
         }
+
+        public string Set_ProductID
+        {
+            set => ProductID = value;
+        }
+
         public string Set_ProductName
         {
-            //get => ProductName.Text;
             set => lbProductName.Text = value;
         }
 
@@ -36,6 +44,11 @@ namespace Shoppa
         public string Set_ProductImage
         {
             set => pbProductImage.ImageLocation = value;
+        }
+
+        private void pbProductImage_Click(object sender, EventArgs e)
+        {
+            ClickProductImage?.Invoke(this, ProductID);
         }
     }
 }

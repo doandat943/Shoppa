@@ -53,7 +53,8 @@ namespace Shoppa
                 int temp = int.Parse(mySqlServices.ExecuteScalar("Select COUNT(*) From Accounts Where AccountID = @AccountID and Password = @Password"));
                 if (temp != 0)
                 {
-                    frmMain frmMain = new frmMain(AccountID);
+                    frmMain frmMain = new frmMain();
+                    frmMain.Initialize(AccountID);
                     frmMain.ShowDialog();
                 }
                 else

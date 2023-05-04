@@ -41,6 +41,7 @@
             // pbProductImage
             // 
             this.pbProductImage.BackColor = System.Drawing.Color.Gainsboro;
+            this.pbProductImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbProductImage.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbProductImage.Location = new System.Drawing.Point(0, 0);
             this.pbProductImage.Name = "pbProductImage";
@@ -48,6 +49,7 @@
             this.pbProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProductImage.TabIndex = 0;
             this.pbProductImage.TabStop = false;
+            this.pbProductImage.Click += new System.EventHandler(this.pbProductImage_Click);
             // 
             // lbProductName
             // 

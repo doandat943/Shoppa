@@ -56,6 +56,12 @@ namespace Shoppa
             }
         }
 
+        private void SetCommandText(string sSql)
+        {
+            mySqlCommand.Connection = mySqlConnection;
+            mySqlCommand.CommandText = sSql;
+        }
+
         public void AddParamater(string parameterName, string parameterValue)
         {
             if (mySqlCommand.Parameters.Contains(parameterName))
@@ -116,12 +122,6 @@ namespace Shoppa
             string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater +  (filter != null ? " and " + filter : null);
 
             return int.Parse(ExecuteScalar(sSql)) != 0;
-        }
-
-        public void SetCommandText(string sSql)
-        {
-            mySqlCommand.Connection = mySqlConnection;
-            mySqlCommand.CommandText = sSql;
         }
     }
 }

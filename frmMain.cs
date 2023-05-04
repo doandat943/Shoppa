@@ -19,35 +19,63 @@ namespace Shoppa
 
         private uiProductView uiProductView;
         private uiProductDetail uiProductDetail;
+        private uiCartView uiCartView;
         private uiAccountView uiAccountView;
         private uiManageTool uiManageTool;
 
-        public frmMain(string AccountID)
+        public frmMain()
         {
             InitializeComponent();
 
-            this.AccountID = AccountID;
 
             //
             uiProductView = new uiProductView();
+            uiProductView.ClickProductImage += ProductItem_ClickProductImage;
             uiProductView.Dock = DockStyle.Right;
             this.Controls.Add(uiProductView);
 
             uiProductDetail = new uiProductDetail();
             uiProductDetail.Dock = DockStyle.Right;
-            uiProductDetail.Hide();
             this.Controls.Add(uiProductDetail);
 
+            uiCartView = new uiCartView();
+            uiCartView.Dock = DockStyle.Right;
+            this.Controls.Add(uiCartView);
+
             uiAccountView = new uiAccountView();
-            uiAccountView.Initialize(AccountID);
             uiAccountView.Dock = DockStyle.Right;
-            uiAccountView.Hide();
             this.Controls.Add(uiAccountView);
 
             uiManageTool = new uiManageTool();
             uiManageTool.Dock = DockStyle.Right;
-            uiManageTool.Hide();
             this.Controls.Add(uiManageTool);
+        }
+
+        private void ProductItem_ClickProductImage(object sender, string ProductID)
+        {
+            HideAllUserControl();
+
+            uiProductDetail.Initialize(ProductID);
+            uiProductDetail.Show();
+        }
+
+        public void Initialize(string AccountID)
+        {
+            this.AccountID = AccountID;
+
+            HideAllUserControl();
+            uiProductView.Show();
+        }
+
+        private void HideAllUserControl()
+        {
+            foreach (var control in Controls)
+            {
+                if (control is UserControl)
+                {
+                    ((UserControl)control).Hide();
+                }
+            }
         }
 
         private void ColorButton(BunifuButton clickedButton)
@@ -61,21 +89,10 @@ namespace Shoppa
                 }
             }
 
-            foreach (var control in Controls)
-            {
-                if (control is UserControl)
-                {
-                    ((UserControl)control).Hide();
-                }
-            }
+            HideAllUserControl();
 
             clickedButton.OnPressedState.FillColor = Color.FromArgb(95, 29, 155);
             clickedButton.OnPressedState.BorderColor = Color.FromArgb(95, 29, 155);
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnProductView_Click(object sender, EventArgs e)
@@ -88,12 +105,15 @@ namespace Shoppa
         private void btnCartView_Click(object sender, EventArgs e)
         {
             ColorButton((BunifuButton)sender);
+
+            uiCartView.Show();
         }
 
-        private void btnUserInfoView_Click(object sender, EventArgs e)
+        private void btnAccountView_Click(object sender, EventArgs e)
         {
             ColorButton((BunifuButton)sender);
 
+            uiAccountView.Initialize(AccountID);
             uiAccountView.Show();
         }
 
@@ -102,6 +122,11 @@ namespace Shoppa
             ColorButton((BunifuButton)sender);
 
             uiManageTool.Show();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void frmMain_SizeChanged(object sender, EventArgs e)

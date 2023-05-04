@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uiProductDetail));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.lbProductName = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
-            this.bunifuButton4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnAddToCart = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.lbCategoryName = new System.Windows.Forms.Label();
+            this.txtProductInfo = new System.Windows.Forms.TextBox();
+            this.lbUnit = new System.Windows.Forms.Label();
             this.tbNumberCart = new System.Windows.Forms.TextBox();
             this.btnAddCart = new System.Windows.Forms.Button();
             this.btnSubtractCart = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,126 +80,127 @@
             this.lbPrice.TabIndex = 2;
             this.lbPrice.Text = "999.999₫";
             // 
-            // bunifuButton4
+            // btnAddToCart
             // 
-            this.bunifuButton4.AllowAnimations = true;
-            this.bunifuButton4.AllowMouseEffects = true;
-            this.bunifuButton4.AllowToggling = false;
-            this.bunifuButton4.AnimationSpeed = 200;
-            this.bunifuButton4.AutoGenerateColors = false;
-            this.bunifuButton4.AutoRoundBorders = false;
-            this.bunifuButton4.AutoSizeLeftIcon = true;
-            this.bunifuButton4.AutoSizeRightIcon = true;
-            this.bunifuButton4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton4.BackColor1 = System.Drawing.Color.BlueViolet;
-            this.bunifuButton4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.BackgroundImage")));
-            this.bunifuButton4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.ButtonText = "Thêm vào giỏ hàng";
-            this.bunifuButton4.ButtonTextMarginLeft = 0;
-            this.bunifuButton4.ColorContrastOnClick = 45;
-            this.bunifuButton4.ColorContrastOnHover = 45;
-            this.bunifuButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.bunifuButton4.CustomizableEdges = borderEdges2;
-            this.bunifuButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton4.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton4.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton4.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton4.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.bunifuButton4.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.IconLeft = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.IconLeft")));
-            this.bunifuButton4.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuButton4.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton4.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.bunifuButton4.IconMarginLeft = 11;
-            this.bunifuButton4.IconPadding = 10;
-            this.bunifuButton4.IconRight = null;
-            this.bunifuButton4.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuButton4.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton4.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.bunifuButton4.IconSize = 25;
-            this.bunifuButton4.IdleBorderColor = System.Drawing.Color.BlueViolet;
-            this.bunifuButton4.IdleBorderRadius = 3;
-            this.bunifuButton4.IdleBorderThickness = 1;
-            this.bunifuButton4.IdleFillColor = System.Drawing.Color.BlueViolet;
-            this.bunifuButton4.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.IdleIconLeftImage")));
-            this.bunifuButton4.IdleIconRightImage = null;
-            this.bunifuButton4.IndicateFocus = false;
-            this.bunifuButton4.Location = new System.Drawing.Point(13, 228);
-            this.bunifuButton4.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuButton4.Name = "bunifuButton4";
-            this.bunifuButton4.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton4.OnDisabledState.BorderRadius = 3;
-            this.bunifuButton4.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.OnDisabledState.BorderThickness = 1;
-            this.bunifuButton4.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton4.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton4.OnDisabledState.IconLeftImage = null;
-            this.bunifuButton4.OnDisabledState.IconRightImage = null;
-            this.bunifuButton4.onHoverState.BorderColor = System.Drawing.Color.DarkOrchid;
-            this.bunifuButton4.onHoverState.BorderRadius = 3;
-            this.bunifuButton4.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.onHoverState.BorderThickness = 1;
-            this.bunifuButton4.onHoverState.FillColor = System.Drawing.Color.DarkOrchid;
-            this.bunifuButton4.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.onHoverState.IconLeftImage = null;
-            this.bunifuButton4.onHoverState.IconRightImage = null;
-            this.bunifuButton4.OnIdleState.BorderColor = System.Drawing.Color.BlueViolet;
-            this.bunifuButton4.OnIdleState.BorderRadius = 3;
-            this.bunifuButton4.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.OnIdleState.BorderThickness = 1;
-            this.bunifuButton4.OnIdleState.FillColor = System.Drawing.Color.BlueViolet;
-            this.bunifuButton4.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.OnIdleState.IconLeftImage")));
-            this.bunifuButton4.OnIdleState.IconRightImage = null;
-            this.bunifuButton4.OnPressedState.BorderColor = System.Drawing.Color.BlueViolet;
-            this.bunifuButton4.OnPressedState.BorderRadius = 3;
-            this.bunifuButton4.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton4.OnPressedState.BorderThickness = 1;
-            this.bunifuButton4.OnPressedState.FillColor = System.Drawing.Color.BlueViolet;
-            this.bunifuButton4.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton4.OnPressedState.IconLeftImage = null;
-            this.bunifuButton4.OnPressedState.IconRightImage = null;
-            this.bunifuButton4.Size = new System.Drawing.Size(200, 40);
-            this.bunifuButton4.TabIndex = 9;
-            this.bunifuButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton4.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuButton4.TextMarginLeft = 0;
-            this.bunifuButton4.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuButton4.UseDefaultRadiusAndThickness = true;
+            this.btnAddToCart.AllowAnimations = true;
+            this.btnAddToCart.AllowMouseEffects = true;
+            this.btnAddToCart.AllowToggling = false;
+            this.btnAddToCart.AnimationSpeed = 200;
+            this.btnAddToCart.AutoGenerateColors = false;
+            this.btnAddToCart.AutoRoundBorders = false;
+            this.btnAddToCart.AutoSizeLeftIcon = true;
+            this.btnAddToCart.AutoSizeRightIcon = true;
+            this.btnAddToCart.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddToCart.BackColor1 = System.Drawing.Color.BlueViolet;
+            this.btnAddToCart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.BackgroundImage")));
+            this.btnAddToCart.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAddToCart.ButtonText = "Thêm vào giỏ hàng";
+            this.btnAddToCart.ButtonTextMarginLeft = 0;
+            this.btnAddToCart.ColorContrastOnClick = 45;
+            this.btnAddToCart.ColorContrastOnHover = 45;
+            this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnAddToCart.CustomizableEdges = borderEdges1;
+            this.btnAddToCart.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddToCart.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAddToCart.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnAddToCart.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAddToCart.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnAddToCart.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnAddToCart.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCart.IconLeft = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.IconLeft")));
+            this.btnAddToCart.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddToCart.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddToCart.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnAddToCart.IconMarginLeft = 11;
+            this.btnAddToCart.IconPadding = 10;
+            this.btnAddToCart.IconRight = null;
+            this.btnAddToCart.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddToCart.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddToCart.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnAddToCart.IconSize = 25;
+            this.btnAddToCart.IdleBorderColor = System.Drawing.Color.BlueViolet;
+            this.btnAddToCart.IdleBorderRadius = 3;
+            this.btnAddToCart.IdleBorderThickness = 1;
+            this.btnAddToCart.IdleFillColor = System.Drawing.Color.BlueViolet;
+            this.btnAddToCart.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.IdleIconLeftImage")));
+            this.btnAddToCart.IdleIconRightImage = null;
+            this.btnAddToCart.IndicateFocus = false;
+            this.btnAddToCart.Location = new System.Drawing.Point(13, 228);
+            this.btnAddToCart.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnAddToCart.OnDisabledState.BorderRadius = 3;
+            this.btnAddToCart.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAddToCart.OnDisabledState.BorderThickness = 1;
+            this.btnAddToCart.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnAddToCart.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnAddToCart.OnDisabledState.IconLeftImage = null;
+            this.btnAddToCart.OnDisabledState.IconRightImage = null;
+            this.btnAddToCart.onHoverState.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.btnAddToCart.onHoverState.BorderRadius = 3;
+            this.btnAddToCart.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAddToCart.onHoverState.BorderThickness = 1;
+            this.btnAddToCart.onHoverState.FillColor = System.Drawing.Color.DarkOrchid;
+            this.btnAddToCart.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCart.onHoverState.IconLeftImage = null;
+            this.btnAddToCart.onHoverState.IconRightImage = null;
+            this.btnAddToCart.OnIdleState.BorderColor = System.Drawing.Color.BlueViolet;
+            this.btnAddToCart.OnIdleState.BorderRadius = 3;
+            this.btnAddToCart.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAddToCart.OnIdleState.BorderThickness = 1;
+            this.btnAddToCart.OnIdleState.FillColor = System.Drawing.Color.BlueViolet;
+            this.btnAddToCart.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCart.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.OnIdleState.IconLeftImage")));
+            this.btnAddToCart.OnIdleState.IconRightImage = null;
+            this.btnAddToCart.OnPressedState.BorderColor = System.Drawing.Color.BlueViolet;
+            this.btnAddToCart.OnPressedState.BorderRadius = 3;
+            this.btnAddToCart.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnAddToCart.OnPressedState.BorderThickness = 1;
+            this.btnAddToCart.OnPressedState.FillColor = System.Drawing.Color.BlueViolet;
+            this.btnAddToCart.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnAddToCart.OnPressedState.IconLeftImage = null;
+            this.btnAddToCart.OnPressedState.IconRightImage = null;
+            this.btnAddToCart.Size = new System.Drawing.Size(200, 40);
+            this.btnAddToCart.TabIndex = 9;
+            this.btnAddToCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddToCart.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnAddToCart.TextMarginLeft = 0;
+            this.btnAddToCart.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnAddToCart.UseDefaultRadiusAndThickness = true;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
-            // label1
+            // lbCategoryName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 30);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Danh mục";
+            this.lbCategoryName.AutoSize = true;
+            this.lbCategoryName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategoryName.Location = new System.Drawing.Point(239, 68);
+            this.lbCategoryName.Name = "lbCategoryName";
+            this.lbCategoryName.Size = new System.Drawing.Size(113, 30);
+            this.lbCategoryName.TabIndex = 10;
+            this.lbCategoryName.Text = "Danh mục";
             // 
-            // textBox1
+            // txtProductInfo
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 303);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(627, 126);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "- ABC\r\n- Sản phẩm này bla, bla\r\n";
+            this.txtProductInfo.Location = new System.Drawing.Point(13, 303);
+            this.txtProductInfo.Multiline = true;
+            this.txtProductInfo.Name = "txtProductInfo";
+            this.txtProductInfo.Size = new System.Drawing.Size(627, 126);
+            this.txtProductInfo.TabIndex = 11;
+            this.txtProductInfo.Text = "- ABC\r\n- Sản phẩm này bla, bla\r\n";
             // 
-            // label3
+            // lbUnit
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(376, 233);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 30);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Đơn vị: Cái";
+            this.lbUnit.AutoSize = true;
+            this.lbUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUnit.Location = new System.Drawing.Point(376, 233);
+            this.lbUnit.Name = "lbUnit";
+            this.lbUnit.Size = new System.Drawing.Size(115, 30);
+            this.lbUnit.TabIndex = 13;
+            this.lbUnit.Text = "Đơn vị: Cái";
             // 
             // tbNumberCart
             // 
@@ -243,15 +244,24 @@
             this.panel1.Controls.Add(this.btnAddCart);
             this.panel1.Controls.Add(this.lbPrice);
             this.panel1.Controls.Add(this.tbNumberCart);
-            this.panel1.Controls.Add(this.bunifuButton4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.btnAddToCart);
+            this.panel1.Controls.Add(this.lbUnit);
+            this.panel1.Controls.Add(this.lbCategoryName);
+            this.panel1.Controls.Add(this.txtProductInfo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 622);
             this.panel1.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 445);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Đánh giá";
             // 
             // flowLayoutPanel1
             // 
@@ -270,22 +280,13 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Mô tả sản phẩm";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 445);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Đánh giá";
-            // 
-            // pnProductDetail
+            // uiProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "pnProductDetail";
+            this.Name = "uiProductDetail";
             this.Size = new System.Drawing.Size(670, 622);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -299,10 +300,10 @@
         private System.Windows.Forms.PictureBox pbProductImage;
         private System.Windows.Forms.Label lbProductName;
         private System.Windows.Forms.Label lbPrice;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAddToCart;
+        private System.Windows.Forms.Label lbCategoryName;
+        private System.Windows.Forms.TextBox txtProductInfo;
+        private System.Windows.Forms.Label lbUnit;
         private System.Windows.Forms.TextBox tbNumberCart;
         private System.Windows.Forms.Button btnAddCart;
         private System.Windows.Forms.Button btnSubtractCart;

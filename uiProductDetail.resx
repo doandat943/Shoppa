@@ -324,7 +324,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO2jVvtvhI8tD4JFgcAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuButton4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddToCart.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAAAoCAYAAAC7HLUcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADKSURBVHhe7d2xTcRQFEVBl0KGZFMEFdAWsrcUYlJKAdkb
@@ -334,7 +334,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuButton4.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddToCart.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAPytJREFUeF7t
         3QeYJVWd/vFlZhgySB5yBhmiBBVEEQEzKgiIriiGZdc1IKiw6LKCIgKCBAElqaCif1ABkVVBUVdRUUQk
@@ -609,7 +609,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAhfmXf/n/3z7T+YSWKIoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="bunifuButton4.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAddToCart.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAPytJREFUeF7t
         3QeYJVWd/vFlZhgySB5yBhmiBBVEEQEzKgiIriiGZdc1IKiw6LKCIgKCBAElqaCif1ABkVVBUVdRUUQk

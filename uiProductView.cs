@@ -30,7 +30,7 @@ namespace Shoppa
 
         public void Load(string filter = null)
         {
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage, CategoryID  From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + (filter != null ? "WHERE " + filter : null) + "\r\nGROUP BY ProductName, Price, ProductImage, CategoryID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select Products.ProductID, ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + (filter != null ? "WHERE " + filter : null) + "\r\nGROUP BY Products.ProductID, ProductName, Price, ProductImage");
 
             if (dataTable.Rows.Count > 0)
             {
@@ -39,14 +39,23 @@ namespace Shoppa
                 {
                     pnProductItem productItem = new pnProductItem();
 
-                    productItem.Set_ProductName = row[0].ToString();
-                    productItem.Set_Price = row[1].ToString();
-                    productItem.Set_Sold = "Đã bán: " + row[2];
-                    productItem.Set_ProductImage = row[3].ToString();
+                    productItem.Set_ProductID = row[0].ToString();
+                    productItem.Set_ProductName = row[1].ToString();
+                    productItem.Set_Price = row[2].ToString();
+                    productItem.Set_Sold = "Đã bán: " + row[3];
+                    productItem.Set_ProductImage = row[4].ToString();
+                    productItem.ClickProductImage += ProductItem_ClickProductImage;
 
                     flowLayoutPanel1.Controls.Add(productItem);
                 }
             }
+        }
+        
+        public event EventHandler<string> ClickProductImage;
+
+        private void ProductItem_ClickProductImage(object sender, string ProductID)
+        {
+            ClickProductImage?.Invoke(this, ProductID);
         }
 
         private void uiProductView_SizeChanged(object sender, EventArgs e)
