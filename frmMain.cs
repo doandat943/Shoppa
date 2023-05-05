@@ -26,11 +26,10 @@ namespace Shoppa
         public frmMain()
         {
             InitializeComponent();
-
-
+            
             //
             uiProductView = new uiProductView();
-            uiProductView.ClickProductImage += ProductItem_ClickProductImage;
+            uiProductView.ClickOnProduct += productItem_ClickOnProduct;
             uiProductView.Dock = DockStyle.Right;
             this.Controls.Add(uiProductView);
 
@@ -51,7 +50,7 @@ namespace Shoppa
             this.Controls.Add(uiManageTool);
         }
 
-        private void ProductItem_ClickProductImage(object sender, string ProductID)
+        private void productItem_ClickOnProduct(object sender, string ProductID)
         {
             HideAllUserControl();
 
@@ -62,6 +61,7 @@ namespace Shoppa
         public void Initialize(string AccountID)
         {
             this.AccountID = AccountID;
+            lbAccountID.Text = AccountID;
 
             HideAllUserControl();
             uiProductView.Show();
@@ -121,6 +121,7 @@ namespace Shoppa
         {
             ColorButton((BunifuButton)sender);
 
+            uiManageTool.Initialize(AccountID);
             uiManageTool.Show();
         }
 

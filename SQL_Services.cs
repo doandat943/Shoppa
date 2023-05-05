@@ -81,8 +81,9 @@ namespace Shoppa
                 SetCommandText(sSql);
                 return mySqlCommand.ExecuteScalar().ToString();
             }
-            catch
+            catch (SqlException ex)
             {
+                DisplayError(ex);
                 return null;
             }
         }
@@ -94,8 +95,9 @@ namespace Shoppa
                 SetCommandText(sSql);
                 return mySqlCommand.ExecuteNonQuery();
             }
-            catch
+            catch (SqlException ex)
             {
+                DisplayError(ex);
                 return -1;
             }
         }

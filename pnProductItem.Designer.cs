@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pnProductItem));
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.lbProductName = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAddToCart = new System.Windows.Forms.PictureBox();
             this.lbSold = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddToCart)).BeginInit();
             this.SuspendLayout();
             // 
             // pbProductImage
@@ -60,16 +60,17 @@
             this.lbProductName.TabIndex = 1;
             this.lbProductName.Text = "Tên Mặt Hàng";
             // 
-            // pictureBox2
+            // btnAddToCart
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(127, 206);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.btnAddToCart.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddToCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.Image")));
+            this.btnAddToCart.Location = new System.Drawing.Point(127, 206);
+            this.btnAddToCart.Name = "btnAddToCart";
+            this.btnAddToCart.Size = new System.Drawing.Size(25, 25);
+            this.btnAddToCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAddToCart.TabIndex = 2;
+            this.btnAddToCart.TabStop = false;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // lbSold
             // 
@@ -98,14 +99,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.lbSold);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btnAddToCart);
             this.Controls.Add(this.lbProductName);
             this.Controls.Add(this.pbProductImage);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "pnProductItem";
             this.Size = new System.Drawing.Size(155, 234);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddToCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,7 +116,7 @@
 
         private System.Windows.Forms.PictureBox pbProductImage;
         private System.Windows.Forms.Label lbProductName;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnAddToCart;
         private System.Windows.Forms.Label lbSold;
         private System.Windows.Forms.Label lbPrice;
     }

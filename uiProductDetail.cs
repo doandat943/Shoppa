@@ -26,7 +26,7 @@ namespace Shoppa
             this.ProductID = ProductID;
             mySqlServices.AddParamater("@ProductID", ProductID);
 
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, CategoryName, Price, UnitName, ProductInfo\r\nFROM Products \r\nJOIN dbo.Categories ON Categories.CategoryID = Products.CategoryID\r\nJOIN dbo.Unit ON Unit.UnitID = Products.UnitID\r\nWHERE ProductID = @ProductID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, CategoryName, Price, UnitName, ProductInfo\r\nFROM Products \r\nJOIN dbo.Categories ON Categories.CategoryID = Products.CategoryID\r\nJOIN dbo.Units ON Units.UnitID = Products.UnitID\r\nWHERE ProductID = @ProductID");
 
             if (dataTable.Rows.Count > 0)
             {

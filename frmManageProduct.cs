@@ -31,7 +31,7 @@ namespace Shoppa
             cboCategoryFilter.DisplayMember = "CategoryName";
             cboCategoryFilter.ValueMember = "CategoryID";
 
-            DataTable dtUnit = mySqlServices.ExecuteQueryTable("Select * From Unit");
+            DataTable dtUnit = mySqlServices.ExecuteQueryTable("Select * From Units");
             cboUnit.DataSource = dtUnit;
             cboUnit.DisplayMember = "UnitName";
             cboUnit.ValueMember = "UnitID";

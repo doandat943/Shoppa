@@ -44,18 +44,18 @@ namespace Shoppa
                     productItem.Set_Price = row[2].ToString();
                     productItem.Set_Sold = "Đã bán: " + row[3];
                     productItem.Set_ProductImage = row[4].ToString();
-                    productItem.ClickProductImage += ProductItem_ClickProductImage;
+                    productItem.ClickOnProduct += productItem_ClickOnProduct;
 
                     flowLayoutPanel1.Controls.Add(productItem);
                 }
             }
         }
         
-        public event EventHandler<string> ClickProductImage;
+        public event EventHandler<string> ClickOnProduct;
 
-        private void ProductItem_ClickProductImage(object sender, string ProductID)
+        private void productItem_ClickOnProduct(object sender, string ProductID)
         {
-            ClickProductImage?.Invoke(this, ProductID);
+            ClickOnProduct?.Invoke(this, ProductID);
         }
 
         private void uiProductView_SizeChanged(object sender, EventArgs e)

@@ -453,6 +453,9 @@
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTemp.resx">
+      <DependentUpon>frmTemp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pnProductItem.resx">
       <DependentUpon>pnProductItem.cs</DependentUpon>
     </EmbeddedResource>

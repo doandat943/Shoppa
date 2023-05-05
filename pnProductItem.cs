@@ -13,7 +13,7 @@ namespace Shoppa
 {
     public partial class pnProductItem : UserControl
     {
-        public event EventHandler<string> ClickProductImage;
+        private SQL_Services mySqlServices = new SQL_Services();
         private string ProductID;
 
         public pnProductItem()
@@ -46,9 +46,16 @@ namespace Shoppa
             set => pbProductImage.ImageLocation = value;
         }
 
+        public event EventHandler<string> ClickOnProduct;
+
         private void pbProductImage_Click(object sender, EventArgs e)
         {
-            ClickProductImage?.Invoke(this, ProductID);
+            ClickOnProduct?.Invoke(this, ProductID);
+        }
+
+        private void btnAddToCart_Click(object sender, EventArgs e)
+        {
+            //mySqlServices.AddParamater(@Account);
         }
     }
 }

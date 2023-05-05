@@ -62,3 +62,4 @@ C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.exe
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.pdb
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.Fody.CopyLocal.cache
 C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.csproj.Fody.RuntimeCopyLocal.cache
+C:\Users\doandat943\source\repos\study\Shoppa\obj\Debug\Shoppa.frmTemp.resources
