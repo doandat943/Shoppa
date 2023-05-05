@@ -45,6 +45,7 @@ namespace Shoppa
                     productItem.Set_Sold = "Đã bán: " + row[3];
                     productItem.Set_ProductImage = row[4].ToString();
                     productItem.ClickOnProduct += productItem_ClickOnProduct;
+                    productItem.AddToCart += productItem_AddToCart;
 
                     flowLayoutPanel1.Controls.Add(productItem);
                 }
@@ -52,10 +53,16 @@ namespace Shoppa
         }
         
         public event EventHandler<string> ClickOnProduct;
+        public event EventHandler<Tuple<string, string>> AddToCart;
 
         private void productItem_ClickOnProduct(object sender, string ProductID)
         {
             ClickOnProduct?.Invoke(this, ProductID);
+        }
+
+        private void productItem_AddToCart(object sender, Tuple<string, string> e)
+        {
+            AddToCart?.Invoke(this, new Tuple<string, string>(e.Item1, e.Item2));
         }
 
         private void uiProductView_SizeChanged(object sender, EventArgs e)

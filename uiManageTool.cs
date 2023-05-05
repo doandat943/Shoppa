@@ -44,25 +44,46 @@ namespace Shoppa
 
         private void btnManageOrder_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnManageAccount_Click(object sender, EventArgs e)
         {
-            frmManageAccount frmManageAccount = new frmManageAccount();
-            frmManageAccount.Show();
+            if (RoleID == "3")
+            {
+                frmManageAccount frmManageAccount = new frmManageAccount();
+                frmManageAccount.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này.");
+            }
+                
         }
 
         private void btnManageProduct_Click(object sender, EventArgs e)
         {
-            frmManageProduct frmManageProduct = new frmManageProduct();
-            frmManageProduct.Show();
+            if (RoleID == "3")
+            {
+                frmManageProduct frmManageProduct = new frmManageProduct();
+                frmManageProduct.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này.");
+            }
         }
 
         private void btnManageCategory_Click(object sender, EventArgs e)
         {
-            frmManageCategory frmManageCategory = new frmManageCategory();
-            frmManageCategory.Show();
+            if (RoleID == "3")
+            {
+                frmManageCategory frmManageCategory = new frmManageCategory();
+                frmManageCategory.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này.");
+            }
         }
 
         private void uiManageTool_SizeChanged(object sender, EventArgs e)

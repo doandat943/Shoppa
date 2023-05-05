@@ -16,6 +16,7 @@ namespace Shoppa
     {
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
+        private string CartID;
 
         private uiProductView uiProductView;
         private uiProductDetail uiProductDetail;
@@ -30,10 +31,12 @@ namespace Shoppa
             //
             uiProductView = new uiProductView();
             uiProductView.ClickOnProduct += productItem_ClickOnProduct;
+            uiProductView.AddToCart += productItem_AddToCart;
             uiProductView.Dock = DockStyle.Right;
             this.Controls.Add(uiProductView);
 
             uiProductDetail = new uiProductDetail();
+            uiProductDetail.AddToCart += productItem_AddToCart;
             uiProductDetail.Dock = DockStyle.Right;
             this.Controls.Add(uiProductDetail);
 
@@ -57,11 +60,29 @@ namespace Shoppa
             uiProductDetail.Initialize(ProductID);
             uiProductDetail.Show();
         }
+        
+        private void productItem_AddToCart(object sender, Tuple<string, string> e)
+        {
+            mySqlServices.AddParamater("@AccountID", AccountID);
+            mySqlServices.AddParamater("@ProductID", e.Item1);
+            mySqlServices.AddParamater("@Quantity", e.Item2);
+            int temp = mySqlServices.ExecuteNonQuery("EXEC AddToCart @AccountID, @ProductID, @Quantity");
+            if (temp != 0)
+            {
+                MessageBox.Show("Thêm mặt hàng vào giỏ thành công. Số lượng: " + e.Item2);
+            }
+        }
 
         public void Initialize(string AccountID)
         {
             this.AccountID = AccountID;
             lbAccountID.Text = AccountID;
+
+            mySqlServices.AddParamater("@AccountID", AccountID);
+            if (mySqlServices.ExecuteScalar("SELECT RoleID\r\nFROM dbo.Accounts\r\nWHERE AccountID = @AccountID") == "0")
+            {
+                btnManageTool.Dispose();
+            }
 
             HideAllUserControl();
             uiProductView.Show();

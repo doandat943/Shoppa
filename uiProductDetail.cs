@@ -42,22 +42,24 @@ namespace Shoppa
             }
         }
 
-        private void btnSubtractCart_Click(object sender, EventArgs e)
+        private void btnSubtractQuantity_Click(object sender, EventArgs e)
         {
-            if (tbNumberCart.Text != "1")
+            if (txtQuantity.Text != "1")
             {
-                tbNumberCart.Text = (int.Parse(tbNumberCart.Text) - 1).ToString();
+                txtQuantity.Text = (int.Parse(txtQuantity.Text) - 1).ToString();
             }
         }
 
-        private void btnAddCart_Click(object sender, EventArgs e)
+        private void btnAddQuantity_Click(object sender, EventArgs e)
         {
-            tbNumberCart.Text = (int.Parse(tbNumberCart.Text) + 1).ToString();
+            txtQuantity.Text = (int.Parse(txtQuantity.Text) + 1).ToString();
         }
+
+        public event EventHandler<Tuple<string, string>> AddToCart;
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-
+            AddToCart?.Invoke(this, new Tuple<string, string>(ProductID, txtQuantity.Text));
         }
     }
 }

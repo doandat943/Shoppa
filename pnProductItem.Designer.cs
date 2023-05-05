@@ -63,6 +63,7 @@
             // btnAddToCart
             // 
             this.btnAddToCart.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddToCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.Image")));
             this.btnAddToCart.Location = new System.Drawing.Point(127, 206);
             this.btnAddToCart.Name = "btnAddToCart";

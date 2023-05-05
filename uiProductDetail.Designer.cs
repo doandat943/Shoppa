@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uiProductDetail));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.lbProductName = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
@@ -37,9 +37,9 @@
             this.lbCategoryName = new System.Windows.Forms.Label();
             this.txtProductInfo = new System.Windows.Forms.TextBox();
             this.lbUnit = new System.Windows.Forms.Label();
-            this.tbNumberCart = new System.Windows.Forms.TextBox();
-            this.btnAddCart = new System.Windows.Forms.Button();
-            this.btnSubtractCart = new System.Windows.Forms.Button();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.btnAddQuantity = new System.Windows.Forms.Button();
+            this.btnSubtractQuantity = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -99,11 +99,11 @@
             this.btnAddToCart.ColorContrastOnClick = 45;
             this.btnAddToCart.ColorContrastOnHover = 45;
             this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnAddToCart.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnAddToCart.CustomizableEdges = borderEdges2;
             this.btnAddToCart.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddToCart.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddToCart.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -154,7 +154,7 @@
             this.btnAddToCart.OnIdleState.BorderThickness = 1;
             this.btnAddToCart.OnIdleState.FillColor = System.Drawing.Color.BlueViolet;
             this.btnAddToCart.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnAddToCart.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton4.OnIdleState.IconLeftImage")));
+            this.btnAddToCart.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.OnIdleState.IconLeftImage")));
             this.btnAddToCart.OnIdleState.IconRightImage = null;
             this.btnAddToCart.OnPressedState.BorderColor = System.Drawing.Color.BlueViolet;
             this.btnAddToCart.OnPressedState.BorderRadius = 3;
@@ -202,35 +202,35 @@
             this.lbUnit.TabIndex = 13;
             this.lbUnit.Text = "Đơn vị: Cái";
             // 
-            // tbNumberCart
+            // txtQuantity
             // 
-            this.tbNumberCart.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNumberCart.Location = new System.Drawing.Point(274, 232);
-            this.tbNumberCart.Name = "tbNumberCart";
-            this.tbNumberCart.Size = new System.Drawing.Size(44, 33);
-            this.tbNumberCart.TabIndex = 14;
-            this.tbNumberCart.Text = "10";
-            this.tbNumberCart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(274, 232);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(44, 33);
+            this.txtQuantity.TabIndex = 14;
+            this.txtQuantity.Text = "10";
+            this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnAddCart
+            // btnAddQuantity
             // 
-            this.btnAddCart.Location = new System.Drawing.Point(322, 231);
-            this.btnAddCart.Name = "btnAddCart";
-            this.btnAddCart.Size = new System.Drawing.Size(35, 35);
-            this.btnAddCart.TabIndex = 15;
-            this.btnAddCart.Text = "+";
-            this.btnAddCart.UseVisualStyleBackColor = true;
-            this.btnAddCart.Click += new System.EventHandler(this.btnAddCart_Click);
+            this.btnAddQuantity.Location = new System.Drawing.Point(233, 232);
+            this.btnAddQuantity.Name = "btnAddQuantity";
+            this.btnAddQuantity.Size = new System.Drawing.Size(35, 35);
+            this.btnAddQuantity.TabIndex = 15;
+            this.btnAddQuantity.Text = "+";
+            this.btnAddQuantity.UseVisualStyleBackColor = true;
+            this.btnAddQuantity.Click += new System.EventHandler(this.btnAddQuantity_Click);
             // 
-            // btnSubtractCart
+            // btnSubtractQuantity
             // 
-            this.btnSubtractCart.Location = new System.Drawing.Point(235, 231);
-            this.btnSubtractCart.Name = "btnSubtractCart";
-            this.btnSubtractCart.Size = new System.Drawing.Size(35, 35);
-            this.btnSubtractCart.TabIndex = 16;
-            this.btnSubtractCart.Text = "-";
-            this.btnSubtractCart.UseVisualStyleBackColor = true;
-            this.btnSubtractCart.Click += new System.EventHandler(this.btnSubtractCart_Click);
+            this.btnSubtractQuantity.Location = new System.Drawing.Point(324, 228);
+            this.btnSubtractQuantity.Name = "btnSubtractQuantity";
+            this.btnSubtractQuantity.Size = new System.Drawing.Size(35, 35);
+            this.btnSubtractQuantity.TabIndex = 16;
+            this.btnSubtractQuantity.Text = "-";
+            this.btnSubtractQuantity.UseVisualStyleBackColor = true;
+            this.btnSubtractQuantity.Click += new System.EventHandler(this.btnSubtractQuantity_Click);
             // 
             // panel1
             // 
@@ -239,11 +239,11 @@
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pbProductImage);
-            this.panel1.Controls.Add(this.btnSubtractCart);
+            this.panel1.Controls.Add(this.btnSubtractQuantity);
             this.panel1.Controls.Add(this.lbProductName);
-            this.panel1.Controls.Add(this.btnAddCart);
+            this.panel1.Controls.Add(this.btnAddQuantity);
             this.panel1.Controls.Add(this.lbPrice);
-            this.panel1.Controls.Add(this.tbNumberCart);
+            this.panel1.Controls.Add(this.txtQuantity);
             this.panel1.Controls.Add(this.btnAddToCart);
             this.panel1.Controls.Add(this.lbUnit);
             this.panel1.Controls.Add(this.lbCategoryName);
@@ -304,9 +304,9 @@
         private System.Windows.Forms.Label lbCategoryName;
         private System.Windows.Forms.TextBox txtProductInfo;
         private System.Windows.Forms.Label lbUnit;
-        private System.Windows.Forms.TextBox tbNumberCart;
-        private System.Windows.Forms.Button btnAddCart;
-        private System.Windows.Forms.Button btnSubtractCart;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Button btnAddQuantity;
+        private System.Windows.Forms.Button btnSubtractQuantity;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;

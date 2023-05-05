@@ -47,6 +47,7 @@ namespace Shoppa
         }
 
         public event EventHandler<string> ClickOnProduct;
+        public event EventHandler<Tuple<string, string>> AddToCart;
 
         private void pbProductImage_Click(object sender, EventArgs e)
         {
@@ -55,7 +56,7 @@ namespace Shoppa
 
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
-            //mySqlServices.AddParamater(@Account);
+            AddToCart?.Invoke(this, new Tuple<string, string>(ProductID, "1"));
         }
     }
 }
