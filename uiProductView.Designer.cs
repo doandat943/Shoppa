@@ -286,8 +286,7 @@
             this.flowLayoutPanel2.Controls.Add(this.label9);
             this.flowLayoutPanel2.Controls.Add(this.cboCategoryFilter);
             this.flowLayoutPanel2.Controls.Add(this.btnFilter);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 41);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 44);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(381, 33);
             this.flowLayoutPanel2.TabIndex = 0;
@@ -389,7 +388,7 @@
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(670, 77);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(670, 80);
             this.flowLayoutPanel4.TabIndex = 40;
             // 
             // uiProductView

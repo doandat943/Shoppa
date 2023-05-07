@@ -26,7 +26,7 @@ namespace Shoppa
             this.ProductID = ProductID;
             mySqlServices.AddParamater("@ProductID", ProductID);
 
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, CategoryName, Price, UnitName, ProductInfo\r\nFROM Products \r\nJOIN dbo.Categories ON Categories.CategoryID = Products.CategoryID\r\nJOIN dbo.Units ON Units.UnitID = Products.UnitID\r\nWHERE ProductID = @ProductID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, Price, ISNULL(SUM(OrderDetail.Quantity), 0) AS Sold, ProductImage \r\nFROM Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.StatusID <> 0 OR Orders.StatusID IS NULL\r\nGROUP BY Products.ProductID, ProductName, Price, ProductImage");
 
             if (dataTable.Rows.Count > 0)
             {
@@ -35,6 +35,7 @@ namespace Shoppa
                 lbPrice.Text = dataTable.Rows[0][2].ToString();
                 lbUnit.Text = "Đơn vị: " +  dataTable.Rows[0][3];
                 txtProductInfo.Text = dataTable.Rows[0][4].ToString();
+                pbProductImage.ImageLocation = dataTable.Rows[0][5].ToString();
             }
             else
             {

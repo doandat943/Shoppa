@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uiProductDetail));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.lbProductName = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             // 
             this.lbProductName.AutoSize = true;
             this.lbProductName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProductName.Location = new System.Drawing.Point(239, 28);
+            this.lbProductName.Location = new System.Drawing.Point(239, 14);
             this.lbProductName.Name = "lbProductName";
             this.lbProductName.Size = new System.Drawing.Size(148, 30);
             this.lbProductName.TabIndex = 1;
@@ -74,7 +75,7 @@
             this.lbPrice.AutoSize = true;
             this.lbPrice.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrice.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lbPrice.Location = new System.Drawing.Point(237, 118);
+            this.lbPrice.Location = new System.Drawing.Point(237, 114);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(146, 40);
             this.lbPrice.TabIndex = 2;
@@ -99,11 +100,11 @@
             this.btnAddToCart.ColorContrastOnClick = 45;
             this.btnAddToCart.ColorContrastOnHover = 45;
             this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnAddToCart.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnAddToCart.CustomizableEdges = borderEdges4;
             this.btnAddToCart.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddToCart.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddToCart.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -177,7 +178,7 @@
             // 
             this.lbCategoryName.AutoSize = true;
             this.lbCategoryName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCategoryName.Location = new System.Drawing.Point(239, 68);
+            this.lbCategoryName.Location = new System.Drawing.Point(239, 59);
             this.lbCategoryName.Name = "lbCategoryName";
             this.lbCategoryName.Size = new System.Drawing.Size(113, 30);
             this.lbCategoryName.TabIndex = 10;
@@ -196,7 +197,7 @@
             // 
             this.lbUnit.AutoSize = true;
             this.lbUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUnit.Location = new System.Drawing.Point(376, 233);
+            this.lbUnit.Location = new System.Drawing.Point(507, 233);
             this.lbUnit.Name = "lbUnit";
             this.lbUnit.Size = new System.Drawing.Size(115, 30);
             this.lbUnit.TabIndex = 13;
@@ -205,7 +206,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(274, 232);
+            this.txtQuantity.Location = new System.Drawing.Point(389, 232);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(44, 33);
             this.txtQuantity.TabIndex = 14;
@@ -214,7 +215,7 @@
             // 
             // btnAddQuantity
             // 
-            this.btnAddQuantity.Location = new System.Drawing.Point(233, 232);
+            this.btnAddQuantity.Location = new System.Drawing.Point(439, 231);
             this.btnAddQuantity.Name = "btnAddQuantity";
             this.btnAddQuantity.Size = new System.Drawing.Size(35, 35);
             this.btnAddQuantity.TabIndex = 15;
@@ -224,7 +225,7 @@
             // 
             // btnSubtractQuantity
             // 
-            this.btnSubtractQuantity.Location = new System.Drawing.Point(324, 228);
+            this.btnSubtractQuantity.Location = new System.Drawing.Point(348, 231);
             this.btnSubtractQuantity.Name = "btnSubtractQuantity";
             this.btnSubtractQuantity.Size = new System.Drawing.Size(35, 35);
             this.btnSubtractQuantity.TabIndex = 16;
@@ -235,6 +236,7 @@
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label2);
@@ -280,6 +282,16 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Mô tả sản phẩm";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(237, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 30);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Số lượng:";
+            // 
             // uiProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,5 +323,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
     }
 }

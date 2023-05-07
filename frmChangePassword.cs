@@ -23,7 +23,12 @@ namespace Shoppa
             this.AccountID = AccountID;
             this.AdminMode = AdminMode;
 
-            if (AdminMode) txtOldPassword.Enabled = false;
+            if (AdminMode)
+            {
+                txtOldPassword.Enabled = false;
+                txtOldPassword.PasswordChar = '\0';
+                txtOldPassword.PlaceholderText = "Không cần nhập";
+            }
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
@@ -75,7 +80,7 @@ namespace Shoppa
             }
             else
             {
-                txtOldPassword.PasswordChar = '*';
+                if (AdminMode == false) txtOldPassword.PasswordChar = '*';
                 txtNewPassword.PasswordChar = '*';
                 txtRePassword.PasswordChar = '*';
             }

@@ -22,6 +22,7 @@ namespace Shoppa
             cboProvince.DisplayMember = "ProvinceName";
             cboProvince.ValueMember = "ProvinceID";
 
+            txtPhoneNumber.PlaceholderText = "0345785426";
             cboGender.SelectedIndex = 0;
             cboProvince.SelectedIndex = 0;
         }

@@ -13,8 +13,7 @@ namespace Shoppa
     public partial class frmManageAccount : Form
     {
         private SQL_Services mySqlServices = new SQL_Services();
-
-        private Form frmAccountView = new Form();
+        
         private uiAccountView uiAccountView = new uiAccountView();
         private string AccountID;
 
@@ -38,12 +37,6 @@ namespace Shoppa
             cboProvince.DisplayMember = "ProvinceName";
             cboProvince.ValueMember = "ProvinceID";
 
-            //
-            frmAccountView.Text = "Chỉnh sửa thông tin người dùng";
-            frmAccountView.FormBorderStyle = FormBorderStyle.FixedSingle;
-            frmAccountView.StartPosition = FormStartPosition.CenterScreen;
-            frmAccountView.AutoSize = true;
-            frmAccountView.Controls.Add(uiAccountView);
 
             //
             Load();
@@ -74,6 +67,14 @@ namespace Shoppa
         private void btnEdit_Click(object sender, EventArgs e)
         {
             uiAccountView.Initialize(AccountID, true);
+            //
+            Form frmAccountView = new Form();
+            frmAccountView.Text = "Chỉnh sửa thông tin người dùng";
+            frmAccountView.FormBorderStyle = FormBorderStyle.FixedSingle;
+            frmAccountView.StartPosition = FormStartPosition.CenterScreen;
+            frmAccountView.MaximizeBox = false;
+            frmAccountView.AutoSize = true;
+            frmAccountView.Controls.Add(uiAccountView);
             frmAccountView.ShowDialog();
             Load();
         }
@@ -81,11 +82,6 @@ namespace Shoppa
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnStatistic_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
