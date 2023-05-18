@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uiProductDetail));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.lbProductName = new System.Windows.Forms.Label();
             this.lbPrice = new System.Windows.Forms.Label();
             this.btnAddToCart = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.lbCategoryName = new System.Windows.Forms.Label();
+            this.lbSold = new System.Windows.Forms.Label();
             this.txtProductInfo = new System.Windows.Forms.TextBox();
             this.lbUnit = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnAddQuantity = new System.Windows.Forms.Button();
             this.btnSubtractQuantity = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -100,11 +100,11 @@
             this.btnAddToCart.ColorContrastOnClick = 45;
             this.btnAddToCart.ColorContrastOnHover = 45;
             this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnAddToCart.CustomizableEdges = borderEdges4;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnAddToCart.CustomizableEdges = borderEdges1;
             this.btnAddToCart.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddToCart.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddToCart.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -174,15 +174,15 @@
             this.btnAddToCart.UseDefaultRadiusAndThickness = true;
             this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
-            // lbCategoryName
+            // lbSold
             // 
-            this.lbCategoryName.AutoSize = true;
-            this.lbCategoryName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCategoryName.Location = new System.Drawing.Point(239, 59);
-            this.lbCategoryName.Name = "lbCategoryName";
-            this.lbCategoryName.Size = new System.Drawing.Size(113, 30);
-            this.lbCategoryName.TabIndex = 10;
-            this.lbCategoryName.Text = "Danh mục";
+            this.lbSold.AutoSize = true;
+            this.lbSold.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSold.Location = new System.Drawing.Point(239, 59);
+            this.lbSold.Name = "lbSold";
+            this.lbSold.Size = new System.Drawing.Size(130, 30);
+            this.lbSold.TabIndex = 10;
+            this.lbSold.Text = "Đã bán: 999";
             // 
             // txtProductInfo
             // 
@@ -248,13 +248,23 @@
             this.panel1.Controls.Add(this.txtQuantity);
             this.panel1.Controls.Add(this.btnAddToCart);
             this.panel1.Controls.Add(this.lbUnit);
-            this.panel1.Controls.Add(this.lbCategoryName);
+            this.panel1.Controls.Add(this.lbSold);
             this.panel1.Controls.Add(this.txtProductInfo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 622);
             this.panel1.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(237, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 30);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Số lượng:";
             // 
             // label4
             // 
@@ -282,16 +292,6 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Mô tả sản phẩm";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 233);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 30);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Số lượng:";
-            // 
             // uiProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,7 +313,7 @@
         private System.Windows.Forms.Label lbProductName;
         private System.Windows.Forms.Label lbPrice;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAddToCart;
-        private System.Windows.Forms.Label lbCategoryName;
+        private System.Windows.Forms.Label lbSold;
         private System.Windows.Forms.TextBox txtProductInfo;
         private System.Windows.Forms.Label lbUnit;
         private System.Windows.Forms.TextBox txtQuantity;

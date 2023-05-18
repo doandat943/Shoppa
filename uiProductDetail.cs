@@ -26,12 +26,12 @@ namespace Shoppa
             this.ProductID = ProductID;
             mySqlServices.AddParamater("@ProductID", ProductID);
 
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, Price, ISNULL(SUM(OrderDetail.Quantity), 0) AS Sold, ProductImage \r\nFROM Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.StatusID <> 0 OR Orders.StatusID IS NULL\r\nGROUP BY Products.ProductID, ProductName, Price, ProductImage");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, ISNULL(SUM(CASE WHEN Orders.StatusID <> 0 THEN OrderDetail.Quantity ELSE 0 END), 0) AS Sold, Price, UnitName, ProductInfo, ProductImage\r\nFROM Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN dbo.Units ON Units.UnitID = Products.UnitID\r\nLEFT JOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Products.ProductID = @ProductID\r\nGROUP BY ProductName, Price, UnitName, ProductInfo, ProductImage");
 
             if (dataTable.Rows.Count > 0)
             {
                 lbProductName.Text = dataTable.Rows[0][0].ToString();
-                lbCategoryName.Text = dataTable.Rows[0][1].ToString();
+                lbSold.Text = "Đã bán: " + dataTable.Rows[0][1].ToString();
                 lbPrice.Text = dataTable.Rows[0][2].ToString();
                 lbUnit.Text = "Đơn vị: " +  dataTable.Rows[0][3];
                 txtProductInfo.Text = dataTable.Rows[0][4].ToString();

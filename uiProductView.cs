@@ -30,7 +30,7 @@ namespace Shoppa
 
         public void Load(string filter = null)
         {
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select Products.ProductID, ProductName, Price, COUNT(OrderDetail.ProductID) AS Sold, ProductImage From Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\n" + (filter != null ? "WHERE " + filter : null) + "\r\nGROUP BY Products.ProductID, ProductName, Price, ProductImage");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT Products.ProductID, ProductName, Price, ISNULL(SUM(CASE WHEN Orders.StatusID <> 0 THEN OrderDetail.Quantity ELSE 0 END), 0) AS Sold, ProductImage \r\nFROM Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\n" + (filter != null ? "WHERE " + filter : null) + "\r\nGROUP BY Products.ProductID, ProductName, Price, ProductImage");
 
             if (dataTable.Rows.Count > 0)
             {

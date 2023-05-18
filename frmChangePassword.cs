@@ -49,7 +49,7 @@ namespace Shoppa
 
                 txtOldPassword.Focus();
             }
-            else if (txtNewPassword.Text == "")
+            if (txtNewPassword.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Mật khẩu mới");
                 txtNewPassword.Focus();
@@ -66,6 +66,10 @@ namespace Shoppa
                 {
                     MessageBox.Show("Đổi mật khẩu thành công");
                     this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đã có lỗi xảy ra!!!");
                 }
             }
         }
