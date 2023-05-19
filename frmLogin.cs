@@ -56,6 +56,7 @@ namespace Shoppa
                     frmMain frmMain = new frmMain();
                     frmMain.Initialize(AccountID);
                     frmMain.ShowDialog();
+                    this.Hide();
                 }
                 else
                 {

@@ -92,9 +92,10 @@ namespace Shoppa
         {
             newMode = true;
             SetControls(true);
-            txtProductID.PlaceholderText = "SP00000001";
+            //txtProductID.PlaceholderText = "SP00000001";
+            txtProductID.Text = "SP" + (int.Parse(mySqlServices.ExecuteScalar("Select MAX(ProductID) From Products").Replace("SP", null)) + 1).ToString("D8");
 
-            txtProductID.Clear();
+            //txtProductID.Clear();
             txtProductName.Clear();
             cboCategory.SelectedIndex = 1;
             cboUnit.SelectedIndex = 1;
