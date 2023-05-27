@@ -19,10 +19,7 @@ namespace Shoppa
         public uiAccountView()
         {
             InitializeComponent();
-        }
 
-        public void Initialize(string AccountID, bool AdminMode = false)
-        {
             DataTable dtGender = mySqlServices.ExecuteQueryTable("Select *From Genders");
             cboGender.DataSource = dtGender;
             cboGender.DisplayMember = "GenderName";
@@ -37,7 +34,10 @@ namespace Shoppa
             cboProvince.DataSource = dtProvince;
             cboProvince.DisplayMember = "ProvinceName";
             cboProvince.ValueMember = "ProvinceID";
+        }
 
+        public void Initialize(string AccountID, bool AdminMode = false)
+        {
             this.AccountID = AccountID;
             this.AdminMode = AdminMode;
 

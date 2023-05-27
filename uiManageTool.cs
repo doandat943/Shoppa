@@ -51,7 +51,7 @@ namespace Shoppa
             if (RoleID == "3")
             {
                 frmManageAccount frmManageAccount = new frmManageAccount();
-                frmManageAccount.Show();
+                frmManageAccount.ShowDialog();
             }
             else
             {
@@ -65,7 +65,7 @@ namespace Shoppa
             if (RoleID == "3")
             {
                 frmManageProduct frmManageProduct = new frmManageProduct();
-                frmManageProduct.Show();
+                frmManageProduct.ShowDialog();
             }
             else
             {
@@ -78,7 +78,7 @@ namespace Shoppa
             if (RoleID == "3")
             {
                 frmManageCategory frmManageCategory = new frmManageCategory();
-                frmManageCategory.Show();
+                frmManageCategory.ShowDialog();
             }
             else
             {

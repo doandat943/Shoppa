@@ -393,6 +393,12 @@
     <Compile Include="uiCartView.Designer.cs">
       <DependentUpon>uiCartView.cs</DependentUpon>
     </Compile>
+    <Compile Include="uiHistoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uiHistoryView.Designer.cs">
+      <DependentUpon>uiHistoryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="uiManageTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -456,11 +462,17 @@
     <EmbeddedResource Include="frmTemp.resx">
       <DependentUpon>frmTemp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="pnCartItem.resx">
+      <DependentUpon>pnCartItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pnProductItem.resx">
       <DependentUpon>pnProductItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiCartView.resx">
       <DependentUpon>uiCartView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uiHistoryView.resx">
+      <DependentUpon>uiHistoryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiManageTool.resx">
       <DependentUpon>uiManageTool.cs</DependentUpon>

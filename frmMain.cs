@@ -127,6 +127,14 @@ namespace Shoppa
         {
             ColorButton((BunifuButton)sender);
 
+            uiCartView.Initialize(AccountID);
+            uiCartView.Show();
+        }
+
+        private void btnHistoryView_Click(object sender, EventArgs e)
+        {
+            ColorButton((BunifuButton)sender);
+
             uiCartView.Show();
         }
 

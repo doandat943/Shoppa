@@ -13,7 +13,6 @@ namespace Shoppa
 {
     public partial class pnProductItem : UserControl
     {
-        private SQL_Services mySqlServices = new SQL_Services();
         private string ProductID;
 
         public pnProductItem()
