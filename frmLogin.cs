@@ -55,14 +55,20 @@ namespace Shoppa
                 {
                     frmMain frmMain = new frmMain();
                     frmMain.Initialize(AccountID);
-                    frmMain.ShowDialog();
+                    frmMain.FormClosed += frmMain_FormClosed;
                     this.Hide();
+                    frmMain.ShowDialog();
                 }
                 else
                 {
                     MessageBox.Show("Thông tin đăng nhập không chính xác. Vui lòng thử lại!!!");
                 }
             }
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
 
         private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)

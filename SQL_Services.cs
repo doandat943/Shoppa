@@ -119,6 +119,18 @@ namespace Shoppa
             }
         }
 
+        public void GetCartID()
+        {
+            string CartID = ExecuteScalar("SELECT TOP 1 OrderID FROM Orders WHERE OrdererAccountID = @AccountID AND StatusID = 0");
+            if (CartID == "")
+            {
+                // Get new CartID
+                int orderCount = Convert.ToInt32(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
+                CartID = "DH" + (orderCount + 1).ToString("D8");
+            }
+            AddParamater("@CartID", CartID);
+        }
+
         public bool CheckExist(string Table, string Paramater, string filter = null)
         {
             string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater +  (filter != null ? " and " + filter : null);

@@ -45,6 +45,16 @@ namespace Shoppa
             set => txtQuantity.Text = value;
         }
 
+        public int Get_Price
+        {
+            get => int.Parse(lbPrice.Text.Replace("₫", null).Replace(",", null));
+        }
+
+        public int Get_Quantity
+        {
+            get => int.Parse(txtQuantity.Text);
+        }
+
         public event EventHandler<string> ClickOnDelete;
         public event EventHandler<Tuple<string, string>> QuantityChanged;
         
@@ -55,18 +65,33 @@ namespace Shoppa
 
         private void btnSubtractQuantity_Click(object sender, EventArgs e)
         {
-            if (txtQuantity.Text != "1")
+            int Quantity = int.Parse(txtQuantity.Text);
+            if (Quantity > 1)
             {
-                txtQuantity.Text = (int.Parse(txtQuantity.Text) - 1).ToString();
-
-                QuantityChanged?.Invoke(this, new Tuple<string, string>(ProductID, txtQuantity.Text));
+                txtQuantity.Text = (Quantity - 1).ToString();
             }
         }
 
         private void btnAddQuantity_Click(object sender, EventArgs e)
         {
-            txtQuantity.Text = (int.Parse(txtQuantity.Text) + 1).ToString();
+            int Quantity = int.Parse(txtQuantity.Text);
+            if (Quantity < 100)
+            {
+                txtQuantity.Text = (Quantity + 1).ToString();
+            }
+        }
 
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            int Quantity = int.Parse(txtQuantity.Text);
+            if (Quantity < 1)
+            {
+                txtQuantity.Text = "1";
+            }
+            else if (Quantity > 100)
+            {
+                txtQuantity.Text = "100";
+            }
             QuantityChanged?.Invoke(this, new Tuple<string, string>(ProductID, txtQuantity.Text));
         }
     }

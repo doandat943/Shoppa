@@ -1220,7 +1220,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHroCU/4f7qC24Uj7svlAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuButton2.OnIdleState.IconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnHistoryView.OnIdleState.IconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAeAAAAHgCAYAAAB91L6VAAAABGdBTUEAALGPC/xhBQAAJS5JREFUeF7t
         3QnYX1V173ETEkgCJAFEZVAGUYagLXBBLjjc3ktFUXslKlSZbgUtxSpCrdSpYlEBJxABhytWQWVoHdFa

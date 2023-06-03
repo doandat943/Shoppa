@@ -329,7 +329,7 @@
             this.btnHistoryView.OnIdleState.BorderThickness = 1;
             this.btnHistoryView.OnIdleState.FillColor = System.Drawing.Color.BlueViolet;
             this.btnHistoryView.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnHistoryView.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.OnIdleState.IconLeftImage")));
+            this.btnHistoryView.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnHistoryView.OnIdleState.IconLeftImage")));
             this.btnHistoryView.OnIdleState.IconRightImage = null;
             this.btnHistoryView.OnPressedState.BorderColor = System.Drawing.Color.BlueViolet;
             this.btnHistoryView.OnPressedState.BorderRadius = 3;
@@ -711,7 +711,6 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shoppa";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.SizeChanged += new System.EventHandler(this.frmMain_SizeChanged);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -173,10 +173,5 @@ namespace Shoppa
             uiManageTool.Width = this.ClientSize.Width - panel1.Width;
             uiManageTool.Height = this.ClientSize.Height - panel1.Height;
         }
-
-        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

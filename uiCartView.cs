@@ -26,8 +26,22 @@ namespace Shoppa
         {
             this.AccountID = AccountID;
             mySqlServices.AddParamater("@AccountID", AccountID);
-            mySqlServices.AddParamater("@CartID", mySqlServices.ExecuteScalar("SELECT TOP 1 OrderID\r\nFROM Orders\r\nWHERE dbo.Orders.OrdererAccountID = @AccountID"));
+            mySqlServices.GetCartID();
             Load();
+        }
+
+        private void Cart_Checkout()
+        {
+            int total = 0;
+            foreach (pnCartItem cartItem in flowLayoutPanel1.Controls)
+            {
+                int price = cartItem.Get_Price;
+                int quantity = cartItem.Get_Quantity;
+                int subtotal = price * quantity;
+                total += subtotal;
+            }
+
+            lbPayment.Text = "Tổng: " + total.ToString("N0") + "₫";
         }
 
         private void Load()
@@ -53,18 +67,29 @@ namespace Shoppa
                     flowLayoutPanel1.Controls.Add(cartItem);
                 }
             }
+            Cart_Checkout();
         }
 
         private void cartItem_ClickOnDelete(object sender, string ProductID)
         {
             mySqlServices.AddParamater("@ProductID", ProductID);
             mySqlServices.ExecuteNonQuery("DELETE FROM dbo.OrderDetail\r\nWHERE OrderID = @CartID AND ProductID = @ProductID");
-            Load();
+            pnCartItem cartItem = (pnCartItem)sender;
+            flowLayoutPanel1.Controls.Remove(cartItem);
+            Cart_Checkout();
         }
 
         private void cartItem_QuantityChanged(object sender, Tuple<string, string> e)
         {
-            Load();
+            mySqlServices.AddParamater("@ProductID", e.Item1);
+            mySqlServices.AddParamater("@Quantity", e.Item2);
+            mySqlServices.ExecuteNonQuery("UPDATE dbo.OrderDetail\r\nSET Quantity = @Quantity\r\nWHERE OrderID = @CartID AND ProductID = @ProductID");
+            Cart_Checkout();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

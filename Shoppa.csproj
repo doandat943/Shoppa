@@ -363,6 +363,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,12 @@
     </Compile>
     <Compile Include="pnCartItem.Designer.cs">
       <DependentUpon>pnCartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pnPaymentItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pnPaymentItem.Designer.cs">
+      <DependentUpon>pnPaymentItem.cs</DependentUpon>
     </Compile>
     <Compile Include="pnProductItem.cs">
       <SubType>UserControl</SubType>
@@ -456,6 +468,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pnCartItem.resx">
       <DependentUpon>pnCartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pnPaymentItem.resx">
+      <DependentUpon>pnPaymentItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pnProductItem.resx">
       <DependentUpon>pnProductItem.cs</DependentUpon>

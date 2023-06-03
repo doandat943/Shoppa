@@ -71,6 +71,7 @@
             // 
             // btnSubtractQuantity
             // 
+            this.btnSubtractQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubtractQuantity.Location = new System.Drawing.Point(198, 134);
             this.btnSubtractQuantity.Name = "btnSubtractQuantity";
             this.btnSubtractQuantity.Size = new System.Drawing.Size(35, 35);
@@ -81,6 +82,7 @@
             // 
             // btnAddQuantity
             // 
+            this.btnAddQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddQuantity.Location = new System.Drawing.Point(289, 134);
             this.btnAddQuantity.Name = "btnAddQuantity";
             this.btnAddQuantity.Size = new System.Drawing.Size(35, 35);
@@ -98,13 +100,14 @@
             this.txtQuantity.TabIndex = 17;
             this.txtQuantity.Text = "10";
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(584, 67);
+            this.btnDelete.Location = new System.Drawing.Point(584, 72);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(55, 55);
+            this.btnDelete.Size = new System.Drawing.Size(45, 45);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "X";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -122,7 +125,7 @@
             this.Controls.Add(this.lbProductName);
             this.Controls.Add(this.pbProductImage);
             this.Name = "pnCartItem";
-            this.Size = new System.Drawing.Size(664, 188);
+            this.Size = new System.Drawing.Size(647, 188);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
