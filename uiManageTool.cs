@@ -14,8 +14,12 @@ namespace Shoppa
     public partial class uiManageTool : UserControl
     {
         private SQL_Services mySqlServices = new SQL_Services();
-        private string AccountID;
         private string RoleID;
+
+        
+        private frmManageAccount frmManageAccount;
+        private frmManageProduct frmManageProduct;
+        private frmManageCategory frmManageCategory;
 
         public uiManageTool()
         {
@@ -24,7 +28,6 @@ namespace Shoppa
 
         public void Initialize(string AccountID)
         {
-            this.AccountID = AccountID;
             mySqlServices.AddParamater("@AccountID", AccountID);
 
             DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT Name, RoleName, Accounts.RoleID\r\nFROM Accounts\r\nJOIN dbo.Roles ON Roles.RoleID = Accounts.RoleID\r\nWHERE AccountID = @AccountID");
@@ -50,7 +53,7 @@ namespace Shoppa
         {
             if (RoleID == "3")
             {
-                frmManageAccount frmManageAccount = new frmManageAccount();
+                frmManageAccount = new frmManageAccount();
                 frmManageAccount.ShowDialog();
             }
             else
@@ -64,7 +67,7 @@ namespace Shoppa
         {
             if (RoleID == "3")
             {
-                frmManageProduct frmManageProduct = new frmManageProduct();
+                frmManageProduct = new frmManageProduct();
                 frmManageProduct.ShowDialog();
             }
             else
@@ -77,7 +80,7 @@ namespace Shoppa
         {
             if (RoleID == "3")
             {
-                frmManageCategory frmManageCategory = new frmManageCategory();
+                frmManageProduct = new frmManageProduct();
                 frmManageCategory.ShowDialog();
             }
             else

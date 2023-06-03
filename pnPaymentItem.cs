@@ -35,7 +35,22 @@ namespace Shoppa
 
         public string Set_Quantity
         {
-            set => lbQuantity.Text = value;
+            set => lbQuantity.Text = "x" + value;
+        }
+
+        public int Set_Checkout
+        {
+            set => lbCheckout.Text = value.ToString("N0") + "₫";
+        }
+        
+        public int Get_Price
+        {
+            get => int.Parse(lbPrice.Text.Replace("₫", null).Replace(",", null));
+        }
+
+        public int Get_Quantity
+        {
+            get => int.Parse(lbQuantity.Text.Replace("x", null));
         }
     }
 }

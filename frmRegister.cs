@@ -21,10 +21,6 @@ namespace Shoppa
             cboProvince.DataSource = dtProvince;
             cboProvince.DisplayMember = "ProvinceName";
             cboProvince.ValueMember = "ProvinceID";
-
-            txtPhoneNumber.PlaceholderText = "0345785426";
-            cboGender.SelectedIndex = 0;
-            cboProvince.SelectedIndex = 0;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

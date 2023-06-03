@@ -16,44 +16,16 @@ namespace Shoppa
         private static SqlConnection mySqlConnection;
         private SqlDataAdapter myDataAdapter = new SqlDataAdapter();
         private SqlCommand mySqlCommand = new SqlCommand();
-        
-        private void DisplayError(SqlException ex)
-        {
-            string sSql = "SELECT * FROM Errors WHERE Number = " + ex.Number;
-            DataTable dtError = ExecuteQueryTable(sSql);
-            if (dtError.Rows.Count > 0)
-            {
-                MessageBox.Show(dtError.Rows[0][1].ToString().Trim(), "Lỗi: " + ex.Number, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(ex.Message, "Lỗi: " + ex.Number, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        
+
         public void OpenDB(string sCon)
         {
-            try
-            {
-                mySqlConnection = new SqlConnection(sCon);
-                mySqlConnection.Open();
-            }
-            catch (SqlException ex)
-            {
-                DisplayError(ex);
-            }
+            mySqlConnection = new SqlConnection(sCon);
+            mySqlConnection.Open();
         }
-        
+
         public void CloseDB()
         {
-            try
-            {
-                mySqlConnection.Close();
-            }
-            catch (SqlException ex)
-            {
-                DisplayError(ex);
-            }
+            mySqlConnection.Close();
         }
 
         private void SetCommandText(string sSql)
@@ -76,47 +48,24 @@ namespace Shoppa
 
         public string ExecuteScalar(string sSql)
         {
-            try
-            {
-                SetCommandText(sSql);
-                return mySqlCommand.ExecuteScalar().ToString();
-            }
-            catch (SqlException ex)
-            {
-                DisplayError(ex);
-                return null;
-            }
+            SetCommandText(sSql);
+            object result = mySqlCommand.ExecuteScalar();
+            return result != null ? result.ToString() : "";
         }
 
         public int ExecuteNonQuery(string sSql)
         {
-            try
-            {
-                SetCommandText(sSql);
-                return mySqlCommand.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                DisplayError(ex);
-                return -1;
-            }
+            SetCommandText(sSql);
+            return mySqlCommand.ExecuteNonQuery();
         }
 
         public DataTable ExecuteQueryTable(string sSql)
         {
-            try
-            {
-                DataTable myDataTable = new DataTable();
-                SetCommandText(sSql);
-                myDataAdapter.SelectCommand = mySqlCommand;
-                myDataAdapter.Fill(myDataTable);
-                return myDataTable;
-            }
-            catch (SqlException ex)
-            {
-                DisplayError(ex);
-                return null;
-            }
+            DataTable myDataTable = new DataTable();
+            SetCommandText(sSql);
+            myDataAdapter.SelectCommand = mySqlCommand;
+            myDataAdapter.Fill(myDataTable);
+            return myDataTable;
         }
 
         public void GetCartID()
@@ -125,7 +74,7 @@ namespace Shoppa
             if (CartID == "")
             {
                 // Get new CartID
-                int orderCount = Convert.ToInt32(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
+                int orderCount = int.Parse(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
                 CartID = "DH" + (orderCount + 1).ToString("D8");
             }
             AddParamater("@CartID", CartID);
@@ -133,7 +82,7 @@ namespace Shoppa
 
         public bool CheckExist(string Table, string Paramater, string filter = null)
         {
-            string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater +  (filter != null ? " and " + filter : null);
+            string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater + (filter != null ? " and " + filter : null);
 
             return int.Parse(ExecuteScalar(sSql)) != 0;
         }

@@ -16,6 +16,7 @@ namespace Shoppa
     {
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
+        private frmPayment frmPayment;
 
         public uiCartView()
         {
@@ -89,7 +90,9 @@ namespace Shoppa
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-
+            frmPayment = new frmPayment();
+            frmPayment.Initialize(AccountID);
+            frmPayment.ShowDialog();
         }
     }
 }

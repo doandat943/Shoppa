@@ -416,7 +416,7 @@
             this.txtName.Padding = new System.Windows.Forms.Padding(3);
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtName.PlaceholderText = "Nguyễn Văn A";
+            this.txtName.PlaceholderText = "Đặng Trung Hưng";
             this.txtName.ReadOnly = false;
             this.txtName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtName.SelectedText = "";
@@ -430,7 +430,7 @@
             this.txtName.TextMarginBottom = 0;
             this.txtName.TextMarginLeft = 5;
             this.txtName.TextMarginTop = 0;
-            this.txtName.TextPlaceholder = "Nguyễn Văn A";
+            this.txtName.TextPlaceholder = "Đặng Trung Hưng";
             this.txtName.UseSystemPasswordChar = false;
             this.txtName.WordWrap = true;
             // 
