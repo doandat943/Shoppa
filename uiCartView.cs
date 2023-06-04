@@ -27,7 +27,6 @@ namespace Shoppa
         {
             this.AccountID = AccountID;
             mySqlServices.AddParamater("@AccountID", AccountID);
-            mySqlServices.GetCartID();
             Load();
         }
 
@@ -47,12 +46,12 @@ namespace Shoppa
 
         private void Load()
         {
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderDetail.ProductID, ProductName, Price, ProductImage, Quantity FROM dbo.OrderDetail\r\nJOIN dbo.Products ON Products.ProductID = OrderDetail.ProductID\r\nJOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE StatusID = 0 AND OrdererAccountID = @AccountID");
+            flowLayoutPanel1.Controls.Clear();
+            mySqlServices.GetCartID();
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderDetail.ProductID, ProductName, Price, ProductImage, Quantity FROM dbo.OrderDetail\r\nJOIN dbo.Products ON Products.ProductID = OrderDetail.ProductID\r\nJOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.OrderID = @CartID");
 
-            if (dataTable.Rows.Count > 0)
+            if (dataTable.Rows.Count != 0)
             {
-
-                flowLayoutPanel1.Controls.Clear();
                 foreach (DataRow row in dataTable.Rows)
                 {
                     pnCartItem cartItem = new pnCartItem();
@@ -93,6 +92,13 @@ namespace Shoppa
             frmPayment = new frmPayment();
             frmPayment.Initialize(AccountID);
             frmPayment.ShowDialog();
+            Load();
+        }
+
+        private void uiCartView_SizeChanged(object sender, EventArgs e)
+        {
+            btnPayment.Location = new Point(this.Size.Width - 216, btnPayment.Location.Y);
+            flowLayoutPanel1.Size = new Size(this.Width, this.Height - 74);
         }
     }
 }

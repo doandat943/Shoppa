@@ -45,6 +45,15 @@ namespace Shoppa
                 mySqlCommand.Parameters.AddWithValue(parameterName, parameterValue);
             }
         }
+        public string GetParameterValue(string parameterName)
+        {
+            if (mySqlCommand.Parameters.Contains(parameterName))
+            {
+                return mySqlCommand.Parameters[parameterName].Value.ToString();
+            }
+
+            return null;
+        }
 
         public string ExecuteScalar(string sSql)
         {
@@ -76,6 +85,8 @@ namespace Shoppa
                 // Get new CartID
                 int orderCount = int.Parse(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
                 CartID = "DH" + (orderCount + 1).ToString("D8");
+                AddParamater("@CartID", CartID);
+                ExecuteNonQuery("INSERT INTO Orders VALUES (@CartID, @AccountID, 0, GETDATE(), '0', NULL)");
             }
             AddParamater("@CartID", CartID);
         }

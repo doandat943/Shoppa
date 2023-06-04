@@ -65,11 +65,6 @@ namespace Shoppa
             AddToCart?.Invoke(this, new Tuple<string, string>(e.Item1, e.Item2));
         }
 
-        private void uiProductView_SizeChanged(object sender, EventArgs e)
-        {
-            flowLayoutPanel1.Height = this.Height - flowLayoutPanel4.Height;
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Load("ProductName LIKE N'%" + txtSearch.Text + "%'");
@@ -85,6 +80,11 @@ namespace Shoppa
             {
                 Load("CategoryID = " + cboCategoryFilter.SelectedValue);
             }
+        }
+
+        private void uiProductView_SizeChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Height = this.Height - flowLayoutPanel4.Height;
         }
     }
 }

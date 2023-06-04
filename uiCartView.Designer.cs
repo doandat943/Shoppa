@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uiCartView));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.btnPayment = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbPayment = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPayment
@@ -54,11 +56,11 @@
             this.btnPayment.ColorContrastOnClick = 45;
             this.btnPayment.ColorContrastOnHover = 45;
             this.btnPayment.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnPayment.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnPayment.CustomizableEdges = borderEdges1;
             this.btnPayment.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnPayment.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPayment.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -84,7 +86,7 @@
             this.btnPayment.IdleIconLeftImage = null;
             this.btnPayment.IdleIconRightImage = null;
             this.btnPayment.IndicateFocus = false;
-            this.btnPayment.Location = new System.Drawing.Point(454, 393);
+            this.btnPayment.Location = new System.Drawing.Point(451, 17);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnPayment.OnDisabledState.BorderRadius = 3;
@@ -140,24 +142,36 @@
             // 
             this.lbPayment.AutoSize = true;
             this.lbPayment.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPayment.Location = new System.Drawing.Point(33, 393);
+            this.lbPayment.Location = new System.Drawing.Point(23, 18);
             this.lbPayment.Name = "lbPayment";
             this.lbPayment.Size = new System.Drawing.Size(217, 37);
             this.lbPayment.TabIndex = 19;
             this.lbPayment.Text = "Tổng: 999.999₫";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.btnPayment);
+            this.panel1.Controls.Add(this.lbPayment);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 376);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(670, 74);
+            this.panel1.TabIndex = 20;
+            // 
             // uiCartView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbPayment);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.btnPayment);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "uiCartView";
             this.Size = new System.Drawing.Size(670, 450);
+            this.SizeChanged += new System.EventHandler(this.uiCartView_SizeChanged);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -166,5 +180,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPayment;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label lbPayment;
+        private System.Windows.Forms.Panel panel1;
     }
 }

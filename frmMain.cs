@@ -21,6 +21,7 @@ namespace Shoppa
         private uiProductView uiProductView;
         private uiProductDetail uiProductDetail;
         private uiCartView uiCartView;
+        private uiHistoryView uiHistoryView;
         private uiAccountView uiAccountView;
         private uiManageTool uiManageTool;
 
@@ -43,6 +44,10 @@ namespace Shoppa
             uiCartView = new uiCartView();
             uiCartView.Dock = DockStyle.Right;
             this.Controls.Add(uiCartView);
+
+            uiHistoryView = new uiHistoryView();
+            uiHistoryView.Dock = DockStyle.Right;
+            this.Controls.Add(uiHistoryView);
 
             uiAccountView = new uiAccountView();
             uiAccountView.Dock = DockStyle.Right;
@@ -135,7 +140,7 @@ namespace Shoppa
         {
             ColorButton((BunifuButton)sender);
 
-            uiCartView.Show();
+            uiHistoryView.Show();
         }
 
         private void btnAccountView_Click(object sender, EventArgs e)
@@ -159,19 +164,19 @@ namespace Shoppa
             this.Close();
         }
 
+        private void SetControlSize(Control control)
+        {
+            control.Size = new Size(this.ClientSize.Width - panel1.Width, this.ClientSize.Height - (control == uiManageTool ? panel1.Height : 0));
+        }
+
         private void frmMain_SizeChanged(object sender, EventArgs e)
         {
-            uiProductView.Width = this.ClientSize.Width - panel1.Width;
-            uiProductView.Height = this.ClientSize.Height;
-
-            uiProductDetail.Width = this.ClientSize.Width - panel1.Width;
-            uiProductDetail.Height = this.ClientSize.Height;
-
-            uiAccountView.Width = this.ClientSize.Width - panel1.Width;
-            uiAccountView.Height = this.ClientSize.Height;
-
-            uiManageTool.Width = this.ClientSize.Width - panel1.Width;
-            uiManageTool.Height = this.ClientSize.Height - panel1.Height;
+            SetControlSize(uiProductView);
+            SetControlSize(uiProductDetail);
+            SetControlSize(uiCartView);
+            SetControlSize(uiHistoryView);
+            SetControlSize(uiAccountView);
+            SetControlSize(uiManageTool);
         }
     }
 }
