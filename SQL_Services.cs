@@ -86,7 +86,7 @@ namespace Shoppa
                 int orderCount = int.Parse(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
                 CartID = "DH" + (orderCount + 1).ToString("D8");
                 AddParamater("@CartID", CartID);
-                ExecuteNonQuery("INSERT INTO Orders VALUES (@CartID, @AccountID, 0, GETDATE(), '0', NULL)");
+                ExecuteNonQuery("INSERT INTO Orders VALUES (@CartID, @AccountID, 0, GETDATE(), '0', NULL, NULL)");
             }
             AddParamater("@CartID", CartID);
         }

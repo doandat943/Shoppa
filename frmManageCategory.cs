@@ -61,7 +61,7 @@ namespace Shoppa
             SetControls(true);
 
             txtCategoryID.Text = (int.Parse(mySqlServices.ExecuteScalar("Select MAX(CategoryID) From Categories")) + 1).ToString();
-                                txtCategoryName.Clear();
+            txtCategoryName.Clear();
             txtProductCount.Text = "0";
             txtTotalQuantityInStock.Text = "0";
         }

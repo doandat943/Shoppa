@@ -1048,9 +1048,9 @@
             this.label1.Location = new System.Drawing.Point(14, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(135, 17);
             this.label1.TabIndex = 52;
-            this.label1.Text = "Thông tin:";
+            this.label1.Text = "Thông tin danh mục:";
             // 
             // flowLayoutPanel3
             // 

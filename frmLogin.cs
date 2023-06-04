@@ -50,18 +50,23 @@ namespace Shoppa
                 string AccountID = txtAccountID.Text;
                 mySqlServices.AddParamater("@AccountID", AccountID);
                 mySqlServices.AddParamater("@Password", txtPassword.Text);
-                int temp = int.Parse(mySqlServices.ExecuteScalar("Select COUNT(*) From Accounts Where AccountID = @AccountID and Password = @Password"));
-                if (temp != 0)
+                object result = mySqlServices.ExecuteScalar("SELECT RoleID FROM Accounts WHERE AccountID = @AccountID AND Password = @Password");
+                int temp = result != null ? Convert.ToInt32(result) : -2;
+                if (temp == -2)
+                {
+                    MessageBox.Show("Thông tin đăng nhập không chính xác. Vui lòng thử lại!!!");
+                }
+                else if (temp == -1)
+                {
+                    MessageBox.Show("Tài khoản của bạn đã bị đóng. Vui lòng liên hệ kĩ thuật của Shoppa để nhận được hỗ trợ!!!");
+                }
+                else
                 {
                     frmMain frmMain = new frmMain();
                     frmMain.Initialize(AccountID);
                     frmMain.FormClosed += frmMain_FormClosed;
                     this.Hide();
                     frmMain.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Thông tin đăng nhập không chính xác. Vui lòng thử lại!!!");
                 }
             }
         }

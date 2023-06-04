@@ -139,7 +139,8 @@ namespace Shoppa
         private void btnHistoryView_Click(object sender, EventArgs e)
         {
             ColorButton((BunifuButton)sender);
-
+            
+            uiHistoryView.Initialize(AccountID);
             uiHistoryView.Show();
         }
 

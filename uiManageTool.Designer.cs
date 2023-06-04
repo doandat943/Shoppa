@@ -42,14 +42,15 @@
             this.lbName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbRole = new System.Windows.Forms.Label();
+            this.btnManageCoupon = new Bunifu.Framework.UI.BunifuTileButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnManageAccount
             // 
-            this.btnManageAccount.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnManageAccount.color = System.Drawing.Color.SeaGreen;
-            this.btnManageAccount.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageAccount.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnManageAccount.color = System.Drawing.Color.BlueViolet;
+            this.btnManageAccount.colorActive = System.Drawing.Color.DarkViolet;
             this.btnManageAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageAccount.ForeColor = System.Drawing.Color.White;
@@ -67,9 +68,9 @@
             // 
             // btnManageProduct
             // 
-            this.btnManageProduct.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnManageProduct.color = System.Drawing.Color.SeaGreen;
-            this.btnManageProduct.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageProduct.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnManageProduct.color = System.Drawing.Color.BlueViolet;
+            this.btnManageProduct.colorActive = System.Drawing.Color.DarkViolet;
             this.btnManageProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageProduct.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageProduct.ForeColor = System.Drawing.Color.White;
@@ -78,7 +79,7 @@
             this.btnManageProduct.ImageZoom = 50;
             this.btnManageProduct.LabelPosition = 29;
             this.btnManageProduct.LabelText = "Mặt hàng";
-            this.btnManageProduct.Location = new System.Drawing.Point(166, 314);
+            this.btnManageProduct.Location = new System.Drawing.Point(164, 314);
             this.btnManageProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageProduct.Name = "btnManageProduct";
             this.btnManageProduct.Size = new System.Drawing.Size(100, 100);
@@ -87,9 +88,9 @@
             // 
             // btnManageCategory
             // 
-            this.btnManageCategory.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnManageCategory.color = System.Drawing.Color.SeaGreen;
-            this.btnManageCategory.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageCategory.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnManageCategory.color = System.Drawing.Color.BlueViolet;
+            this.btnManageCategory.colorActive = System.Drawing.Color.DarkViolet;
             this.btnManageCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageCategory.ForeColor = System.Drawing.Color.White;
@@ -98,7 +99,7 @@
             this.btnManageCategory.ImageZoom = 50;
             this.btnManageCategory.LabelPosition = 29;
             this.btnManageCategory.LabelText = "Danh mục";
-            this.btnManageCategory.Location = new System.Drawing.Point(296, 314);
+            this.btnManageCategory.Location = new System.Drawing.Point(298, 314);
             this.btnManageCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageCategory.Name = "btnManageCategory";
             this.btnManageCategory.Size = new System.Drawing.Size(100, 100);
@@ -107,9 +108,9 @@
             // 
             // btnManageOrder
             // 
-            this.btnManageOrder.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnManageOrder.color = System.Drawing.Color.SeaGreen;
-            this.btnManageOrder.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.btnManageOrder.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnManageOrder.color = System.Drawing.Color.BlueViolet;
+            this.btnManageOrder.colorActive = System.Drawing.Color.DarkViolet;
             this.btnManageOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageOrder.ForeColor = System.Drawing.Color.White;
@@ -203,7 +204,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbName.ForeColor = System.Drawing.Color.DarkViolet;
             this.lbName.Location = new System.Drawing.Point(85, 3);
             this.lbName.Margin = new System.Windows.Forms.Padding(3);
             this.lbName.Name = "lbName";
@@ -234,10 +235,31 @@
             this.lbRole.TabIndex = 27;
             this.lbRole.Text = "Quản lý";
             // 
+            // btnManageCoupon
+            // 
+            this.btnManageCoupon.BackColor = System.Drawing.Color.BlueViolet;
+            this.btnManageCoupon.color = System.Drawing.Color.BlueViolet;
+            this.btnManageCoupon.colorActive = System.Drawing.Color.DarkViolet;
+            this.btnManageCoupon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageCoupon.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageCoupon.ForeColor = System.Drawing.Color.White;
+            this.btnManageCoupon.Image = ((System.Drawing.Image)(resources.GetObject("btnManageCoupon.Image")));
+            this.btnManageCoupon.ImagePosition = 14;
+            this.btnManageCoupon.ImageZoom = 50;
+            this.btnManageCoupon.LabelPosition = 29;
+            this.btnManageCoupon.LabelText = "Mã giảm giá";
+            this.btnManageCoupon.Location = new System.Drawing.Point(432, 314);
+            this.btnManageCoupon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageCoupon.Name = "btnManageCoupon";
+            this.btnManageCoupon.Size = new System.Drawing.Size(100, 100);
+            this.btnManageCoupon.TabIndex = 27;
+            this.btnManageCoupon.Click += new System.EventHandler(this.btnManageCoupon_Click);
+            // 
             // uiManageTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnManageCoupon);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -272,5 +294,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbRole;
+        private Bunifu.Framework.UI.BunifuTileButton btnManageCoupon;
     }
 }

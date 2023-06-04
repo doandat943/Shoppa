@@ -52,7 +52,7 @@ namespace Shoppa
             dataGridView1.Enabled = !mode;
             btnAdd.Enabled = !mode;
             btnEdit.Enabled = !mode;
-            btnDelete.Enabled = !mode;
+            btnDelete.Enabled = false;
             btnSave.Enabled = mode;
             btnCancel.Enabled = mode;
 

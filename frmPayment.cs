@@ -64,6 +64,7 @@ namespace Shoppa
             }
 
             // Total
+            mySqlServices.AddParamater("@TotalAmount", total.ToString());
             lbCheckout.Text = total.ToString("N0") + "₫";
         }
 
@@ -138,7 +139,7 @@ namespace Shoppa
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            int temp = mySqlServices.ExecuteNonQuery("UPDATE dbo.Orders\r\nSET StatusID = 10\r\nWHERE OrderID = @CartID");
+            int temp = mySqlServices.ExecuteNonQuery("UPDATE dbo.Orders\r\nSET StatusID = 10, TotalAmount = @TotalAmount, OrderDate = GETDATE()\r\nWHERE OrderID = @CartID");
             if (temp != 0)
             {
                 MessageBox.Show("Đặt hàng thành công!!!");

@@ -42,6 +42,7 @@ namespace Shoppa
             this.AdminMode = AdminMode;
 
             if (AdminMode) cboRole.Enabled = true;
+            else btnCloseAccount.Visible = false;
 
             txtAccountID.Text = AccountID;
             mySqlServices.AddParamater("@AccountID", AccountID);
@@ -114,9 +115,9 @@ namespace Shoppa
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn xóa tài khoản chứ?", "Xóa tài khoản", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có chắc muốn đóng tài khoản chứ?", "Đóng tài khoản", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                mySqlServices.ExecuteNonQuery("Delete From Accounts Where AccountID = @AccountID");
+                mySqlServices.ExecuteNonQuery("UPDATE Accounts SET RoleID = -1 Where AccountID = @AccountID");
             }
         }
 

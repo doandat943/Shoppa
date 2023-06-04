@@ -14,12 +14,13 @@ namespace Shoppa
     public partial class uiManageTool : UserControl
     {
         private SQL_Services mySqlServices = new SQL_Services();
+        private string AccountID;
         private string RoleID;
-
         
         private frmManageAccount frmManageAccount;
         private frmManageProduct frmManageProduct;
         private frmManageCategory frmManageCategory;
+        private frmManageCoupon frmManageCoupon;
 
         public uiManageTool()
         {
@@ -28,13 +29,13 @@ namespace Shoppa
 
         public void Initialize(string AccountID)
         {
+            this.AccountID = AccountID;
             mySqlServices.AddParamater("@AccountID", AccountID);
 
             DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT Name, RoleName, Accounts.RoleID\r\nFROM Accounts\r\nJOIN dbo.Roles ON Roles.RoleID = Accounts.RoleID\r\nWHERE AccountID = @AccountID");
 
             if (dataTable.Rows.Count > 0)
             {
-
                 lbName.Text = dataTable.Rows[0][0].ToString();
                 lbRole.Text = dataTable.Rows[0][1].ToString();
                 RoleID = dataTable.Rows[0][2].ToString();
@@ -82,6 +83,20 @@ namespace Shoppa
             {
                 frmManageProduct = new frmManageProduct();
                 frmManageCategory.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này.");
+            }
+        }
+
+        private void btnManageCoupon_Click(object sender, EventArgs e)
+        {
+            if (RoleID == "3")
+            {
+                frmManageCoupon = new frmManageCoupon();
+                frmManageCoupon.Initialize(AccountID);
+                frmManageCoupon.ShowDialog();
             }
             else
             {
