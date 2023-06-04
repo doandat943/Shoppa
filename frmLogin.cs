@@ -51,7 +51,7 @@ namespace Shoppa
                 mySqlServices.AddParamater("@AccountID", AccountID);
                 mySqlServices.AddParamater("@Password", txtPassword.Text);
                 object result = mySqlServices.ExecuteScalar("SELECT RoleID FROM Accounts WHERE AccountID = @AccountID AND Password = @Password");
-                int temp = result != null ? Convert.ToInt32(result) : -2;
+                int temp = result != "" ? Convert.ToInt32(result) : -2;
                 if (temp == -2)
                 {
                     MessageBox.Show("Thông tin đăng nhập không chính xác. Vui lòng thử lại!!!");

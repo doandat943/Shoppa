@@ -14,6 +14,8 @@ namespace Shoppa
     public partial class pnHistoryItem : UserControl
     {
         private SQL_Services mySqlServices = new SQL_Services();
+        private frmRating frmRating;
+        private string OrderID;
 
         public pnHistoryItem()
         {
@@ -22,6 +24,7 @@ namespace Shoppa
 
         public void Initialize(string OrderID)
         {
+            this.OrderID = OrderID;
             mySqlServices.AddParamater("@OrderID", OrderID);
             Load();
         }
@@ -55,6 +58,13 @@ namespace Shoppa
                     flowLayoutPanel1.Controls.Add(productItem);
                 }
             }
+        }
+
+        private void btnRating_Click(object sender, EventArgs e)
+        {
+            frmRating = new frmRating();
+            frmRating.Initialize(OrderID);
+            frmRating.ShowDialog();
         }
     }
 }

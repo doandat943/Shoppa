@@ -51,6 +51,7 @@
             this.pbStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbStar2.TabIndex = 6;
             this.pbStar2.TabStop = false;
+            this.pbStar2.Click += new System.EventHandler(this.pbStar2_Click);
             // 
             // pbStar1
             // 
@@ -62,6 +63,7 @@
             this.pbStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbStar1.TabIndex = 5;
             this.pbStar1.TabStop = false;
+            this.pbStar1.Click += new System.EventHandler(this.pbStar1_Click);
             // 
             // pbStar3
             // 
@@ -73,6 +75,7 @@
             this.pbStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbStar3.TabIndex = 7;
             this.pbStar3.TabStop = false;
+            this.pbStar3.Click += new System.EventHandler(this.pbStar3_Click);
             // 
             // pbStar4
             // 
@@ -84,6 +87,7 @@
             this.pbStar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbStar4.TabIndex = 8;
             this.pbStar4.TabStop = false;
+            this.pbStar4.Click += new System.EventHandler(this.pbStar4_Click);
             // 
             // pbStar5
             // 
@@ -95,8 +99,9 @@
             this.pbStar5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbStar5.TabIndex = 9;
             this.pbStar5.TabStop = false;
+            this.pbStar5.Click += new System.EventHandler(this.pbStar5_Click);
             // 
-            // StarPanel
+            // pnRatingStar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +110,7 @@
             this.Controls.Add(this.pbStar3);
             this.Controls.Add(this.pbStar2);
             this.Controls.Add(this.pbStar1);
-            this.Name = "StarPanel";
+            this.Name = "pnRatingStar";
             this.Size = new System.Drawing.Size(155, 31);
             ((System.ComponentModel.ISupportInitialize)(this.pbStar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStar1)).EndInit();

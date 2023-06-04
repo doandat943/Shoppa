@@ -87,7 +87,7 @@ namespace Shoppa
         {
             mySqlServices.AddParamater("@CategoryName", txtCategoryName.Text);
 
-            if (newMode == true)
+            if (newMode)
             {
                 if (mySqlServices.CheckExist("Categories", "CategoryName"))
                 {

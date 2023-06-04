@@ -41,6 +41,10 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -51,22 +55,21 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtCouponID = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtCreatorAccountID = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtDiscount = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.cboCouponType = new System.Windows.Forms.ComboBox();
+            this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.txtUsedCount = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtCouponName = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.cboCouponType = new System.Windows.Forms.ComboBox();
             this.btnCancel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnClose = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -75,9 +78,6 @@
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bunifuDatePicker1 = new Bunifu.UI.WinForms.BunifuDatePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtUsedCount = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +115,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(356, 254);
             this.tableLayoutPanel2.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 222);
+            this.label8.Margin = new System.Windows.Forms.Padding(5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(136, 17);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Số lần được sử dụng:";
             // 
             // txtCouponID
             // 
@@ -236,28 +247,6 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Hạn sử dụng:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 17);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Loại:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 78);
-            this.label3.Margin = new System.Windows.Forms.Padding(5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 17);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Tên mã giảm giá:";
-            // 
             // txtCreatorAccountID
             // 
             this.txtCreatorAccountID.AcceptsReturn = false;
@@ -317,7 +306,7 @@
             this.txtCreatorAccountID.Padding = new System.Windows.Forms.Padding(3);
             this.txtCreatorAccountID.PasswordChar = '\0';
             this.txtCreatorAccountID.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtCreatorAccountID.PlaceholderText = "3";
+            this.txtCreatorAccountID.PlaceholderText = "admin";
             this.txtCreatorAccountID.ReadOnly = false;
             this.txtCreatorAccountID.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCreatorAccountID.SelectedText = "";
@@ -331,7 +320,7 @@
             this.txtCreatorAccountID.TextMarginBottom = 0;
             this.txtCreatorAccountID.TextMarginLeft = 5;
             this.txtCreatorAccountID.TextMarginTop = 0;
-            this.txtCreatorAccountID.TextPlaceholder = "3";
+            this.txtCreatorAccountID.TextPlaceholder = "admin";
             this.txtCreatorAccountID.UseSystemPasswordChar = false;
             this.txtCreatorAccountID.WordWrap = true;
             // 
@@ -411,16 +400,129 @@
             this.txtDiscount.UseSystemPasswordChar = false;
             this.txtDiscount.WordWrap = true;
             // 
-            // cboCouponType
+            // bunifuDatePicker1
             // 
-            this.cboCouponType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCouponType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCouponType.FormattingEnabled = true;
-            this.cboCouponType.Location = new System.Drawing.Point(181, 40);
-            this.cboCouponType.Name = "cboCouponType";
-            this.cboCouponType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cboCouponType.Size = new System.Drawing.Size(171, 25);
-            this.cboCouponType.TabIndex = 3;
+            this.bunifuDatePicker1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDatePicker1.BorderColor = System.Drawing.Color.Silver;
+            this.bunifuDatePicker1.BorderRadius = 1;
+            this.bunifuDatePicker1.Color = System.Drawing.Color.Silver;
+            this.bunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.bunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.bunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDatePicker1.DisplayWeekNumbers = false;
+            this.bunifuDatePicker1.DPHeight = 0;
+            this.bunifuDatePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.bunifuDatePicker1.FillDatePicker = false;
+            this.bunifuDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuDatePicker1.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePicker1.Icon")));
+            this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
+            this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.bunifuDatePicker1.LeftTextMargin = 5;
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(181, 112);
+            this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
+            this.bunifuDatePicker1.Name = "bunifuDatePicker1";
+            this.bunifuDatePicker1.Size = new System.Drawing.Size(171, 32);
+            this.bunifuDatePicker1.TabIndex = 25;
+            // 
+            // txtUsedCount
+            // 
+            this.txtUsedCount.AcceptsReturn = false;
+            this.txtUsedCount.AcceptsTab = false;
+            this.txtUsedCount.AnimationSpeed = 200;
+            this.txtUsedCount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtUsedCount.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtUsedCount.AutoSizeHeight = true;
+            this.txtUsedCount.BackColor = System.Drawing.Color.Transparent;
+            this.txtUsedCount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUsedCount.BackgroundImage")));
+            this.txtUsedCount.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtUsedCount.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
+            this.txtUsedCount.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtUsedCount.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtUsedCount.BorderRadius = 1;
+            this.txtUsedCount.BorderThickness = 1;
+            this.txtUsedCount.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
+            this.txtUsedCount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtUsedCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsedCount.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.txtUsedCount.DefaultText = "";
+            this.txtUsedCount.Enabled = false;
+            this.txtUsedCount.FillColor = System.Drawing.Color.White;
+            this.txtUsedCount.HideSelection = true;
+            this.txtUsedCount.IconLeft = null;
+            this.txtUsedCount.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsedCount.IconPadding = 10;
+            this.txtUsedCount.IconRight = null;
+            this.txtUsedCount.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsedCount.Lines = new string[0];
+            this.txtUsedCount.Location = new System.Drawing.Point(181, 220);
+            this.txtUsedCount.MaxLength = 10;
+            this.txtUsedCount.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtUsedCount.Modified = false;
+            this.txtUsedCount.Multiline = false;
+            this.txtUsedCount.Name = "txtUsedCount";
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsedCount.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.Empty;
+            stateProperties14.FillColor = System.Drawing.Color.White;
+            stateProperties14.ForeColor = System.Drawing.Color.Empty;
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtUsedCount.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsedCount.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtUsedCount.OnIdleState = stateProperties16;
+            this.txtUsedCount.Padding = new System.Windows.Forms.Padding(3);
+            this.txtUsedCount.PasswordChar = '\0';
+            this.txtUsedCount.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtUsedCount.PlaceholderText = "3";
+            this.txtUsedCount.ReadOnly = false;
+            this.txtUsedCount.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUsedCount.SelectedText = "";
+            this.txtUsedCount.SelectionLength = 0;
+            this.txtUsedCount.SelectionStart = 0;
+            this.txtUsedCount.ShortcutsEnabled = true;
+            this.txtUsedCount.Size = new System.Drawing.Size(171, 29);
+            this.txtUsedCount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtUsedCount.TabIndex = 27;
+            this.txtUsedCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUsedCount.TextMarginBottom = 0;
+            this.txtUsedCount.TextMarginLeft = 5;
+            this.txtUsedCount.TextMarginTop = 0;
+            this.txtUsedCount.TextPlaceholder = "3";
+            this.txtUsedCount.UseSystemPasswordChar = false;
+            this.txtUsedCount.WordWrap = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 78);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 17);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Tên mã giảm giá:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 17);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Loại:";
             // 
             // txtCouponName
             // 
@@ -497,6 +599,17 @@
             this.txtCouponName.TextPlaceholder = "iPhone 15 Ultra";
             this.txtCouponName.UseSystemPasswordChar = false;
             this.txtCouponName.WordWrap = true;
+            // 
+            // cboCouponType
+            // 
+            this.cboCouponType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCouponType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCouponType.FormattingEnabled = true;
+            this.cboCouponType.Location = new System.Drawing.Point(181, 40);
+            this.cboCouponType.Name = "cboCouponType";
+            this.cboCouponType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cboCouponType.Size = new System.Drawing.Size(171, 25);
+            this.cboCouponType.TabIndex = 3;
             // 
             // btnCancel
             // 
@@ -1080,118 +1193,6 @@
             this.dataGridView1.TabIndex = 54;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
-            // bunifuDatePicker1
-            // 
-            this.bunifuDatePicker1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDatePicker1.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuDatePicker1.BorderRadius = 1;
-            this.bunifuDatePicker1.Color = System.Drawing.Color.Silver;
-            this.bunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
-            this.bunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
-            this.bunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDatePicker1.DisplayWeekNumbers = false;
-            this.bunifuDatePicker1.DPHeight = 0;
-            this.bunifuDatePicker1.FillDatePicker = false;
-            this.bunifuDatePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuDatePicker1.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDatePicker1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePicker1.Icon")));
-            this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
-            this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
-            this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(181, 112);
-            this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(0, 32);
-            this.bunifuDatePicker1.Name = "bunifuDatePicker1";
-            this.bunifuDatePicker1.Size = new System.Drawing.Size(171, 32);
-            this.bunifuDatePicker1.TabIndex = 25;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 222);
-            this.label8.Margin = new System.Windows.Forms.Padding(5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(136, 17);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Số lần được sử dụng:";
-            // 
-            // txtUsedCount
-            // 
-            this.txtUsedCount.AcceptsReturn = false;
-            this.txtUsedCount.AcceptsTab = false;
-            this.txtUsedCount.AnimationSpeed = 200;
-            this.txtUsedCount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtUsedCount.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtUsedCount.AutoSizeHeight = true;
-            this.txtUsedCount.BackColor = System.Drawing.Color.Transparent;
-            this.txtUsedCount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUsedCount.BackgroundImage")));
-            this.txtUsedCount.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtUsedCount.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
-            this.txtUsedCount.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtUsedCount.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtUsedCount.BorderRadius = 1;
-            this.txtUsedCount.BorderThickness = 1;
-            this.txtUsedCount.CharacterCase = Bunifu.UI.WinForms.BunifuTextBox.CharacterCases.Normal;
-            this.txtUsedCount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtUsedCount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsedCount.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.txtUsedCount.DefaultText = "";
-            this.txtUsedCount.Enabled = false;
-            this.txtUsedCount.FillColor = System.Drawing.Color.White;
-            this.txtUsedCount.HideSelection = true;
-            this.txtUsedCount.IconLeft = null;
-            this.txtUsedCount.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsedCount.IconPadding = 10;
-            this.txtUsedCount.IconRight = null;
-            this.txtUsedCount.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsedCount.Lines = new string[0];
-            this.txtUsedCount.Location = new System.Drawing.Point(181, 220);
-            this.txtUsedCount.MaxLength = 10;
-            this.txtUsedCount.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtUsedCount.Modified = false;
-            this.txtUsedCount.Multiline = false;
-            this.txtUsedCount.Name = "txtUsedCount";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsedCount.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.Empty;
-            stateProperties14.FillColor = System.Drawing.Color.White;
-            stateProperties14.ForeColor = System.Drawing.Color.Empty;
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtUsedCount.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsedCount.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtUsedCount.OnIdleState = stateProperties16;
-            this.txtUsedCount.Padding = new System.Windows.Forms.Padding(3);
-            this.txtUsedCount.PasswordChar = '\0';
-            this.txtUsedCount.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtUsedCount.PlaceholderText = "3";
-            this.txtUsedCount.ReadOnly = false;
-            this.txtUsedCount.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUsedCount.SelectedText = "";
-            this.txtUsedCount.SelectionLength = 0;
-            this.txtUsedCount.SelectionStart = 0;
-            this.txtUsedCount.ShortcutsEnabled = true;
-            this.txtUsedCount.Size = new System.Drawing.Size(171, 29);
-            this.txtUsedCount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtUsedCount.TabIndex = 27;
-            this.txtUsedCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtUsedCount.TextMarginBottom = 0;
-            this.txtUsedCount.TextMarginLeft = 5;
-            this.txtUsedCount.TextMarginTop = 0;
-            this.txtUsedCount.TextPlaceholder = "3";
-            this.txtUsedCount.UseSystemPasswordChar = false;
-            this.txtUsedCount.WordWrap = true;
-            // 
             // frmManageCoupon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1206,7 +1207,10 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmManageCoupon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý mã giảm giá";
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

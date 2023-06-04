@@ -30,7 +30,7 @@ namespace Shoppa
         private void Load()
         {
             flowLayoutPanel1.Controls.Clear();
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderID\r\nFROM dbo.Orders\r\nWHERE OrdererAccountID = @AccountID AND StatusID <> 0");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderID\r\nFROM dbo.Orders\r\nWHERE OrdererAccountID = @AccountID AND StatusID <> 0\r\nORDER BY OrderID DESC");
 
             if (dataTable.Rows.Count != 0)
             {

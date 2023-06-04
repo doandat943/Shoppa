@@ -14,14 +14,13 @@ namespace Shoppa
     {
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
-        private string CouponID;
         private bool newMode;
 
         public frmManageCoupon()
         {
             InitializeComponent();
-            
-            DataTable dtCouponType = mySqlServices.ExecuteQueryTable("Select * From CouponType"); 
+
+            DataTable dtCouponType = mySqlServices.ExecuteQueryTable("Select * From CouponType");
             cboCouponType.DataSource = dtCouponType;
             cboCouponType.DisplayMember = "CouponTypeName";
             cboCouponType.ValueMember = "CouponTypeID";
@@ -62,9 +61,7 @@ namespace Shoppa
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            CouponID = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-            txtCouponID.Text = CouponID;
+            txtCouponID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             cboCouponType.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[1].Value;
             txtCouponName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             bunifuDatePicker1.Value = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
@@ -91,6 +88,7 @@ namespace Shoppa
         {
             newMode = false;
             SetControls(true);
+            txtCouponID.Enabled = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -99,17 +97,41 @@ namespace Shoppa
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            mySqlServices.AddParamater("@CouponID", txtCouponID.Text);
+            mySqlServices.AddParamater("@CouponTypeID", cboCouponType.SelectedValue.ToString());
+            mySqlServices.AddParamater("@CouponName", txtCouponName.Text);
+            mySqlServices.AddParamater("@ExpireDate", bunifuDatePicker1.Value.ToString("yyyy/MM/dd"));
+            mySqlServices.AddParamater("@Discount", txtDiscount.Text);
+            mySqlServices.AddParamater("@CreatorAccountID", txtCreatorAccountID.Text);
 
+            if (newMode)
+            {
+                if (mySqlServices.CheckExist("Coupons", "CouponID"))
+                {
+                    MessageBox.Show("Mã giảm giá: \"" + txtCouponID.Text + "\" đã tồn tại. Vui lòng nhập Mã giảm giá khác");
+                    txtCouponID.Focus();
+                }
+                else
+                {
+                    mySqlServices.ExecuteNonQuery("Insert Into Coupons Values (@CouponID, @CouponTypeID, @CouponName, @ExpireDate, @Discount, @CreatorAccountID)");
+                }
+            }
+            else
+            {
+                mySqlServices.ExecuteNonQuery("Update Coupons Set CouponTypeID = @CouponTypeID, CouponName = @CouponName, ExpireDate = @ExpireDate, Discount = @Discount Where CouponID = @CouponID");
+            }
+
+            Load();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Load();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
