@@ -105,7 +105,7 @@ namespace Shoppa
         private void btnCoupon_Click(object sender, EventArgs e)
         {
             mySqlServices.AddParamater("@CouponID", txtCoupon.Text);
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select CouponName, Discount, CouponType\r\nFROM Coupons\r\nWHERE CouponID = @CouponID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("Select CouponName, Discount, CouponTypeID\r\nFROM Coupons\r\nWHERE CouponID = @CouponID");
 
             if (dataTable.Rows.Count > 0)
             {
