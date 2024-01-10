@@ -20,10 +20,33 @@ namespace Shoppa
         {
             InitializeComponent();
 
-            DataTable dtCouponType = mySqlServices.ExecuteQueryTable("Select * From CouponType");
-            cboCouponType.DataSource = dtCouponType;
-            cboCouponType.DisplayMember = "CouponTypeName";
-            cboCouponType.ValueMember = "CouponTypeID";
+            List<DataSource> dataSourceList = new List<DataSource>
+{
+    new DataSource("Giảm giá đơn hàng", 0),
+    new DataSource("Giảm phí vận chuyển", 1)
+};
+
+            cboCouponType.DataSource = dataSourceList;
+            cboCouponType.DisplayMember = "Text";
+            cboCouponType.ValueMember = "Value";
+
+        }
+
+        public class DataSource
+        {
+            public string Text { get; set; }
+            public int Value { get; set; }
+
+            public DataSource(string text, int value)
+            {
+                Text = text;
+                Value = value;
+            }
+
+            public override string ToString()
+            {
+                return Text;
+            }
         }
 
         public void Initialize(string AccountID)
@@ -36,7 +59,7 @@ namespace Shoppa
 
         private void Load(string filter = null)
         {
-            string sSQL = "SELECT Coupons.CouponID, CouponTypeID, CouponName, ExpireDate, Discount, CreatorAccountID, COUNT(Coupons.CouponID) AS UsedCount\r\nFROM dbo.Coupons\r\nLEFT JOIN dbo.Orders ON Orders.CouponID = Coupons.CouponID\r\nGROUP BY  Coupons.CouponID, CouponTypeID, CouponName, ExpireDate, Discount, CreatorAccountID";
+            string sSQL = "SELECT Coupons.CouponID, CouponType, CouponName, ExpireDate, Discount, CreatorAccountID, COUNT(Coupons.CouponID) AS UsedCount\r\nFROM Coupons\r\nLEFT JOIN Orders ON Orders.CouponID = Coupons.CouponID\r\nGROUP BY  Coupons.CouponID, CouponType, CouponName, ExpireDate, Discount, CreatorAccountID";
             dataGridView1.DataSource = mySqlServices.ExecuteQueryTable(sSQL);
             SetControls(false);
         }
@@ -98,7 +121,7 @@ namespace Shoppa
         private void btnSave_Click(object sender, EventArgs e)
         {
             mySqlServices.AddParamater("@CouponID", txtCouponID.Text);
-            mySqlServices.AddParamater("@CouponTypeID", cboCouponType.SelectedValue.ToString());
+            mySqlServices.AddParamater("@CouponType", cboCouponType.SelectedValue.ToString());
             mySqlServices.AddParamater("@CouponName", txtCouponName.Text);
             mySqlServices.AddParamater("@ExpireDate", bunifuDatePicker1.Value.ToString("yyyy/MM/dd"));
             mySqlServices.AddParamater("@Discount", txtDiscount.Text);
@@ -113,12 +136,12 @@ namespace Shoppa
                 }
                 else
                 {
-                    mySqlServices.ExecuteNonQuery("Insert Into Coupons Values (@CouponID, @CouponTypeID, @CouponName, @ExpireDate, @Discount, @CreatorAccountID)");
+                    mySqlServices.ExecuteNonQuery("Insert Into Coupons Values (@CouponID, @CouponType, @CouponName, @ExpireDate, @Discount, @CreatorAccountID)");
                 }
             }
             else
             {
-                mySqlServices.ExecuteNonQuery("Update Coupons Set CouponTypeID = @CouponTypeID, CouponName = @CouponName, ExpireDate = @ExpireDate, Discount = @Discount Where CouponID = @CouponID");
+                mySqlServices.ExecuteNonQuery("Update Coupons Set CouponType = @CouponType, CouponName = @CouponName, ExpireDate = @ExpireDate, Discount = @Discount Where CouponID = @CouponID");
             }
 
             Load();

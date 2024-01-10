@@ -32,7 +32,7 @@ namespace Shoppa
 
         public void Load()
         {
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT StatusName, TotalAmount\r\nFROM dbo.Orders\r\nJOIN dbo.Status ON Status.StatusID = Orders.StatusID\r\nWHERE OrderID = @OrderID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT StatusName, TotalAmount\r\nFROM Orders\r\nJOIN Status ON Status.StatusID = Orders.StatusID\r\nWHERE OrderID = @OrderID");
 
             if (dataTable.Rows.Count > 0)
             {
@@ -40,7 +40,7 @@ namespace Shoppa
                 lbTotalAmount.Text = Convert.ToInt32(dataTable.Rows[0][1]).ToString("N0") + "₫";
             }
 
-            dataTable = mySqlServices.ExecuteQueryTable("SELECT Products.ProductID, ProductName, Price, dbo.OrderDetail.Quantity, ProductImage \r\nFROM Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.OrderID = @OrderID");
+            dataTable = mySqlServices.ExecuteQueryTable("SELECT Products.ProductID, ProductName, Price, OrderDetail.Quantity, ProductImage \r\nFROM Products\r\nLEFT JOIN OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.OrderID = @OrderID");
 
             if (dataTable.Rows.Count > 0)
             {

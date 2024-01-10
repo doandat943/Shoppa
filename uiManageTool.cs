@@ -32,7 +32,7 @@ namespace Shoppa
             this.AccountID = AccountID;
             mySqlServices.AddParamater("@AccountID", AccountID);
 
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT Name, RoleName, Accounts.RoleID\r\nFROM Accounts\r\nJOIN dbo.Roles ON Roles.RoleID = Accounts.RoleID\r\nWHERE AccountID = @AccountID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT Name, RoleName, Accounts.RoleID\r\nFROM Accounts\r\nJOIN Roles ON Roles.RoleID = Accounts.RoleID\r\nWHERE AccountID = @AccountID");
 
             if (dataTable.Rows.Count > 0)
             {
@@ -81,7 +81,7 @@ namespace Shoppa
         {
             if (RoleID == "3")
             {
-                frmManageProduct = new frmManageProduct();
+                frmManageCategory = new frmManageCategory();
                 frmManageCategory.ShowDialog();
             }
             else

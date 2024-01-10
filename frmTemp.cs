@@ -17,14 +17,6 @@ namespace Shoppa
         public frmTemp()
         {
             InitializeComponent();
-
-            mySqlServices.OpenDB("Data Source=MACBOOK\\SQLEXPRESS;Initial Catalog=Shoppa;Integrated Security=True");
-
-            uiProductDetail uiProductDetail = new uiProductDetail();
-            uiProductDetail.Initialize("SP00000001");
-            this.Controls.Add(uiProductDetail);
-            this.AutoSize = true;
-            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
     }
 }

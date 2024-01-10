@@ -8,18 +8,19 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySqlConnector;
 
 namespace Shoppa
 {
     internal class SQL_Services
     {
-        private static SqlConnection mySqlConnection;
-        private SqlDataAdapter myDataAdapter = new SqlDataAdapter();
-        private SqlCommand mySqlCommand = new SqlCommand();
+        private static MySqlConnection mySqlConnection;
+        private MySqlDataAdapter myDataAdapter = new MySqlDataAdapter();
+        private MySqlCommand mySqlCommand = new MySqlCommand();
 
         public void OpenDB(string sCon)
         {
-            mySqlConnection = new SqlConnection(sCon);
+            mySqlConnection = new MySqlConnection(sCon);
             mySqlConnection.Open();
         }
 

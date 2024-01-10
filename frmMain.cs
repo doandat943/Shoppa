@@ -84,7 +84,7 @@ namespace Shoppa
             lbAccountID.Text = AccountID;
 
             mySqlServices.AddParamater("@AccountID", AccountID);
-            if (mySqlServices.ExecuteScalar("SELECT RoleID\r\nFROM dbo.Accounts\r\nWHERE AccountID = @AccountID") == "0")
+            if (mySqlServices.ExecuteScalar("SELECT RoleID\r\nFROM Accounts\r\nWHERE AccountID = @AccountID") == "0")
             {
                 btnManageTool.Dispose();
             }

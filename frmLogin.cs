@@ -19,7 +19,7 @@ namespace Shoppa
         {
             InitializeComponent();
             
-            mySqlServices.OpenDB("Data Source=MACBOOK\\SQLEXPRESS;Initial Catalog=Shoppa;Integrated Security=True");
+            mySqlServices.OpenDB("Server=cloud.joverse.me;Port=3001;Database=Shoppa;Uid=root;Pwd=kinhvanhoa0;");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

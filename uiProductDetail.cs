@@ -26,7 +26,7 @@ namespace Shoppa
             this.ProductID = ProductID;
             mySqlServices.AddParamater("@ProductID", ProductID);
 
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, ISNULL(SUM(CASE WHEN Orders.StatusID = 40 THEN OrderDetail.Quantity ELSE 0 END), 0) AS Sold, Price, UnitName, ProductInfo, ProductImage\r\nFROM Products\r\nLEFT JOIN dbo.OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN dbo.Units ON Units.UnitID = Products.UnitID\r\nLEFT JOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Products.ProductID = @ProductID\r\nGROUP BY ProductName, Price, UnitName, ProductInfo, ProductImage");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, COALESCE(SUM(CASE WHEN Orders.StatusID = 40 THEN OrderDetail.Quantity ELSE 0 END), 0) AS Sold, Price, UnitName, ProductInfo, ProductImage\r\nFROM Products\r\nLEFT JOIN OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN Units ON Units.UnitID = Products.UnitID\r\nLEFT JOIN Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Products.ProductID = @ProductID\r\nGROUP BY ProductName, Price, UnitName, ProductInfo, ProductImage");
 
             if (dataTable.Rows.Count > 0)
             {

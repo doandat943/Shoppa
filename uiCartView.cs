@@ -48,7 +48,7 @@ namespace Shoppa
         {
             flowLayoutPanel1.Controls.Clear();
             mySqlServices.GetCartID();
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderDetail.ProductID, ProductName, Price, ProductImage, Quantity FROM dbo.OrderDetail\r\nJOIN dbo.Products ON Products.ProductID = OrderDetail.ProductID\r\nJOIN dbo.Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.OrderID = @CartID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderDetail.ProductID, ProductName, Price, ProductImage, Quantity FROM OrderDetail\r\nJOIN Products ON Products.ProductID = OrderDetail.ProductID\r\nJOIN Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.OrderID = @CartID");
 
             if (dataTable.Rows.Count != 0)
             {
@@ -73,7 +73,7 @@ namespace Shoppa
         private void cartItem_ClickOnDelete(object sender, string ProductID)
         {
             mySqlServices.AddParamater("@ProductID", ProductID);
-            mySqlServices.ExecuteNonQuery("DELETE FROM dbo.OrderDetail\r\nWHERE OrderID = @CartID AND ProductID = @ProductID");
+            mySqlServices.ExecuteNonQuery("DELETE FROM OrderDetail\r\nWHERE OrderID = @CartID AND ProductID = @ProductID");
             pnCartItem cartItem = (pnCartItem)sender;
             flowLayoutPanel1.Controls.Remove(cartItem);
             Cart_Checkout();
@@ -83,7 +83,7 @@ namespace Shoppa
         {
             mySqlServices.AddParamater("@ProductID", e.Item1);
             mySqlServices.AddParamater("@Quantity", e.Item2);
-            mySqlServices.ExecuteNonQuery("UPDATE dbo.OrderDetail\r\nSET Quantity = @Quantity\r\nWHERE OrderID = @CartID AND ProductID = @ProductID");
+            mySqlServices.ExecuteNonQuery("UPDATE OrderDetail\r\nSET Quantity = @Quantity\r\nWHERE OrderID = @CartID AND ProductID = @ProductID");
             Cart_Checkout();
         }
 

@@ -31,7 +31,7 @@ namespace Shoppa
         {
             mySqlServices.AddParamater("@Star", pnRatingStar1.Get_StarValue.ToString());
             mySqlServices.AddParamater("@Comment", txtProductInfo.Text);
-            mySqlServices.ExecuteNonQuery("EXEC dbo.AddRatingForOrder @OrderID, @Star, @Comment");
+            mySqlServices.ExecuteNonQuery("EXEC AddRatingForOrder @OrderID, @Star, @Comment");
             MessageBox.Show("Đánh giá thành công");
             this.Close();
         }
