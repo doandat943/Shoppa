@@ -43,7 +43,7 @@
             this.txtAccountID = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtPassword = new Bunifu.UI.WinForms.BunifuTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.cbShowPassword = new System.Windows.Forms.CheckBox();
@@ -428,7 +428,7 @@
         private Bunifu.UI.WinForms.BunifuTextBox txtAccountID;
         private Bunifu.UI.WinForms.BunifuTextBox txtPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
         private System.Windows.Forms.CheckBox cbShowPassword;
