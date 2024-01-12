@@ -18,5 +18,17 @@ namespace Shoppa
         {
             set => lbComment.Text = value;
         }
+
+        public int Set_Star
+        {
+            set => pnRatingStar.Set_StarValue(value);
+        }
+
+
+        public string Set_Avatar
+        {
+            set => pbAvatar.ImageLocation = value;
+        }
+
     }
 }

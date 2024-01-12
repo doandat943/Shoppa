@@ -97,6 +97,20 @@ namespace Shoppa
             }
         }
 
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            if (RoleID == "3")
+            {
+                ClickOnStatistic?.Invoke(this, EventArgs.Empty);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này.");
+            }
+        }
+
+        public event EventHandler ClickOnStatistic;
+
         private void uiManageTool_SizeChanged(object sender, EventArgs e)
         {
             bunifuSeparator1.Width = this.Width;

@@ -9,7 +9,6 @@ namespace Shoppa
     {
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
-        private string CartID;
 
         private uiProductView uiProductView;
         private uiProductDetail uiProductDetail;
@@ -17,6 +16,7 @@ namespace Shoppa
         private uiHistoryView uiHistoryView;
         private uiAccountView uiAccountView;
         private uiManageTool uiManageTool;
+        private uiStatistic uiStatistic;
 
         public frmMain()
         {
@@ -47,8 +47,13 @@ namespace Shoppa
             this.Controls.Add(uiAccountView);
 
             uiManageTool = new uiManageTool();
+            uiManageTool.ClickOnStatistic += uiManageTool_ClickOnStatistic;
             uiManageTool.Dock = DockStyle.Right;
             this.Controls.Add(uiManageTool);
+
+            uiStatistic = new uiStatistic();
+            uiStatistic.Dock = DockStyle.Right;
+            this.Controls.Add(uiStatistic);
         }
 
         private void productItem_ClickOnProduct(object sender, string ProductID)
@@ -69,6 +74,12 @@ namespace Shoppa
             {
                 MessageBox.Show("Thêm mặt hàng vào giỏ thành công. Số lượng: " + e.Item2);
             }
+        }
+
+        private void uiManageTool_ClickOnStatistic(object sender, EventArgs e)
+        {
+            uiStatistic.Load();
+            uiStatistic.Show();
         }
 
         public void Initialize(string AccountID)

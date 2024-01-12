@@ -44,6 +44,7 @@
             this.lbUnit = new System.Windows.Forms.Label();
             this.lbSold = new System.Windows.Forms.Label();
             this.txtProductInfo = new System.Windows.Forms.TextBox();
+            this.pnRatingStar = new Shoppa.pnRatingStar();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +103,7 @@
             this.btnSubtractQuantity.TabIndex = 30;
             this.btnSubtractQuantity.Text = "-";
             this.btnSubtractQuantity.UseVisualStyleBackColor = true;
+            this.btnSubtractQuantity.Click += new System.EventHandler(this.btnSubtractQuantity_Click);
             // 
             // lbProductName
             // 
@@ -121,6 +123,7 @@
             this.btnAddQuantity.TabIndex = 29;
             this.btnAddQuantity.Text = "+";
             this.btnAddQuantity.UseVisualStyleBackColor = true;
+            this.btnAddQuantity.Click += new System.EventHandler(this.btnAddQuantity_Click);
             // 
             // lbPrice
             // 
@@ -234,6 +237,7 @@
             this.btnAddToCart.TextMarginLeft = 0;
             this.btnAddToCart.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnAddToCart.UseDefaultRadiusAndThickness = true;
+            this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // lbUnit
             // 
@@ -257,6 +261,7 @@
             // 
             // txtProductInfo
             // 
+            this.txtProductInfo.Enabled = false;
             this.txtProductInfo.Location = new System.Drawing.Point(15, 304);
             this.txtProductInfo.Multiline = true;
             this.txtProductInfo.Name = "txtProductInfo";
@@ -264,11 +269,19 @@
             this.txtProductInfo.TabIndex = 26;
             this.txtProductInfo.Text = "- ABC\r\n- Sản phẩm này bla, bla\r\n";
             // 
+            // pnRatingStar
+            // 
+            this.pnRatingStar.Location = new System.Drawing.Point(244, 179);
+            this.pnRatingStar.Name = "pnRatingStar";
+            this.pnRatingStar.Size = new System.Drawing.Size(155, 31);
+            this.pnRatingStar.TabIndex = 35;
+            // 
             // uiProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.pnRatingStar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -308,5 +321,6 @@
         private System.Windows.Forms.Label lbUnit;
         private System.Windows.Forms.Label lbSold;
         private System.Windows.Forms.TextBox txtProductInfo;
+        private pnRatingStar pnRatingStar;
     }
 }

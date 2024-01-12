@@ -28,23 +28,20 @@ namespace Shoppa
 
         public void Set_StarValue(int StarValue)
         {
-            if (ratingMode)
+            this.StarValue = 0;
+            foreach (KeyValuePair<PictureBox, bool> control in picDictionary)
             {
-                this.StarValue = 0;
-                foreach (KeyValuePair<PictureBox, bool> control in picDictionary)
+                if (++this.StarValue <= StarValue)
                 {
-                    if (++this.StarValue <= StarValue)
-                    {
-                        control.Key.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\star_full_512px.png";
-                    }
-                    else
-                    {
-                        control.Key.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\star_512px.png";
-                    }
+                    control.Key.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\star_full_512px.png";
+                }
+                else
+                {
+                    control.Key.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\star_512px.png";
                 }
             }
         }
-        
+
         public int Get_StarValue
         {
             get => StarValue;
@@ -52,27 +49,42 @@ namespace Shoppa
 
         private void pbStar1_Click(object sender, EventArgs e)
         {
-            Set_StarValue(1);
+            if (ratingMode)
+            {
+                Set_StarValue(1);
+            }
         }
 
         private void pbStar2_Click(object sender, EventArgs e)
         {
-            Set_StarValue(2);
+            if (ratingMode)
+            {
+                Set_StarValue(2);
+            }
         }
 
         private void pbStar3_Click(object sender, EventArgs e)
         {
-            Set_StarValue(3);
+            if (ratingMode)
+            {
+                Set_StarValue(3);
+            }
         }
 
         private void pbStar4_Click(object sender, EventArgs e)
         {
-            Set_StarValue(4);
+            if (ratingMode)
+            {
+                Set_StarValue(4);
+            }
         }
 
         private void pbStar5_Click(object sender, EventArgs e)
         {
-            Set_StarValue(5);
+            if (ratingMode)
+            {
+                Set_StarValue(5);
+            }
         }
     }
 }

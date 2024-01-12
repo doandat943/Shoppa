@@ -37,6 +37,7 @@ namespace Shoppa
                 mySqlCommand.Parameters.AddWithValue(parameterName, parameterValue);
             }
         }
+
         public string GetParameterValue(string parameterName)
         {
             if (mySqlCommand.Parameters.Contains(parameterName))
