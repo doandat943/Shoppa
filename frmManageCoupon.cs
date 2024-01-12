@@ -16,8 +16,8 @@ namespace Shoppa
 
             List<DataSource> dataSourceList = new List<DataSource>
             {
-                new DataSource("Giảm phí vận chuyển", 1),
-                new DataSource("Giảm giá đơn hàng", 2)
+                new DataSource("Giảm theo %", 1),
+                new DataSource("Giảm theo số tiền", 2)
             };
 
             cboCouponType.DataSource = dataSourceList;
@@ -35,11 +35,6 @@ namespace Shoppa
             {
                 Text = text;
                 Value = value;
-            }
-
-            public override string ToString()
-            {
-                return Text;
             }
         }
 

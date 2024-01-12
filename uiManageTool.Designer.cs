@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbRole = new System.Windows.Forms.Label();
             this.btnManageCoupon = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             this.btnManageProduct.ImageZoom = 50;
             this.btnManageProduct.LabelPosition = 29;
             this.btnManageProduct.LabelText = "Mặt hàng";
-            this.btnManageProduct.Location = new System.Drawing.Point(164, 314);
+            this.btnManageProduct.Location = new System.Drawing.Point(157, 314);
             this.btnManageProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageProduct.Name = "btnManageProduct";
             this.btnManageProduct.Size = new System.Drawing.Size(100, 100);
@@ -99,7 +100,7 @@
             this.btnManageCategory.ImageZoom = 50;
             this.btnManageCategory.LabelPosition = 29;
             this.btnManageCategory.LabelText = "Danh mục";
-            this.btnManageCategory.Location = new System.Drawing.Point(298, 314);
+            this.btnManageCategory.Location = new System.Drawing.Point(284, 314);
             this.btnManageCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageCategory.Name = "btnManageCategory";
             this.btnManageCategory.Size = new System.Drawing.Size(100, 100);
@@ -248,17 +249,37 @@
             this.btnManageCoupon.ImageZoom = 50;
             this.btnManageCoupon.LabelPosition = 29;
             this.btnManageCoupon.LabelText = "Mã giảm giá";
-            this.btnManageCoupon.Location = new System.Drawing.Point(432, 314);
+            this.btnManageCoupon.Location = new System.Drawing.Point(411, 314);
             this.btnManageCoupon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageCoupon.Name = "btnManageCoupon";
             this.btnManageCoupon.Size = new System.Drawing.Size(100, 100);
             this.btnManageCoupon.TabIndex = 27;
             this.btnManageCoupon.Click += new System.EventHandler(this.btnManageCoupon_Click);
             // 
+            // bunifuTileButton1
+            // 
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.BlueViolet;
+            this.bunifuTileButton1.color = System.Drawing.Color.BlueViolet;
+            this.bunifuTileButton1.colorActive = System.Drawing.Color.DarkViolet;
+            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
+            this.bunifuTileButton1.ImagePosition = 14;
+            this.bunifuTileButton1.ImageZoom = 50;
+            this.bunifuTileButton1.LabelPosition = 29;
+            this.bunifuTileButton1.LabelText = "Thống kê";
+            this.bunifuTileButton1.Location = new System.Drawing.Point(538, 314);
+            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuTileButton1.Name = "bunifuTileButton1";
+            this.bunifuTileButton1.Size = new System.Drawing.Size(100, 100);
+            this.bunifuTileButton1.TabIndex = 28;
+            // 
             // uiManageTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bunifuTileButton1);
             this.Controls.Add(this.btnManageCoupon);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label2);
@@ -295,5 +316,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbRole;
         private Bunifu.Framework.UI.BunifuTileButton btnManageCoupon;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
     }
 }
