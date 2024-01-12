@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Shoppa
@@ -21,10 +15,10 @@ namespace Shoppa
             InitializeComponent();
 
             List<DataSource> dataSourceList = new List<DataSource>
-{
-    new DataSource("Giảm giá đơn hàng", 0),
-    new DataSource("Giảm phí vận chuyển", 1)
-};
+            {
+                new DataSource("Giảm phí vận chuyển", 1),
+                new DataSource("Giảm giá đơn hàng", 2)
+            };
 
             cboCouponType.DataSource = dataSourceList;
             cboCouponType.DisplayMember = "Text";

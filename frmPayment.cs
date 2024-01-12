@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Shoppa
 {
@@ -139,7 +132,7 @@ namespace Shoppa
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            int temp = mySqlServices.ExecuteNonQuery("UPDATE Orders\r\nSET StatusID = 10, TotalAmount = @TotalAmount, OrderDate = GETDATE()\r\nWHERE OrderID = @CartID");
+            int temp = mySqlServices.ExecuteNonQuery("UPDATE Orders\r\nSET StatusID = 10, TotalAmount = @TotalAmount, OrderDate = NOW()\r\nWHERE OrderID = @CartID");
             if (temp != 0)
             {
                 MessageBox.Show("Đặt hàng thành công!!!");

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using Bunifu.UI.WinForms.BunifuButton;
 
 namespace Shoppa
@@ -71,7 +64,7 @@ namespace Shoppa
             mySqlServices.AddParamater("@AccountID", AccountID);
             mySqlServices.AddParamater("@ProductID", e.Item1);
             mySqlServices.AddParamater("@Quantity", e.Item2);
-            int temp = mySqlServices.ExecuteNonQuery("EXEC AddToCart @AccountID, @ProductID, @Quantity");
+            int temp = mySqlServices.ExecuteNonQuery("CALL AddToCart(@AccountID, @ProductID, @Quantity)");
             if (temp != 0)
             {
                 MessageBox.Show("Thêm mặt hàng vào giỏ thành công. Số lượng: " + e.Item2);

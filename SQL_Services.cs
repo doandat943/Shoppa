@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using MySqlConnector;
 
 namespace Shoppa
@@ -80,14 +71,14 @@ namespace Shoppa
 
         public void GetCartID()
         {
-            string CartID = ExecuteScalar("SELECT TOP 1 OrderID FROM Orders WHERE OrdererAccountID = @AccountID AND StatusID = 0");
+            string CartID = ExecuteScalar("SELECT OrderID FROM Orders WHERE OrdererAccountID = @AccountID AND StatusID = 0 LIMIT 1");
             if (CartID == "")
             {
                 // Get new CartID
                 int orderCount = int.Parse(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
                 CartID = "DH" + (orderCount + 1).ToString("D8");
                 AddParamater("@CartID", CartID);
-                ExecuteNonQuery("INSERT INTO Orders VALUES (@CartID, @AccountID, 0, GETDATE(), '0', NULL, NULL)");
+                ExecuteNonQuery("INSERT INTO Orders VALUES (@CartID, @AccountID, 0, NOW(), '0', NULL, NULL)");
             }
             AddParamater("@CartID", CartID);
         }
