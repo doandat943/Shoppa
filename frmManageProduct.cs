@@ -87,7 +87,7 @@ namespace Shoppa
             newMode = true;
             SetControls(true);
             //txtProductID.PlaceholderText = "SP00000001";
-            txtProductID.Text = "SP" + (int.Parse(mySqlServices.ExecuteScalar("Select MAX(ProductID) From Products").Replace("SP", null)) + 1).ToString("D8");
+            txtProductID.Text = "SP" + (Convert.ToInt32(mySqlServices.ExecuteScalar("Select MAX(ProductID) From Products").Replace("SP", null)) + 1).ToString("D8");
 
             //txtProductID.Clear();
             txtProductName.Clear();

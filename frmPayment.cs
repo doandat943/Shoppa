@@ -44,8 +44,8 @@ namespace Shoppa
             }
 
             // Delivery
-            int DistanceToNgheAn = int.Parse(mySqlServices.ExecuteScalar("SELECT DistanceToNgheAn FROM Provinces\r\nJOIN Accounts ON Accounts.ProvinceID = Provinces.ProvinceID\r\nWHERE AccountID = @AccountID"));
-            int DeliveryFee = DistanceToNgheAn * int.Parse(cboDeliveryFee.SelectedValue.ToString());
+            int DistanceToNgheAn = Convert.ToInt32(mySqlServices.ExecuteScalar("SELECT DistanceToNgheAn FROM Provinces\r\nJOIN Accounts ON Accounts.ProvinceID = Provinces.ProvinceID\r\nWHERE AccountID = @AccountID"));
+            int DeliveryFee = DistanceToNgheAn * Convert.ToInt32(cboDeliveryFee.SelectedValue.ToString());
             lbDeliveryFee.Text = DeliveryFee.ToString("N0") + "₫";
             total += DeliveryFee;
 
@@ -53,7 +53,7 @@ namespace Shoppa
 
             if (panel5.Visible)
             {
-                total += int.Parse(lbCoupon.Text.Replace("₫", null).Replace(",", null));
+                total += Convert.ToInt32(lbCoupon.Text.Replace("₫", null).Replace(",", null));
             }
 
             // Total
@@ -105,13 +105,13 @@ namespace Shoppa
                 mySqlServices.ExecuteNonQuery("UPDATE Orders\r\nSET CouponID = @CouponID\r\nWHERE OrderID = @CartID");
 
                 string couponName = dataTable.Rows[0][0].ToString();
-                int discount = int.Parse(dataTable.Rows[0][1].ToString());
+                int discount = Convert.ToInt32(dataTable.Rows[0][1].ToString());
                 string couponType = dataTable.Rows[0][2].ToString();
 
                 if (couponType == "1")
                 {
                     couponType = "%";
-                    lbCoupon.Text = "-" + (discount * int.Parse(lbCheckout.Text.Replace("₫", null).Replace(",", null))).ToString("N0") + "₫";
+                    lbCoupon.Text = "-" + (discount * Convert.ToInt32(lbCheckout.Text.Replace("₫", null).Replace(",", null))).ToString("N0") + "₫";
                 }
                 else if (couponType == "2")
                 {

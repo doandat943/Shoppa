@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Shoppa
 {
@@ -17,7 +18,7 @@ namespace Shoppa
 
         public string Set_Price
         {
-            set => lbPrice.Text = int.Parse(value).ToString("N0") + "₫";
+            set => lbPrice.Text = Convert.ToInt32(value).ToString("N0") + "₫";
         }
 
         public string Set_ProductImage
@@ -37,12 +38,12 @@ namespace Shoppa
         
         public int Get_Price
         {
-            get => int.Parse(lbPrice.Text.Replace("₫", null).Replace(",", null));
+            get => Convert.ToInt32(lbPrice.Text.Replace("₫", null).Replace(",", null));
         }
 
         public int Get_Quantity
         {
-            get => int.Parse(lbQuantity.Text.Replace("x", null));
+            get => Convert.ToInt32(lbQuantity.Text.Replace("x", null));
         }
     }
 }

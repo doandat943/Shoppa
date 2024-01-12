@@ -25,7 +25,7 @@ namespace Shoppa
 
         public string Set_Price
         {
-            set => lbPrice.Text = int.Parse(value).ToString("N0") + "₫";
+            set => lbPrice.Text = Convert.ToInt32(value).ToString("N0") + "₫";
         }
 
         public string Set_ProductImage
@@ -40,12 +40,12 @@ namespace Shoppa
 
         public int Get_Price
         {
-            get => int.Parse(lbPrice.Text.Replace("₫", null).Replace(",", null));
+            get => Convert.ToInt32(lbPrice.Text.Replace("₫", null).Replace(",", null));
         }
 
         public int Get_Quantity
         {
-            get => int.Parse(txtQuantity.Text);
+            get => Convert.ToInt32(txtQuantity.Text);
         }
 
         public event EventHandler<string> ClickOnDelete;
@@ -58,7 +58,7 @@ namespace Shoppa
 
         private void btnSubtractQuantity_Click(object sender, EventArgs e)
         {
-            int Quantity = int.Parse(txtQuantity.Text);
+            int Quantity = Convert.ToInt32(txtQuantity.Text);
             if (Quantity > 1)
             {
                 txtQuantity.Text = (Quantity - 1).ToString();
@@ -67,7 +67,7 @@ namespace Shoppa
 
         private void btnAddQuantity_Click(object sender, EventArgs e)
         {
-            int Quantity = int.Parse(txtQuantity.Text);
+            int Quantity = Convert.ToInt32(txtQuantity.Text);
             if (Quantity < 100)
             {
                 txtQuantity.Text = (Quantity + 1).ToString();
@@ -76,7 +76,7 @@ namespace Shoppa
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
-            int Quantity = int.Parse(txtQuantity.Text);
+            int Quantity = Convert.ToInt32(txtQuantity.Text);
             if (Quantity < 1)
             {
                 txtQuantity.Text = "1";

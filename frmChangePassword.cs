@@ -42,7 +42,7 @@ namespace Shoppa
 
                 txtOldPassword.Focus();
             }
-            if (txtNewPassword.Text == "")
+            else if (txtNewPassword.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập Mật khẩu mới");
                 txtNewPassword.Focus();

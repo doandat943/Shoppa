@@ -26,8 +26,8 @@ namespace Shoppa
             {
                 lbProductName.Text = dataTable.Rows[0][0].ToString();
                 lbSold.Text = "Đã bán: " + dataTable.Rows[0][1].ToString();
-                lbPrice.Text = int.Parse(dataTable.Rows[0][2].ToString()).ToString("N0") + "₫";
-                pnRatingStar.Set_StarValue(int.Parse(dataTable.Rows[0][3].ToString()));
+                lbPrice.Text = Convert.ToInt32(dataTable.Rows[0][2].ToString()).ToString("N0") + "₫";
+                pnRatingStar.Set_StarValue(Convert.ToInt32(dataTable.Rows[0][3].ToString()));
                 lbUnit.Text = "Đơn vị: " +  dataTable.Rows[0][4];
                 txtProductInfo.Text = dataTable.Rows[0][5].ToString();
                 pbProductImage.ImageLocation = dataTable.Rows[0][6].ToString();
@@ -35,7 +35,6 @@ namespace Shoppa
                 dataTable = mySqlServices.ExecuteQueryTable("SELECT Accounts.Avatar, Accounts.Name, Comment, Star\r\nFROM Rating\r\nLEFT JOIN Orders ON Orders.OrderID = Rating.OrderID\r\nLEFT JOIN Accounts ON Accounts.AccountID = Orders.OrdererAccountID\r\nWHERE ProductID = @ProductID");
                 if (dataTable.Rows.Count > 0)
                 {
-                    flowLayoutPanel1.Controls.Clear();
                     foreach (DataRow row in dataTable.Rows)
                     {
                         pnRatingItem ratingItem = new pnRatingItem();
@@ -43,7 +42,7 @@ namespace Shoppa
                         ratingItem.Set_Avatar = row[0].ToString();
                         ratingItem.Set_AccountName = row[1].ToString();
                         ratingItem.Set_Comment = row[2].ToString();
-                        ratingItem.Set_Star = int.Parse(row[3].ToString());
+                        ratingItem.Set_Star = Convert.ToInt32(row[3].ToString());
 
                         flowLayoutPanel1.Controls.Add(ratingItem);
                     }
@@ -59,13 +58,13 @@ namespace Shoppa
         {
             if (txtQuantity.Text != "1")
             {
-                txtQuantity.Text = (int.Parse(txtQuantity.Text) - 1).ToString();
+                txtQuantity.Text = (Convert.ToInt32(txtQuantity.Text) - 1).ToString();
             }
         }
 
         private void btnAddQuantity_Click(object sender, EventArgs e)
         {
-            txtQuantity.Text = (int.Parse(txtQuantity.Text) + 1).ToString();
+            txtQuantity.Text = (Convert.ToInt32(txtQuantity.Text) + 1).ToString();
         }
 
         public event EventHandler<Tuple<string, string>> AddToCart;

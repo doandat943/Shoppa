@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using MySqlConnector;
 
 namespace Shoppa
@@ -76,7 +77,7 @@ namespace Shoppa
             if (CartID == "")
             {
                 // Get new CartID
-                int orderCount = int.Parse(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
+                int orderCount = Convert.ToInt32(ExecuteScalar("SELECT COUNT(*) FROM Orders"));
                 CartID = "DH" + (orderCount + 1).ToString("D8");
                 AddParamater("@CartID", CartID);
                 ExecuteNonQuery("INSERT INTO Orders VALUES (@CartID, @AccountID, 0, NOW(), '0', NULL, NULL)");
@@ -88,7 +89,7 @@ namespace Shoppa
         {
             string sSql = "Select COUNT(*) From " + Table + " Where " + Paramater + " = @" + Paramater + (filter != null ? " and " + filter : null);
 
-            return int.Parse(ExecuteScalar(sSql)) != 0;
+            return Convert.ToInt32(ExecuteScalar(sSql)) != 0;
         }
     }
 }

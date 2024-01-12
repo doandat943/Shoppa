@@ -16,7 +16,7 @@ namespace Shoppa
 
             List<DataSource> dataSourceList = new List<DataSource>
             {
-                new DataSource("Giảm theo %", 1),
+                new DataSource("Giảm theo phần trăm", 1),
                 new DataSource("Giảm theo số tiền", 2)
             };
 
