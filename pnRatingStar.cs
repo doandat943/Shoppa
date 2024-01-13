@@ -40,6 +40,7 @@ namespace Shoppa
                     control.Key.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\star_512px.png";
                 }
             }
+            this.StarValue = StarValue;
         }
 
         public int Get_StarValue

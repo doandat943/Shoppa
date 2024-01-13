@@ -32,6 +32,7 @@ namespace Shoppa
                 txtProductInfo.Text = dataTable.Rows[0][5].ToString();
                 pbProductImage.ImageLocation = dataTable.Rows[0][6].ToString();
 
+                flowLayoutPanel2.Controls.Clear();
                 dataTable = mySqlServices.ExecuteQueryTable("SELECT Accounts.Avatar, Accounts.Name, Comment, Star\r\nFROM Rating\r\nLEFT JOIN Orders ON Orders.OrderID = Rating.OrderID\r\nLEFT JOIN Accounts ON Accounts.AccountID = Orders.OrdererAccountID\r\nWHERE ProductID = @ProductID");
                 if (dataTable.Rows.Count > 0)
                 {
@@ -44,7 +45,7 @@ namespace Shoppa
                         ratingItem.Set_Comment = row[2].ToString();
                         ratingItem.Set_Star = Convert.ToInt32(row[3].ToString());
 
-                        flowLayoutPanel1.Controls.Add(ratingItem);
+                        flowLayoutPanel2.Controls.Add(ratingItem);
                     }
                 }
             }

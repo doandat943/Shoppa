@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uiProductDetail));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.txtProductInfo = new System.Windows.Forms.TextBox();
             this.lbSold = new System.Windows.Forms.Label();
             this.lbUnit = new System.Windows.Forms.Label();
@@ -42,10 +42,11 @@
             this.pbProductImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnRatingStar = new Shoppa.pnRatingStar();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnRatingStar = new Shoppa.pnRatingStar();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -100,11 +101,11 @@
             this.btnAddToCart.ColorContrastOnClick = 45;
             this.btnAddToCart.ColorContrastOnHover = 45;
             this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnAddToCart.CustomizableEdges = borderEdges4;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnAddToCart.CustomizableEdges = borderEdges1;
             this.btnAddToCart.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddToCart.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddToCart.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -249,37 +250,12 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(670, 622);
             this.flowLayoutPanel1.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 449);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Đánh giá";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 237);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 30);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Số lượng:";
-            // 
-            // pnRatingStar
-            // 
-            this.pnRatingStar.Location = new System.Drawing.Point(244, 182);
-            this.pnRatingStar.Name = "pnRatingStar";
-            this.pnRatingStar.Size = new System.Drawing.Size(155, 31);
-            this.pnRatingStar.TabIndex = 35;
             // 
             // panel1
             // 
@@ -302,6 +278,41 @@
             this.panel1.Size = new System.Drawing.Size(644, 476);
             this.panel1.TabIndex = 36;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(239, 237);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 30);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Số lượng:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 449);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Đánh giá";
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(653, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel2.TabIndex = 37;
+            // 
+            // pnRatingStar
+            // 
+            this.pnRatingStar.Location = new System.Drawing.Point(244, 182);
+            this.pnRatingStar.Name = "pnRatingStar";
+            this.pnRatingStar.Size = new System.Drawing.Size(155, 31);
+            this.pnRatingStar.TabIndex = 35;
+            // 
             // uiProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,6 +324,7 @@
             this.Size = new System.Drawing.Size(670, 622);
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -337,5 +349,6 @@
         private System.Windows.Forms.Label label1;
         private pnRatingStar pnRatingStar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
