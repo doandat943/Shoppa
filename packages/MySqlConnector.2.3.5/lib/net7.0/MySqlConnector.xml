@@ -153,6 +153,43 @@
             rows, where each row can fill an array of field values.
             </summary>
         </member>
+        <member name="M:MySqlConnector.Core.NormalizedSchema.NameRegex">
+            <remarks>
+            Pattern explanation:<br/>
+            <code>
+            ○ Match if at the beginning of the string.<br/>
+            ○ Match a whitespace character greedily any number of times.<br/>
+            ○ Match with 2 alternative expressions.<br/>
+                ○ Match a sequence of expressions.<br/>
+                    ○ Match '`'.<br/>
+                    ○ 1st capture group.<br/>
+                        ○ Loop greedily at least once.<br/>
+                            ○ Match with 2 alternative expressions.<br/>
+                                ○ Match any character other than '`'.<br/>
+                                ○ Match the string "``".<br/>
+                    ○ Match '`'.<br/>
+                ○ 2nd capture group.<br/>
+                    ○ Match a character in the set [^.`] greedily at least once.<br/>
+            ○ Match a whitespace character greedily any number of times.<br/>
+            ○ Optional (greedy).<br/>
+                ○ Match '.'.<br/>
+                ○ Match a whitespace character greedily any number of times.<br/>
+                ○ Match with 2 alternative expressions.<br/>
+                    ○ Match a sequence of expressions.<br/>
+                        ○ Match '`'.<br/>
+                        ○ 3rd capture group.<br/>
+                            ○ Loop greedily at least once.<br/>
+                                ○ Match with 2 alternative expressions.<br/>
+                                    ○ Match any character other than '`'.<br/>
+                                    ○ Match the string "``".<br/>
+                        ○ Match '`'.<br/>
+                    ○ 4th capture group.<br/>
+                        ○ Match a character in the set [^.`] greedily at least once.<br/>
+                ○ Match a whitespace character greedily any number of times.<br/>
+            ○ Match if at the end of the string or if before an ending newline.<br/>
+            </code>
+            </remarks>
+        </member>
         <member name="T:MySqlConnector.Core.ParsedStatement">
             <summary>
             <see cref="T:MySqlConnector.Core.ParsedStatement"/> represents an individual SQL statement that's been parsed
@@ -1065,6 +1102,14 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the new database transaction.</returns>
             <remarks>Transactions may not be nested.</remarks>
         </member>
+        <member name="M:MySqlConnector.MySqlConnection.BeginDbTransactionAsync(System.Data.IsolationLevel,System.Threading.CancellationToken)">
+            <summary>
+            Begins a database transaction asynchronously.
+            </summary>
+            <param name="isolationLevel">The <see cref="T:System.Data.IsolationLevel"/> for the transaction.</param>
+            <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1"/> representing the new database transaction.</returns>
+        </member>
         <member name="M:MySqlConnector.MySqlConnection.BeginTransactionAsync(System.Data.IsolationLevel,System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Begins a database transaction asynchronously.
@@ -1577,6 +1622,38 @@
             </summary>
             <param name="propertyDescriptors">The collection of <see cref="T:System.ComponentModel.PropertyDescriptor"/> objects to populate.</param>
         </member>
+        <member name="M:MySqlConnector.MySqlConnectionStringOption.TlsVersionsRegex">
+            <remarks>
+            Pattern explanation:<br/>
+            <code>
+            ○ Match a whitespace character atomically any number of times.<br/>
+            ○ Match a character in the set [Tt].<br/>
+            ○ Match a character in the set [Ll].<br/>
+            ○ Match a character in the set [Ss].<br/>
+            ○ Optional (greedy).<br/>
+                ○ 1st capture group.<br/>
+                    ○ Match ' ' atomically, optionally.<br/>
+                    ○ Match a character in the set [Vv] atomically, optionally.<br/>
+                    ○ 2nd capture group.<br/>
+                        ○ Match '1'.<br/>
+                        ○ Match with 5 alternative expressions.<br/>
+                            ○ Match an empty string.<br/>
+                            ○ Match a sequence of expressions.<br/>
+                                ○ Match '.' atomically, optionally.<br/>
+                                ○ Match '0'.<br/>
+                            ○ Match a sequence of expressions.<br/>
+                                ○ Match '.' atomically, optionally.<br/>
+                                ○ Match '1'.<br/>
+                            ○ Match a sequence of expressions.<br/>
+                                ○ Match '.' atomically, optionally.<br/>
+                                ○ Match '2'.<br/>
+                            ○ Match a sequence of expressions.<br/>
+                                ○ Match '.' atomically, optionally.<br/>
+                                ○ Match '3'.<br/>
+            ○ Match if at the end of the string or if before an ending newline.<br/>
+            </code>
+            </remarks>
+        </member>
         <member name="T:MySqlConnector.MySqlConnectorFactory">
             <summary>
             An implementation of <see cref="T:System.Data.Common.DbProviderFactory"/> that creates MySqlConnector objects.
@@ -1622,6 +1699,16 @@
             Returns <c>false</c>.
             </summary>
             <remarks><see cref="T:System.Data.Common.DbDataSourceEnumerator"/> is not supported by MySqlConnector.</remarks>
+        </member>
+        <member name="P:MySqlConnector.MySqlConnectorFactory.CanCreateCommandBuilder">
+            <summary>
+            Returns <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:MySqlConnector.MySqlConnectorFactory.CanCreateDataAdapter">
+            <summary>
+            Returns <c>true</c>.
+            </summary>
         </member>
         <member name="M:MySqlConnector.MySqlConnectorFactory.CreateBatch">
             <summary>
@@ -1772,6 +1859,9 @@
             </summary>
             <param name="name">The data source name.</param>
             <returns>This builder, so that method calls can be chained.</returns>
+            <remarks>The connection pool name is used to set the <c>program_name</c> connection attribute
+            (which is visible to some diagnostic tools) and the <c>pool.name</c> tag supplied with
+            <a href="https://mysqlconnector.net/diagnostics/metrics/">connection pool metrics</a>.</remarks>
         </member>
         <member name="M:MySqlConnector.MySqlDataSourceBuilder.UseClientCertificatesCallback(System.Func{System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Threading.Tasks.ValueTask})">
             <summary>
@@ -6099,6 +6189,11 @@
             to this object are visible to other objects that hold a reference to it.
             </summary>
         </member>
+        <member name="M:MySqlConnector.Protocol.Serialization.AuthenticationUtility.GetNullTerminatedPasswordBytes(System.String)">
+            <summary>
+            Returns the UTF-8 bytes for <paramref name="password"/>, followed by a null byte.
+            </summary>
+        </member>
         <member name="M:MySqlConnector.Protocol.Serialization.AuthenticationUtility.HashPassword(System.ReadOnlySpan{System.Byte},System.String)">
             <summary>
             Hashes a password with the "Secure Password Authentication" method.
@@ -6254,24 +6349,6 @@
             SESSION_TRACK_GTIDS: "track GTIDs" changed
             </summary>
         </member>
-        <member name="T:MySqlConnector.Utilities.Adler32">
-            <summary>
-            Calculates the 32 bit Adler checksum of a given buffer according to
-            RFC 1950. ZLIB Compressed Data Format Specification version 3.3)
-            </summary>
-        </member>
-        <member name="F:MySqlConnector.Utilities.Adler32.SeedValue">
-            <summary>
-            The default initial seed value of a Adler32 checksum calculation.
-            </summary>
-        </member>
-        <member name="M:MySqlConnector.Utilities.Adler32.Calculate(System.ReadOnlySpan{System.Byte})">
-            <summary>
-            Calculates the Adler32 checksum with the bytes taken from the span.
-            </summary>
-            <param name="buffer">The readonly span of bytes.</param>
-            <returns>The <see cref="T:System.UInt32"/>.</returns>
-        </member>
         <member name="F:MySqlConnector.Utilities.Constants.InfiniteTimeout">
             <summary>
             A sentinel value indicating no (or infinite) timeout.
@@ -6312,36 +6389,10 @@
             <param name="id">The timer ID (returned from <see cref="M:MySqlConnector.Utilities.TimerQueue.Add(System.Int32,System.Action)"/>).</param>
             <returns><c>true</c> if the timer was removed; otherwise, <c>false</c>. This method will return <c>false</c> if the specified timer has already fired.</returns>
         </member>
-        <member name="M:MySqlConnector.Utilities.Utility.GetRsaParameters(System.String)">
+        <member name="M:MySqlConnector.Utilities.Utility.LoadRsaParameters(System.String,System.Security.Cryptography.RSA)">
             <summary>
             Loads a RSA key from a PEM string.
             </summary>
-        </member>
-        <member name="M:MySqlConnector.Utilities.Utility.Slice``1(System.ArraySegment{``0},System.Int32)">
-            <summary>
-            Returns a new <see cref="T:System.ArraySegment`1"/> that starts at index <paramref name="index"/> into <paramref name="arraySegment"/>.
-            </summary>
-            <param name="arraySegment">The <see cref="T:System.ArraySegment`1"/> from which to create a slice.</param>
-            <param name="index">The non-negative, zero-based starting index of the new slice (relative to <see cref="P:System.ArraySegment`1.Offset"/> of <paramref name="arraySegment"/>.</param>
-            <returns>A new <see cref="T:System.ArraySegment`1"/> starting at the <paramref name="index"/>th element of <paramref name="arraySegment"/> and continuing to the end of <paramref name="arraySegment"/>.</returns>
-        </member>
-        <member name="M:MySqlConnector.Utilities.Utility.Slice``1(System.ArraySegment{``0},System.Int32,System.Int32)">
-            <summary>
-            Returns a new <see cref="T:System.ArraySegment`1"/> that starts at index <paramref name="index"/> into <paramref name="arraySegment"/> and has a length of <paramref name="length"/>.
-            </summary>
-            <param name="arraySegment">The <see cref="T:System.ArraySegment`1"/> from which to create a slice.</param>
-            <param name="index">The non-negative, zero-based starting index of the new slice (relative to <see cref="P:System.ArraySegment`1.Offset"/> of <paramref name="arraySegment"/>.</param>
-            <param name="length">The non-negative length of the new slice.</param>
-            <returns>A new <see cref="T:System.ArraySegment`1"/> of length <paramref name="length"/>, starting at the <paramref name="index"/>th element of <paramref name="arraySegment"/>.</returns>
-        </member>
-        <member name="M:MySqlConnector.Utilities.Utility.ArraySlice(System.Byte[],System.Int32,System.Int32)">
-            <summary>
-            Returns a new <see cref="T:System.Byte"/> array that is a slice of <paramref name="input"/> starting at <paramref name="offset"/>.
-            </summary>
-            <param name="input">The array to slice.</param>
-            <param name="offset">The offset at which to slice.</param>
-            <param name="length">The length of the slice.</param>
-            <returns>A new <see cref="T:System.Byte"/> array that is a slice of <paramref name="input"/> from <paramref name="offset"/> to the end.</returns>
         </member>
         <member name="M:MySqlConnector.Utilities.Utility.FindNextIndex(System.ReadOnlySpan{System.Byte},System.Int32,System.ReadOnlySpan{System.Byte})">
             <summary>
@@ -6368,23 +6419,90 @@
             Gets the elapsed time (in seconds) between the specified <paramref name="startingTimestamp"/> and <paramref name="endingTimestamp"/>. (These must be values returned from <see cref="M:System.Diagnostics.Stopwatch.GetTimestamp"/>.)
             </summary>
         </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
-            <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        <member name="T:System.Text.RegularExpressions.Generated.NameRegex_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the NameRegex method.</summary>
         </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
-            <summary>Specifies that an output will not be null even if the corresponding type allows it.</summary>
+        <member name="F:System.Text.RegularExpressions.Generated.NameRegex_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
         </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
-            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.</summary>
+        <member name="M:System.Text.RegularExpressions.Generated.NameRegex_0.#ctor">
+            <summary>Initializes the instance.</summary>
         </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
-            <summary>Initializes the attribute with the specified return value condition.</summary>
-            <param name="returnValue">
-            The return value condition. If the method returns this value, the associated parameter will not be null.
-            </param>
+        <member name="T:System.Text.RegularExpressions.Generated.NameRegex_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
         </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
-            <summary>Gets the return value condition.</summary>
+        <member name="M:System.Text.RegularExpressions.Generated.NameRegex_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.NameRegex_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.NameRegex_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.NameRegex_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.NameRegex_0.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the TlsVersionsRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.TlsVersionsRegex_1.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPush(System.Int32[]@,System.Int32@,System.Int32,System.Int32)">
+            <summary>Pushes 2 values onto the backtracking stack.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPush(System.Int32[]@,System.Int32@,System.Int32,System.Int32,System.Int32)">
+            <summary>Pushes 3 values onto the backtracking stack.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPop(System.Int32[],System.Int32@,System.Int32@,System.Int32@)">
+            <summary>Pops 2 values from the backtracking stack.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPush(System.Int32[]@,System.Int32@,System.Int32)">
+            <summary>Pushes 1 value onto the backtracking stack.</summary>
         </member>
     </members>
 </doc>

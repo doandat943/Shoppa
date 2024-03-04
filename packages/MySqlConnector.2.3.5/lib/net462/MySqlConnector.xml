@@ -1065,14 +1065,6 @@
             <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the new database transaction.</returns>
             <remarks>Transactions may not be nested.</remarks>
         </member>
-        <member name="M:MySqlConnector.MySqlConnection.BeginDbTransactionAsync(System.Data.IsolationLevel,System.Threading.CancellationToken)">
-            <summary>
-            Begins a database transaction asynchronously.
-            </summary>
-            <param name="isolationLevel">The <see cref="T:System.Data.IsolationLevel"/> for the transaction.</param>
-            <param name="cancellationToken">A token to cancel the asynchronous operation.</param>
-            <returns>A <see cref="T:System.Threading.Tasks.ValueTask`1"/> representing the new database transaction.</returns>
-        </member>
         <member name="M:MySqlConnector.MySqlConnection.BeginTransactionAsync(System.Data.IsolationLevel,System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Begins a database transaction asynchronously.
@@ -1631,16 +1623,6 @@
             </summary>
             <remarks><see cref="T:System.Data.Common.DbDataSourceEnumerator"/> is not supported by MySqlConnector.</remarks>
         </member>
-        <member name="P:MySqlConnector.MySqlConnectorFactory.CanCreateCommandBuilder">
-            <summary>
-            Returns <c>true</c>.
-            </summary>
-        </member>
-        <member name="P:MySqlConnector.MySqlConnectorFactory.CanCreateDataAdapter">
-            <summary>
-            Returns <c>true</c>.
-            </summary>
-        </member>
         <member name="M:MySqlConnector.MySqlConnectorFactory.CreateBatch">
             <summary>
             Creates a new <see cref="T:MySqlConnector.MySqlBatch"/> object.
@@ -1790,6 +1772,9 @@
             </summary>
             <param name="name">The data source name.</param>
             <returns>This builder, so that method calls can be chained.</returns>
+            <remarks>The connection pool name is used to set the <c>program_name</c> connection attribute
+            (which is visible to some diagnostic tools) and the <c>pool.name</c> tag supplied with
+            <a href="https://mysqlconnector.net/diagnostics/metrics/">connection pool metrics</a>.</remarks>
         </member>
         <member name="M:MySqlConnector.MySqlDataSourceBuilder.UseClientCertificatesCallback(System.Func{System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Threading.Tasks.ValueTask})">
             <summary>
@@ -6117,6 +6102,11 @@
             to this object are visible to other objects that hold a reference to it.
             </summary>
         </member>
+        <member name="M:MySqlConnector.Protocol.Serialization.AuthenticationUtility.GetNullTerminatedPasswordBytes(System.String)">
+            <summary>
+            Returns the UTF-8 bytes for <paramref name="password"/>, followed by a null byte.
+            </summary>
+        </member>
         <member name="M:MySqlConnector.Protocol.Serialization.AuthenticationUtility.HashPassword(System.ReadOnlySpan{System.Byte},System.String)">
             <summary>
             Hashes a password with the "Secure Password Authentication" method.
@@ -6272,6 +6262,24 @@
             SESSION_TRACK_GTIDS: "track GTIDs" changed
             </summary>
         </member>
+        <member name="T:MySqlConnector.Utilities.Adler32">
+            <summary>
+            Calculates the 32 bit Adler checksum of a given buffer according to
+            RFC 1950. ZLIB Compressed Data Format Specification version 3.3)
+            </summary>
+        </member>
+        <member name="F:MySqlConnector.Utilities.Adler32.SeedValue">
+            <summary>
+            The default initial seed value of a Adler32 checksum calculation.
+            </summary>
+        </member>
+        <member name="M:MySqlConnector.Utilities.Adler32.Calculate(System.ReadOnlySpan{System.Byte})">
+            <summary>
+            Calculates the Adler32 checksum with the bytes taken from the span.
+            </summary>
+            <param name="buffer">The readonly span of bytes.</param>
+            <returns>The <see cref="T:System.UInt32"/>.</returns>
+        </member>
         <member name="F:MySqlConnector.Utilities.Constants.InfiniteTimeout">
             <summary>
             A sentinel value indicating no (or infinite) timeout.
@@ -6312,10 +6320,36 @@
             <param name="id">The timer ID (returned from <see cref="M:MySqlConnector.Utilities.TimerQueue.Add(System.Int32,System.Action)"/>).</param>
             <returns><c>true</c> if the timer was removed; otherwise, <c>false</c>. This method will return <c>false</c> if the specified timer has already fired.</returns>
         </member>
-        <member name="M:MySqlConnector.Utilities.Utility.LoadRsaParameters(System.String,System.Security.Cryptography.RSA)">
+        <member name="M:MySqlConnector.Utilities.Utility.GetRsaParameters(System.String)">
             <summary>
             Loads a RSA key from a PEM string.
             </summary>
+        </member>
+        <member name="M:MySqlConnector.Utilities.Utility.Slice``1(System.ArraySegment{``0},System.Int32)">
+            <summary>
+            Returns a new <see cref="T:System.ArraySegment`1"/> that starts at index <paramref name="index"/> into <paramref name="arraySegment"/>.
+            </summary>
+            <param name="arraySegment">The <see cref="T:System.ArraySegment`1"/> from which to create a slice.</param>
+            <param name="index">The non-negative, zero-based starting index of the new slice (relative to <see cref="P:System.ArraySegment`1.Offset"/> of <paramref name="arraySegment"/>.</param>
+            <returns>A new <see cref="T:System.ArraySegment`1"/> starting at the <paramref name="index"/>th element of <paramref name="arraySegment"/> and continuing to the end of <paramref name="arraySegment"/>.</returns>
+        </member>
+        <member name="M:MySqlConnector.Utilities.Utility.Slice``1(System.ArraySegment{``0},System.Int32,System.Int32)">
+            <summary>
+            Returns a new <see cref="T:System.ArraySegment`1"/> that starts at index <paramref name="index"/> into <paramref name="arraySegment"/> and has a length of <paramref name="length"/>.
+            </summary>
+            <param name="arraySegment">The <see cref="T:System.ArraySegment`1"/> from which to create a slice.</param>
+            <param name="index">The non-negative, zero-based starting index of the new slice (relative to <see cref="P:System.ArraySegment`1.Offset"/> of <paramref name="arraySegment"/>.</param>
+            <param name="length">The non-negative length of the new slice.</param>
+            <returns>A new <see cref="T:System.ArraySegment`1"/> of length <paramref name="length"/>, starting at the <paramref name="index"/>th element of <paramref name="arraySegment"/>.</returns>
+        </member>
+        <member name="M:MySqlConnector.Utilities.Utility.ArraySlice(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Returns a new <see cref="T:System.Byte"/> array that is a slice of <paramref name="input"/> starting at <paramref name="offset"/>.
+            </summary>
+            <param name="input">The array to slice.</param>
+            <param name="offset">The offset at which to slice.</param>
+            <param name="length">The length of the slice.</param>
+            <returns>A new <see cref="T:System.Byte"/> array that is a slice of <paramref name="input"/> from <paramref name="offset"/> to the end.</returns>
         </member>
         <member name="M:MySqlConnector.Utilities.Utility.FindNextIndex(System.ReadOnlySpan{System.Byte},System.Int32,System.ReadOnlySpan{System.Byte})">
             <summary>
@@ -6341,6 +6375,24 @@
             <summary>
             Gets the elapsed time (in seconds) between the specified <paramref name="startingTimestamp"/> and <paramref name="endingTimestamp"/>. (These must be values returned from <see cref="M:System.Diagnostics.Stopwatch.GetTimestamp"/>.)
             </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>Specifies that an output will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
         </member>
     </members>
 </doc>

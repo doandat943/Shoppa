@@ -1772,6 +1772,9 @@
             </summary>
             <param name="name">The data source name.</param>
             <returns>This builder, so that method calls can be chained.</returns>
+            <remarks>The connection pool name is used to set the <c>program_name</c> connection attribute
+            (which is visible to some diagnostic tools) and the <c>pool.name</c> tag supplied with
+            <a href="https://mysqlconnector.net/diagnostics/metrics/">connection pool metrics</a>.</remarks>
         </member>
         <member name="M:MySqlConnector.MySqlDataSourceBuilder.UseClientCertificatesCallback(System.Func{System.Security.Cryptography.X509Certificates.X509CertificateCollection,System.Threading.Tasks.ValueTask})">
             <summary>
@@ -6097,6 +6100,11 @@
             <see cref="T:MySqlConnector.Protocol.Serialization.ArraySegmentHolder`1"/> is a class that holds an instance of <see cref="T:System.ArraySegment`1"/>.
             Its primary difference from <see cref="T:System.ArraySegment`1"/> is that it's a reference type, so mutations
             to this object are visible to other objects that hold a reference to it.
+            </summary>
+        </member>
+        <member name="M:MySqlConnector.Protocol.Serialization.AuthenticationUtility.GetNullTerminatedPasswordBytes(System.String)">
+            <summary>
+            Returns the UTF-8 bytes for <paramref name="password"/>, followed by a null byte.
             </summary>
         </member>
         <member name="M:MySqlConnector.Protocol.Serialization.AuthenticationUtility.HashPassword(System.ReadOnlySpan{System.Byte},System.String)">
