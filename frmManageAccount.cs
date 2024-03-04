@@ -7,7 +7,6 @@ namespace Shoppa
     public partial class frmManageAccount : Form
     {
         private SQL_Services mySqlServices = new SQL_Services();
-        
         private uiAccountView uiAccountView = new uiAccountView();
         private string AccountID;
 
@@ -25,15 +24,12 @@ namespace Shoppa
             cboRoleFilter.DataSource = dtRoleFilter;
             cboRoleFilter.DisplayMember = "RoleName";
             cboRoleFilter.ValueMember = "RoleID";
+            cboRoleFilter.SelectedIndexChanged += cboRoleFilter_SelectedIndexChanged;
 
             DataTable dtProvince = mySqlServices.ExecuteQueryTable("Select *From Provinces");
             cboProvince.DataSource = dtProvince;
             cboProvince.DisplayMember = "ProvinceName";
             cboProvince.ValueMember = "ProvinceID";
-
-
-            //
-            Load();
         }
 
         private void Load(string filter = null)
@@ -83,7 +79,7 @@ namespace Shoppa
             Load("WHERE Name LIKE N'%" + txtSearch.Text + "%'");
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void cboRoleFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboRoleFilter.SelectedValue.ToString() == "-1")
             {

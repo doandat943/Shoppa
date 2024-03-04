@@ -78,6 +78,7 @@ namespace Shoppa
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            mySqlServices.AddParamater("@CategoryID", txtCategoryID.Text);
             mySqlServices.AddParamater("@CategoryName", txtCategoryName.Text);
 
             if (newMode)
@@ -89,7 +90,7 @@ namespace Shoppa
                 }
                 else
                 {
-                    mySqlServices.ExecuteNonQuery("Insert Into Categories Values (@CategoryName)");
+                    mySqlServices.ExecuteNonQuery("Insert Into Categories Values (@CategoryID, @CategoryName)");
                 }
             }
             else

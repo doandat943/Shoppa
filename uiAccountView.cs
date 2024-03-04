@@ -73,9 +73,8 @@ namespace Shoppa
 
         private void btnSelectAvatar_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.ShowDialog();
-            pbAvatar.ImageLocation = openFileDialog.FileName;
+            string result = Microsoft.VisualBasic.Interaction.InputBox("Nhập liên kết ảnh:", "Chọn ảnh", "");
+            pbAvatar.ImageLocation = result;
         }
 
         private void btnUpdateAccount_Click(object sender, EventArgs e)

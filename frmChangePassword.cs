@@ -31,16 +31,17 @@ namespace Shoppa
 
             if (AdminMode == false)
             {
-                if (txtOldPassword.Text == "")
+                if (txtOldPassword.Text == "" && AdminMode == false)
                 {
                     MessageBox.Show("Vui lòng nhập Mật khẩu cũ");
+                    txtOldPassword.Focus();
                 }
                 else if (txtOldPassword.Text != OldPassword)
                 {
                     MessageBox.Show("Mật khẩu cũ không chính xác. Vui lòng thử lại!!!");
+                    txtOldPassword.Focus();
                 }
 
-                txtOldPassword.Focus();
             }
             else if (txtNewPassword.Text == "")
             {

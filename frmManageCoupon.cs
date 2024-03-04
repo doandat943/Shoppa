@@ -23,7 +23,6 @@ namespace Shoppa
             cboCouponType.DataSource = dataSourceList;
             cboCouponType.DisplayMember = "Text";
             cboCouponType.ValueMember = "Value";
-
         }
 
         public class DataSource

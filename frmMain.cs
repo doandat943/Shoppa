@@ -21,8 +21,9 @@ namespace Shoppa
         public frmMain()
         {
             InitializeComponent();
-            
+
             //
+
             uiProductView = new uiProductView();
             uiProductView.ClickOnProduct += productItem_ClickOnProduct;
             uiProductView.AddToCart += productItem_AddToCart;

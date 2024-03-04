@@ -24,14 +24,14 @@ namespace Shoppa
             cboCategoryFilter.DataSource = dtCategoryFilter;
             cboCategoryFilter.DisplayMember = "CategoryName";
             cboCategoryFilter.ValueMember = "CategoryID";
+            cboCategoryFilter.SelectedIndexChanged += cboCategoryFilter_SelectedIndexChanged;
 
             DataTable dtUnit = mySqlServices.ExecuteQueryTable("Select * From Units");
             cboUnit.DataSource = dtUnit;
             cboUnit.DisplayMember = "UnitName";
             cboUnit.ValueMember = "UnitID";
 
-            //
-            Load();
+            SetControls(false);
         }
 
         private void Load(string filter = null)
@@ -77,9 +77,8 @@ namespace Shoppa
 
         private void btnSelectProductImage_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.ShowDialog();
-            pbProductImage.ImageLocation = ofd.FileName;
+            string result = Microsoft.VisualBasic.Interaction.InputBox("Nhập liên kết ảnh:", "Chọn ảnh", "");
+            pbProductImage.ImageLocation = result;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -170,7 +169,7 @@ namespace Shoppa
             Load("WHERE ProductName LIKE N'%" + txtSearch.Text + "%'");
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void cboCategoryFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboCategoryFilter.SelectedValue.ToString() == "-1")
             {

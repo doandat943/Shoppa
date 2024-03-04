@@ -17,6 +17,7 @@ namespace Shoppa
             cboCategoryFilter.DataSource = dtCategoryFilter;
             cboCategoryFilter.DisplayMember = "CategoryName";
             cboCategoryFilter.ValueMember = "CategoryID";
+            cboCategoryFilter.SelectedIndexChanged += cboCategoryFilter_SelectedIndexChanged;
 
             //
             Load();
@@ -64,7 +65,7 @@ namespace Shoppa
             Load("ProductName LIKE N'%" + txtSearch.Text + "%'");
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void cboCategoryFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboCategoryFilter.SelectedValue.ToString() == "-1")
             {
