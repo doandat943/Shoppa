@@ -41,7 +41,7 @@ namespace Shoppa
         {
             flowLayoutPanel1.Controls.Clear();
             mySqlServices.GetCartID();
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderDetail.ProductID, ProductName, Price, ProductImage, Quantity FROM OrderDetail\r\nJOIN Products ON Products.ProductID = OrderDetail.ProductID\r\nJOIN Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.OrderID = @CartID");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT OrderDetail.ProductID, ProductName, Price, ProductImage, Quantity, QuantityInStock FROM OrderDetail\r\nJOIN Products ON Products.ProductID = OrderDetail.ProductID\r\nJOIN Orders ON Orders.OrderID = OrderDetail.OrderID\r\nWHERE Orders.OrderID = @CartID");
 
             if (dataTable.Rows.Count != 0)
             {
@@ -54,6 +54,7 @@ namespace Shoppa
                     cartItem.Set_Price = row[2].ToString();
                     cartItem.Set_ProductImage = row[3].ToString();
                     cartItem.Set_Quantity = row[4].ToString();
+                    cartItem.Set_QuantityInStock = row[5].ToString();
                     cartItem.QuantityChanged += cartItem_QuantityChanged;
                     cartItem.ClickOnDelete += cartItem_ClickOnDelete;
 

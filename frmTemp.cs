@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Bunifu.UI.WinForms.BunifuButton;
+using System.Windows.Forms;
 
 namespace Shoppa
 {
@@ -9,6 +10,11 @@ namespace Shoppa
         public frmTemp()
         {
             InitializeComponent();
+        }
+
+        private void uiStatistic1_Load(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Shoppa
     {
         private SQL_Services mySqlServices = new SQL_Services();
         private string ProductID;
+        private int QuantityInStock;
 
         public uiProductDetail()
         {
@@ -16,10 +17,11 @@ namespace Shoppa
 
         public void Initialize(string ProductID)
         {
+            txtQuantity.Text = "0";
             this.ProductID = ProductID;
             mySqlServices.AddParamater("@ProductID", ProductID);
 
-            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, COALESCE(SUM(CASE WHEN Orders.StatusID = 40 THEN OrderDetail.Quantity ELSE 0 END), 0) AS Sold, Price, IFNULL(ROUND(AVG(Rating.Star)), 0) AS AVG, UnitName, ProductInfo, ProductImage\r\nFROM Products\r\nLEFT JOIN OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN Units ON Units.UnitID = Products.UnitID\r\nLEFT JOIN Orders ON Orders.OrderID = OrderDetail.OrderID\r\nLEFT JOIN Rating ON Rating.ProductID = Products.ProductID\r\nWHERE Products.ProductID = @ProductID\r\nGROUP BY ProductName, Price, UnitName, ProductInfo, ProductImage");
+            DataTable dataTable = mySqlServices.ExecuteQueryTable("SELECT ProductName, COALESCE(SUM(CASE WHEN Orders.StatusID = 40 THEN OrderDetail.Quantity ELSE 0 END), 0) AS Sold, Price, IFNULL(ROUND(AVG(Rating.Star)), 0) AS AVG, UnitName, ProductInfo, ProductImage, QuantityInStock\r\nFROM Products\r\nLEFT JOIN OrderDetail ON OrderDetail.ProductID = Products.ProductID\r\nLEFT JOIN Units ON Units.UnitID = Products.UnitID\r\nLEFT JOIN Orders ON Orders.OrderID = OrderDetail.OrderID\r\nLEFT JOIN Rating ON Rating.ProductID = Products.ProductID\r\nWHERE Products.ProductID = @ProductID\r\nGROUP BY ProductName, Price, UnitName, ProductInfo, ProductImage");
 
             if (dataTable.Rows.Count > 0)
             {
@@ -30,6 +32,8 @@ namespace Shoppa
                 lbUnit.Text = "Đơn vị: " +  dataTable.Rows[0][4];
                 txtProductInfo.Text = dataTable.Rows[0][5].ToString();
                 pbProductImage.ImageLocation = dataTable.Rows[0][6].ToString();
+                lbQuantityInStock.Text = "Kho: " + dataTable.Rows[0][7].ToString();
+                QuantityInStock = (int)dataTable.Rows[0][7];
 
                 flowLayoutPanel2.Controls.Clear();
                 dataTable = mySqlServices.ExecuteQueryTable("SELECT Accounts.Avatar, Accounts.Name, Comment, Star\r\nFROM Rating\r\nLEFT JOIN Orders ON Orders.OrderID = Rating.OrderID\r\nLEFT JOIN Accounts ON Accounts.AccountID = Orders.OrdererAccountID\r\nWHERE ProductID = @ProductID");
@@ -59,12 +63,20 @@ namespace Shoppa
             if (txtQuantity.Text != "1")
             {
                 txtQuantity.Text = (Convert.ToInt32(txtQuantity.Text) - 1).ToString();
+                btnAddQuantity.Enabled = true;
             }
         }
 
         private void btnAddQuantity_Click(object sender, EventArgs e)
         {
-            txtQuantity.Text = (Convert.ToInt32(txtQuantity.Text) + 1).ToString();
+            if (int.Parse(txtQuantity.Text) != QuantityInStock)
+            {
+                txtQuantity.Text = (Convert.ToInt32(txtQuantity.Text) + 1).ToString();
+            }
+            else
+            {
+                btnAddQuantity.Enabled = false;
+            }
         }
 
         public event EventHandler<Tuple<string, string>> AddToCart;
@@ -72,6 +84,22 @@ namespace Shoppa
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             AddToCart?.Invoke(this, new Tuple<string, string>(ProductID, txtQuantity.Text));
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQuantity.Text == "")
+            {
+                txtQuantity.Text = "1";
+            }
+            else if (Convert.ToInt32(txtQuantity.Text) < 1)
+            {
+                txtQuantity.Text = "1";
+            }
+            else if (Convert.ToInt32(txtQuantity.Text) > QuantityInStock)
+            {
+                txtQuantity.Text = QuantityInStock.ToString();
+            }
         }
     }
 }

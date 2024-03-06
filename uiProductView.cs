@@ -46,7 +46,7 @@ namespace Shoppa
                 }
             }
         }
-        
+
         public event EventHandler<string> ClickOnProduct;
         public event EventHandler<Tuple<string, string>> AddToCart;
 
@@ -67,13 +67,18 @@ namespace Shoppa
 
         private void cboCategoryFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboCategoryFilter.SelectedValue.ToString() == "-1")
+            FilterCategory(cboCategoryFilter.SelectedValue.ToString());
+        }
+
+        public void FilterCategory(string CategoryID)
+        {
+            if (CategoryID == "-1")
             {
                 Load();
             }
             else
             {
-                Load("CategoryID = " + cboCategoryFilter.SelectedValue);
+                Load("CategoryID = " + CategoryID);
             }
         }
 

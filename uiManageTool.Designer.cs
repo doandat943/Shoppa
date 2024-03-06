@@ -99,7 +99,7 @@
             this.btnManageCategory.ImagePosition = 14;
             this.btnManageCategory.ImageZoom = 50;
             this.btnManageCategory.LabelPosition = 29;
-            this.btnManageCategory.LabelText = "Danh mục";
+            this.btnManageCategory.LabelText = "Mục mặt hàng";
             this.btnManageCategory.Location = new System.Drawing.Point(284, 314);
             this.btnManageCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageCategory.Name = "btnManageCategory";

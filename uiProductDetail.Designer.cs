@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbQuantityInStock = new System.Windows.Forms.Label();
             this.pnRatingStar = new Shoppa.pnRatingStar();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductImage)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -182,8 +183,9 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(44, 33);
             this.txtQuantity.TabIndex = 28;
-            this.txtQuantity.Text = "1";
+            this.txtQuantity.Text = "0";
             this.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // lbPrice
             // 
@@ -259,6 +261,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbQuantityInStock);
             this.panel1.Controls.Add(this.pnRatingStar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
@@ -306,6 +309,16 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(0, 0);
             this.flowLayoutPanel2.TabIndex = 37;
             // 
+            // lbQuantityInStock
+            // 
+            this.lbQuantityInStock.AutoSize = true;
+            this.lbQuantityInStock.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuantityInStock.Location = new System.Drawing.Point(496, 188);
+            this.lbQuantityInStock.Name = "lbQuantityInStock";
+            this.lbQuantityInStock.Size = new System.Drawing.Size(74, 30);
+            this.lbQuantityInStock.TabIndex = 36;
+            this.lbQuantityInStock.Text = "Kho: 0";
+            // 
             // pnRatingStar
             // 
             this.pnRatingStar.Location = new System.Drawing.Point(244, 182);
@@ -350,5 +363,6 @@
         private pnRatingStar pnRatingStar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label lbQuantityInStock;
     }
 }

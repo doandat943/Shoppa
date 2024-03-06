@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnProductView = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnCartView = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -48,6 +49,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbAccountID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnHomeView = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -58,6 +60,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.btnHomeView);
             this.flowLayoutPanel1.Controls.Add(this.btnProductView);
             this.flowLayoutPanel1.Controls.Add(this.btnCartView);
             this.flowLayoutPanel1.Controls.Add(this.btnHistoryView);
@@ -66,7 +69,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 95);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 209);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 245);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnProductView
@@ -88,11 +91,11 @@
             this.btnProductView.ColorContrastOnClick = 45;
             this.btnProductView.ColorContrastOnHover = 45;
             this.btnProductView.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnProductView.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnProductView.CustomizableEdges = borderEdges2;
             this.btnProductView.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnProductView.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnProductView.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -118,7 +121,7 @@
             this.btnProductView.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnProductView.IdleIconLeftImage")));
             this.btnProductView.IdleIconRightImage = null;
             this.btnProductView.IndicateFocus = false;
-            this.btnProductView.Location = new System.Drawing.Point(0, 0);
+            this.btnProductView.Location = new System.Drawing.Point(0, 40);
             this.btnProductView.Margin = new System.Windows.Forms.Padding(0);
             this.btnProductView.Name = "btnProductView";
             this.btnProductView.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -181,11 +184,11 @@
             this.btnCartView.ColorContrastOnClick = 45;
             this.btnCartView.ColorContrastOnHover = 45;
             this.btnCartView.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnCartView.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btnCartView.CustomizableEdges = borderEdges3;
             this.btnCartView.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCartView.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCartView.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -211,7 +214,7 @@
             this.btnCartView.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnCartView.IdleIconLeftImage")));
             this.btnCartView.IdleIconRightImage = null;
             this.btnCartView.IndicateFocus = false;
-            this.btnCartView.Location = new System.Drawing.Point(0, 40);
+            this.btnCartView.Location = new System.Drawing.Point(0, 80);
             this.btnCartView.Margin = new System.Windows.Forms.Padding(0);
             this.btnCartView.Name = "btnCartView";
             this.btnCartView.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -274,11 +277,11 @@
             this.btnHistoryView.ColorContrastOnClick = 45;
             this.btnHistoryView.ColorContrastOnHover = 45;
             this.btnHistoryView.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnHistoryView.CustomizableEdges = borderEdges3;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnHistoryView.CustomizableEdges = borderEdges4;
             this.btnHistoryView.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnHistoryView.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnHistoryView.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -304,7 +307,7 @@
             this.btnHistoryView.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnHistoryView.IdleIconLeftImage")));
             this.btnHistoryView.IdleIconRightImage = null;
             this.btnHistoryView.IndicateFocus = false;
-            this.btnHistoryView.Location = new System.Drawing.Point(0, 80);
+            this.btnHistoryView.Location = new System.Drawing.Point(0, 120);
             this.btnHistoryView.Margin = new System.Windows.Forms.Padding(0);
             this.btnHistoryView.Name = "btnHistoryView";
             this.btnHistoryView.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -367,11 +370,11 @@
             this.btnAccountView.ColorContrastOnClick = 45;
             this.btnAccountView.ColorContrastOnHover = 45;
             this.btnAccountView.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnAccountView.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btnAccountView.CustomizableEdges = borderEdges5;
             this.btnAccountView.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAccountView.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAccountView.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -397,7 +400,7 @@
             this.btnAccountView.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAccountView.IdleIconLeftImage")));
             this.btnAccountView.IdleIconRightImage = null;
             this.btnAccountView.IndicateFocus = false;
-            this.btnAccountView.Location = new System.Drawing.Point(0, 120);
+            this.btnAccountView.Location = new System.Drawing.Point(0, 160);
             this.btnAccountView.Margin = new System.Windows.Forms.Padding(0);
             this.btnAccountView.Name = "btnAccountView";
             this.btnAccountView.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -460,11 +463,11 @@
             this.btnManageTool.ColorContrastOnClick = 45;
             this.btnManageTool.ColorContrastOnHover = 45;
             this.btnManageTool.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnManageTool.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btnManageTool.CustomizableEdges = borderEdges6;
             this.btnManageTool.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnManageTool.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnManageTool.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -490,7 +493,7 @@
             this.btnManageTool.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnManageTool.IdleIconLeftImage")));
             this.btnManageTool.IdleIconRightImage = null;
             this.btnManageTool.IndicateFocus = false;
-            this.btnManageTool.Location = new System.Drawing.Point(0, 160);
+            this.btnManageTool.Location = new System.Drawing.Point(0, 200);
             this.btnManageTool.Margin = new System.Windows.Forms.Padding(0);
             this.btnManageTool.Name = "btnManageTool";
             this.btnManageTool.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -553,11 +556,11 @@
             this.btnLogOut.ColorContrastOnClick = 45;
             this.btnLogOut.ColorContrastOnHover = 45;
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btnLogOut.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnLogOut.CustomizableEdges = borderEdges7;
             this.btnLogOut.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLogOut.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLogOut.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -701,6 +704,99 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Tài khoản:";
             // 
+            // btnHomeView
+            // 
+            this.btnHomeView.AllowAnimations = true;
+            this.btnHomeView.AllowMouseEffects = true;
+            this.btnHomeView.AllowToggling = false;
+            this.btnHomeView.AnimationSpeed = 200;
+            this.btnHomeView.AutoGenerateColors = false;
+            this.btnHomeView.AutoRoundBorders = false;
+            this.btnHomeView.AutoSizeLeftIcon = true;
+            this.btnHomeView.AutoSizeRightIcon = true;
+            this.btnHomeView.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeView.BackColor1 = System.Drawing.Color.BlueViolet;
+            this.btnHomeView.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHomeView.BackgroundImage")));
+            this.btnHomeView.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnHomeView.ButtonText = "Trang chủ";
+            this.btnHomeView.ButtonTextMarginLeft = 0;
+            this.btnHomeView.ColorContrastOnClick = 45;
+            this.btnHomeView.ColorContrastOnHover = 45;
+            this.btnHomeView.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnHomeView.CustomizableEdges = borderEdges1;
+            this.btnHomeView.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnHomeView.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnHomeView.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnHomeView.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnHomeView.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnHomeView.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.btnHomeView.ForeColor = System.Drawing.Color.White;
+            this.btnHomeView.IconLeft = ((System.Drawing.Image)(resources.GetObject("btnHomeView.IconLeft")));
+            this.btnHomeView.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHomeView.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeView.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnHomeView.IconMarginLeft = 11;
+            this.btnHomeView.IconPadding = 10;
+            this.btnHomeView.IconRight = null;
+            this.btnHomeView.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHomeView.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHomeView.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnHomeView.IconSize = 25;
+            this.btnHomeView.IdleBorderColor = System.Drawing.Color.BlueViolet;
+            this.btnHomeView.IdleBorderRadius = 3;
+            this.btnHomeView.IdleBorderThickness = 1;
+            this.btnHomeView.IdleFillColor = System.Drawing.Color.BlueViolet;
+            this.btnHomeView.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnHomeView.IdleIconLeftImage")));
+            this.btnHomeView.IdleIconRightImage = null;
+            this.btnHomeView.IndicateFocus = false;
+            this.btnHomeView.Location = new System.Drawing.Point(0, 0);
+            this.btnHomeView.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHomeView.Name = "btnHomeView";
+            this.btnHomeView.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnHomeView.OnDisabledState.BorderRadius = 3;
+            this.btnHomeView.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnHomeView.OnDisabledState.BorderThickness = 1;
+            this.btnHomeView.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnHomeView.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnHomeView.OnDisabledState.IconLeftImage = null;
+            this.btnHomeView.OnDisabledState.IconRightImage = null;
+            this.btnHomeView.onHoverState.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.btnHomeView.onHoverState.BorderRadius = 3;
+            this.btnHomeView.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnHomeView.onHoverState.BorderThickness = 1;
+            this.btnHomeView.onHoverState.FillColor = System.Drawing.Color.DarkOrchid;
+            this.btnHomeView.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHomeView.onHoverState.IconLeftImage = null;
+            this.btnHomeView.onHoverState.IconRightImage = null;
+            this.btnHomeView.OnIdleState.BorderColor = System.Drawing.Color.BlueViolet;
+            this.btnHomeView.OnIdleState.BorderRadius = 3;
+            this.btnHomeView.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnHomeView.OnIdleState.BorderThickness = 1;
+            this.btnHomeView.OnIdleState.FillColor = System.Drawing.Color.BlueViolet;
+            this.btnHomeView.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnHomeView.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.OnIdleState.IconLeftImage")));
+            this.btnHomeView.OnIdleState.IconRightImage = null;
+            this.btnHomeView.OnPressedState.BorderColor = System.Drawing.Color.BlueViolet;
+            this.btnHomeView.OnPressedState.BorderRadius = 3;
+            this.btnHomeView.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnHomeView.OnPressedState.BorderThickness = 1;
+            this.btnHomeView.OnPressedState.FillColor = System.Drawing.Color.BlueViolet;
+            this.btnHomeView.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnHomeView.OnPressedState.IconLeftImage = null;
+            this.btnHomeView.OnPressedState.IconRightImage = null;
+            this.btnHomeView.Size = new System.Drawing.Size(200, 40);
+            this.btnHomeView.TabIndex = 10;
+            this.btnHomeView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHomeView.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnHomeView.TextMarginLeft = 0;
+            this.btnHomeView.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnHomeView.UseDefaultRadiusAndThickness = true;
+            this.btnHomeView.Click += new System.EventHandler(this.btnHomeView_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -737,6 +833,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lbAccountID;
         private System.Windows.Forms.Label label3;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnHomeView;
     }
 }
 

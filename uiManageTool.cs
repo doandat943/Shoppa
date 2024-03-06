@@ -9,7 +9,8 @@ namespace Shoppa
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
         private string RoleID;
-        
+
+        private frmManageOrder frmManageOrder;
         private frmManageAccount frmManageAccount;
         private frmManageProduct frmManageProduct;
         private frmManageCategory frmManageCategory;
@@ -41,6 +42,15 @@ namespace Shoppa
 
         private void btnManageOrder_Click(object sender, EventArgs e)
         {
+            if (RoleID == "3")
+            {
+                frmManageOrder = new frmManageOrder();
+                frmManageOrder.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập chức năng này.");
+            }
         }
 
         private void btnManageAccount_Click(object sender, EventArgs e)

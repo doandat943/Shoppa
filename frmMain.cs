@@ -10,6 +10,7 @@ namespace Shoppa
         private SQL_Services mySqlServices = new SQL_Services();
         private string AccountID;
 
+        private uiHomeView uiHomeView;
         private uiProductView uiProductView;
         private uiProductDetail uiProductDetail;
         private uiCartView uiCartView;
@@ -23,6 +24,12 @@ namespace Shoppa
             InitializeComponent();
 
             //
+
+            uiHomeView = new uiHomeView();
+            uiHomeView.ClickOnProduct += homeView_ClickOnProduct;
+            uiHomeView.ClickOnCategory += productItem_ClickOnCategory;
+            uiHomeView.Dock = DockStyle.Right;
+            this.Controls.Add(uiHomeView);
 
             uiProductView = new uiProductView();
             uiProductView.ClickOnProduct += productItem_ClickOnProduct;
@@ -55,6 +62,22 @@ namespace Shoppa
             uiStatistic = new uiStatistic();
             uiStatistic.Dock = DockStyle.Right;
             this.Controls.Add(uiStatistic);
+        }
+
+        private void homeView_ClickOnProduct(object sender, string ProductID)
+        {
+            HideAllUserControl();
+
+            uiProductDetail.Initialize(ProductID);
+            uiProductDetail.Show();
+        }
+
+        private void productItem_ClickOnCategory(object sender, string CategoryID)
+        {
+            HideAllUserControl();
+
+            uiProductView.FilterCategory(CategoryID);
+            uiProductView.Show();
         }
 
         private void productItem_ClickOnProduct(object sender, string ProductID)
@@ -95,7 +118,7 @@ namespace Shoppa
             }
 
             HideAllUserControl();
-            uiProductView.Show();
+            uiHomeView.Show();
         }
 
         private void HideAllUserControl()
@@ -124,6 +147,13 @@ namespace Shoppa
 
             clickedButton.OnPressedState.FillColor = Color.FromArgb(95, 29, 155);
             clickedButton.OnPressedState.BorderColor = Color.FromArgb(95, 29, 155);
+        }
+
+        private void btnHomeView_Click(object sender, EventArgs e)
+        {
+            ColorButton((BunifuButton)sender);
+
+            uiHomeView.Show();
         }
 
         private void btnProductView_Click(object sender, EventArgs e)

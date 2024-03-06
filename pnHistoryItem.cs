@@ -53,11 +53,31 @@ namespace Shoppa
             }
         }
 
+        int mode = 0;
+
+        public void setMode(int mode)
+        {
+            this.mode = mode;
+            btnRating.Text = "Duyệt";
+        }
+
         private void btnRating_Click(object sender, EventArgs e)
         {
-            frmRating = new frmRating();
-            frmRating.Initialize(OrderID);
-            frmRating.ShowDialog();
+            if (mode == 0)
+            {
+                frmRating = new frmRating();
+                frmRating.Initialize(OrderID);
+                frmRating.ShowDialog();
+            }
+            else
+            {
+                int temp = mySqlServices.ExecuteNonQuery("UPDATE Orders SET StatusID=20 WHERE OrderID = @OrderID");
+                if (temp != 0)
+                {
+                    MessageBox.Show("Duyệt đơn hàng thành công");
+                    Load();
+                }
+            }
         }
     }
 }

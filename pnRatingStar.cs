@@ -33,11 +33,11 @@ namespace Shoppa
             {
                 if (++this.StarValue <= StarValue)
                 {
-                    control.Key.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\star_full_512px.png";
+                    control.Key.ImageLocation = "https://cloud.joverse.me:2023/application/Shoppa/icon/star_full_512px.png";
                 }
                 else
                 {
-                    control.Key.ImageLocation = @"C:\Users\doandat943\Documents\Pichon\star_512px.png";
+                    control.Key.ImageLocation = "https://cloud.joverse.me:2023/application/Shoppa/icon/star_512px.png";
                 }
             }
             this.StarValue = StarValue;

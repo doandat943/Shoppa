@@ -7,6 +7,7 @@ namespace Shoppa
     {
         private SQL_Services mySqlServices = new SQL_Services();
         private string ProductID;
+        private int QuantityInStock = 1;
 
         public pnCartItem()
         {
@@ -36,6 +37,10 @@ namespace Shoppa
         public string Set_Quantity
         {
             set => txtQuantity.Text = value;
+        }
+        public string Set_QuantityInStock
+        {
+            set => QuantityInStock = int.Parse(value);
         }
 
         public int Get_Price
@@ -68,7 +73,7 @@ namespace Shoppa
         private void btnAddQuantity_Click(object sender, EventArgs e)
         {
             int Quantity = Convert.ToInt32(txtQuantity.Text);
-            if (Quantity < 100)
+            if (Quantity < QuantityInStock)
             {
                 txtQuantity.Text = (Quantity + 1).ToString();
             }
@@ -81,9 +86,9 @@ namespace Shoppa
             {
                 txtQuantity.Text = "1";
             }
-            else if (Quantity > 100)
+            else if (Quantity > QuantityInStock)
             {
-                txtQuantity.Text = "100";
+                txtQuantity.Text = QuantityInStock.ToString();
             }
             QuantityChanged?.Invoke(this, new Tuple<string, string>(ProductID, txtQuantity.Text));
         }

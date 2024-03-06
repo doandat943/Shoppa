@@ -252,6 +252,12 @@
     <Compile Include="frmManageCoupon.Designer.cs">
       <DependentUpon>frmManageCoupon.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManageOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageOrder.Designer.cs">
+      <DependentUpon>frmManageOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManageProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,12 @@
     <Compile Include="uiHistoryView.Designer.cs">
       <DependentUpon>uiHistoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="uiHomeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uiHomeView.Designer.cs">
+      <DependentUpon>uiHomeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="uiManageTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -387,6 +399,9 @@
     <EmbeddedResource Include="frmManageCoupon.resx">
       <DependentUpon>frmManageCoupon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageOrder.resx">
+      <DependentUpon>frmManageOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageProduct.resx">
       <DependentUpon>frmManageProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uiHistoryView.resx">
       <DependentUpon>uiHistoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uiHomeView.resx">
+      <DependentUpon>uiHomeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uiManageTool.resx">
       <DependentUpon>uiManageTool.cs</DependentUpon>
